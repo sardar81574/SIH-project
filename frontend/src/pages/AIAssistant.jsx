@@ -1,0 +1,410 @@
+import React, { useState, useRef, useEffect } from "react";
+import { 
+  Bot, 
+  Send, 
+  User, 
+  Mic, 
+  MicOff, 
+  Volume2, 
+  VolumeX, 
+  Sparkles, 
+  Sprout, 
+  HelpCircle, 
+  Pill, 
+  CloudSun,
+  Languages,
+  ShieldCheck,
+  RefreshCw,
+  Wheat,
+  MapPin,
+  CheckCircle2,
+  Trash2
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
+import { doc, getDoc } from "firebase/firestore";
+import { auth, db } from "../services/firebase";
+
+export default function AIAssistant() {
+  const [lang, setLang] = useState("hi"); // 'hi' | 'en'
+  const [farmerContext, setFarmerContext] = useState({
+    name: localStorage.getItem("farmerName") || "किसान साथी",
+    location: "जबलपुर, मध्य प्रदेश",
+    crop: "शरबती गेहूं (C-306)",
+    area: "6.5 एकड़"
+  });
+
+  const [messages, setMessages] = useState([
+    {
+      sender: "ai",
+      text: "नमस्ते! मैं आपका 'किसान मित्र AI' कृषि वैज्ञानिक हूँ। आप मुझसे अपनी फसल, खाद की सही मात्रा, कीटनाशक, मौसम या सरकारी योजनाओं के बारे में कोई भी सवाल पूछ सकते हैं।",
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    }
+  ]);
+
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const [speakingIndex, setSpeakingIndex] = useState(null);
+
+  const messagesEndRef = useRef(null);
+
+  // Sync Live Farmer Data from Firestore
+  useEffect(() => {
+    const fetchFarmerProfile = async () => {
+      const user = auth.currentUser;
+      if (user) {
+        try {
+          const snap = await getDoc(doc(db, "farmers", user.uid));
+          if (snap.exists()) {
+            const d = snap.data();
+            setFarmerContext(prev => ({
+              ...prev,
+              name: d.name || prev.name,
+              location: d.location || prev.location,
+              crop: d.crop?.name || prev.crop,
+              area: d.crop?.area || prev.area
+            }));
+          }
+        } catch (e) {
+          console.warn("Firestore sync skipped:", e);
+        }
+      }
+    };
+    fetchFarmerProfile();
+  }, []);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, loading]);
+
+  // Topic Categories for Quick One-Click Exploration
+  const categoryPrompts = [
+    { label: "यूरिया व DAP खुराक", query: "1 एकड़ गेहूं में यूरिया, DAP और जिंक कितनी मात्रा में कब डालें?" },
+    { label: "इल्ली व कीट नियंत्रण", query: "फसल में इल्ली (caterpillar) और तना छेदक के लिए सबसे अच्छी दवा और प्रति पंप खुराक बताएं।" },
+    { label: "पीला मोज़ेक व फफूंद", query: "पत्तियों पर पीलापन और फफूंद (Fungus) दिखने पर तुरंत कौन सा स्प्रे करें?" },
+    { label: "PM किसान व योजनाएं", query: "PM किसान सम्मान निधि और फसल बीमा योजना का लाभ लेने की प्रक्रिया क्या है?" },
+  ];
+
+  // Send Question to Backend / Gemini
+  const handleSend = async (queryText = input) => {
+    const query = queryText.trim();
+    if (!query || loading) return;
+
+    const userMessage = {
+      sender: "user",
+      text: query,
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/chat", {
+        message: query,
+        farmer_name: farmerContext.name,
+        location: farmerContext.location,
+        current_crop: farmerContext.crop,
+        field_area: farmerContext.area,
+        language: lang
+      });
+
+      const replyText = response.data?.reply || "उत्तर प्राप्त करने में असमर्थ। कृपया पुनः प्रयास करें।";
+
+      setMessages(prev => [
+        ...prev,
+        {
+          sender: "ai",
+          text: replyText,
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }
+      ]);
+    } catch (err) {
+      console.error(err);
+      // Helpful offline fallback answer
+      setMessages(prev => [
+        ...prev,
+        {
+          sender: "ai",
+          text: "सर्वर कनेक्ट नहीं हो सका। सामान्य सलाह: पत्तियों पर फफूंद दिखने पर 'साफ (Carbendazim 12% + Mancozeb 63%)' 30 ग्राम प्रति 15L पंप स्प्रे करें। विस्तृत विश्लेषण हेतु बैकएंड चालू रखें।",
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Voice Input (Web Speech API)
+  const toggleSpeechRecognition = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("आपके ब्राउज़र में वॉइस टाइपिंग उपलब्ध नहीं है। Chrome इस्तेमाल करें।");
+      return;
+    }
+
+    if (isListening) {
+      setIsListening(false);
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = lang === "hi" ? "hi-IN" : "en-IN";
+    recognition.interimResults = false;
+
+    recognition.onstart = () => setIsListening(true);
+    recognition.onend = () => setIsListening(false);
+    recognition.onerror = () => setIsListening(false);
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setInput(transcript);
+      handleSend(transcript);
+    };
+
+    recognition.start();
+  };
+
+  // Voice Readout (Text-To-Speech)
+  const toggleSpeechOutput = (text, idx) => {
+    if (!('speechSynthesis' in window)) return;
+
+    if (speakingIndex === idx) {
+      window.speechSynthesis.cancel();
+      setSpeakingIndex(null);
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang === "hi" ? "hi-IN" : "en-US";
+    utterance.rate = 0.95;
+    utterance.onend = () => setSpeakingIndex(null);
+    utterance.onerror = () => setSpeakingIndex(null);
+
+    setSpeakingIndex(idx);
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const clearChat = () => {
+    if (window.confirm("क्या आप पूरी चैट हटाना चाहते हैं?")) {
+      setMessages([
+        {
+          sender: "ai",
+          text: "बातचीत रीसेट हो गई है। आप नया सवाल पूछ सकते हैं।",
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }
+      ]);
+    }
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto px-3 sm:px-6 py-6 pb-28 font-sans space-y-4">
+      
+      {/* 🌟 TOP SCIENTIST BANNER WITH CONTEXT CARDS */}
+      <div className="bg-slate-900 rounded-3xl p-5 sm:p-7 text-white shadow-xl border border-slate-800 space-y-4">
+        
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 shrink-0">
+              <Bot className="w-7 h-7" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h1 className="text-lg sm:text-xl font-black tracking-tight">किसान मित्र AI सलाहकार</h1>
+                <span className="text-[10px] font-black bg-emerald-950 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> 24/7 ICAR Live
+                </span>
+              </div>
+              <p className="text-xs text-slate-400 font-medium mt-0.5">
+                कृषि वैज्ञानिक स्तर की सलाह: खाद, रोग उपचार, बीज व मौसम
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 self-end sm:self-auto">
+            <button
+              onClick={() => setLang(lang === "hi" ? "en" : "hi")}
+              className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold transition flex items-center gap-1.5 text-slate-200"
+            >
+              <Languages className="w-3.5 h-3.5 text-emerald-400" />
+              <span>{lang === "hi" ? "English" : "हिंदी"}</span>
+            </button>
+
+            <button
+              onClick={clearChat}
+              className="p-2 rounded-xl bg-white/10 hover:bg-rose-500/20 text-slate-400 hover:text-rose-300 transition"
+              title="Clear Chat"
+            >
+              <Trash2 className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Live Farm Profile Metadata Bar */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-3 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+          <div>
+            <span className="text-[10px] text-slate-400 block font-bold">किसान</span>
+            <span className="font-black text-slate-200 truncate block">{farmerContext.name}</span>
+          </div>
+          <div>
+            <span className="text-[10px] text-slate-400 block font-bold">स्थान</span>
+            <span className="font-black text-slate-200 truncate block">{farmerContext.location}</span>
+          </div>
+          <div>
+            <span className="text-[10px] text-slate-400 block font-bold">सक्रिय फसल</span>
+            <span className="font-black text-emerald-300 truncate block">{farmerContext.crop}</span>
+          </div>
+          <div>
+            <span className="text-[10px] text-slate-400 block font-bold">रकबा</span>
+            <span className="font-black text-slate-200 truncate block">{farmerContext.area}</span>
+          </div>
+        </div>
+
+      </div>
+
+      {/* 🌟 ONE-CLICK PROMPT CHIPS */}
+      <div className="space-y-1.5">
+        <span className="text-[11px] font-bold text-slate-400 flex items-center gap-1 px-1">
+          <Sparkles className="w-3.5 h-3.5 text-emerald-700" /> तुरंत सवाल पूछें (Quick Suggestions):
+        </span>
+        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
+          {categoryPrompts.map((item, idx) => (
+            <motion.button
+              key={idx}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => handleSend(item.query)}
+              className="bg-white border border-slate-200 hover:border-slate-800 text-slate-800 px-3 py-2 rounded-xl text-xs font-black shrink-0 transition shadow-xs"
+            >
+              {item.label}
+            </motion.button>
+          ))}
+        </div>
+      </div>
+
+      {/* 🌟 CHAT LOG DISPLAY */}
+      <div className="bg-white rounded-3xl border border-slate-200 shadow-xs p-4 sm:p-6 min-h-[440px] max-h-[560px] overflow-y-auto space-y-4">
+        <AnimatePresence initial={false}>
+          {messages.map((msg, index) => {
+            const isAI = msg.sender === "ai";
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.2 }}
+                className={`flex gap-3 ${isAI ? "justify-start" : "justify-end"}`}
+              >
+                {isAI && (
+                  <div className="w-8 h-8 rounded-xl bg-slate-900 text-emerald-400 flex items-center justify-center shrink-0 mt-1 shadow-xs">
+                    <Bot className="w-4 h-4" />
+                  </div>
+                )}
+
+                <div className="max-w-[85%] sm:max-w-[78%] space-y-1">
+                  <div
+                    className={`p-4 rounded-2xl text-xs sm:text-sm leading-relaxed whitespace-pre-line shadow-xs ${
+                      isAI
+                        ? "bg-slate-50 border border-slate-200 text-slate-800 font-medium"
+                        : "bg-slate-900 text-white font-semibold ml-auto"
+                    }`}
+                  >
+                    {msg.text}
+                  </div>
+
+                  <div className={`flex items-center gap-2 px-1 text-[10px] text-slate-400 font-bold ${isAI ? "justify-start" : "justify-end"}`}>
+                    <span>{msg.time}</span>
+                    {isAI && (
+                      <button
+                        onClick={() => toggleSpeechOutput(msg.text, index)}
+                        className="hover:text-slate-900 transition flex items-center gap-1"
+                        title="बोलकर सुनें"
+                      >
+                        {speakingIndex === index ? (
+                          <VolumeX className="w-3.5 h-3.5 text-rose-600 animate-pulse" />
+                        ) : (
+                          <Volume2 className="w-3.5 h-3.5 text-slate-400 hover:text-slate-800" />
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+                {!isAI && (
+                  <div className="w-8 h-8 rounded-xl bg-slate-100 text-slate-800 border border-slate-200 flex items-center justify-center shrink-0 mt-1 font-black text-xs">
+                    {farmerContext.name.charAt(0).toUpperCase()}
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+
+        {/* Waveform Loading Animation */}
+        {loading && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex items-center gap-3 text-slate-500"
+          >
+            <div className="w-8 h-8 rounded-xl bg-slate-900 text-emerald-400 flex items-center justify-center shrink-0">
+              <RefreshCw className="w-4 h-4 animate-spin text-emerald-400" />
+            </div>
+            <div className="bg-slate-50 border border-slate-200 px-4 py-3 rounded-2xl text-xs font-bold flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-700 animate-bounce" />
+              <span>कृषि वैज्ञानिक उत्तर तैयार कर रहे हैं...</span>
+            </div>
+          </motion.div>
+        )}
+
+        <div ref={messagesEndRef} />
+      </div>
+
+      {/* 🌟 INPUT FIELD WITH VOICE & SEND */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSend();
+        }}
+        className="flex items-center gap-2 bg-white border border-slate-200/90 focus-within:border-slate-900 p-2 rounded-2xl shadow-sm transition"
+      >
+        <button
+          type="button"
+          onClick={toggleSpeechRecognition}
+          className={`p-3 rounded-xl transition ${
+            isListening
+              ? "bg-rose-600 text-white animate-pulse"
+              : "bg-slate-100 hover:bg-slate-200 text-slate-700"
+          }`}
+          title="बोलकर पूछें"
+        >
+          {isListening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
+        </button>
+
+        <input
+          type="text"
+          placeholder="फसल, खाद, रोग या खुराक का सवाल पूछें..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="flex-1 bg-transparent outline-none px-2 text-xs sm:text-sm font-semibold text-slate-800"
+        />
+
+        <button
+          type="submit"
+          disabled={!input.trim() || loading}
+          className="bg-slate-900 hover:bg-black disabled:opacity-30 text-white p-3 rounded-xl transition active:scale-95 shadow-xs shrink-0"
+        >
+          <Send className="w-4 h-4" />
+        </button>
+      </form>
+
+    </div>
+  );
+}

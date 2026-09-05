@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    @apply transition-colors duration-300;
+  }
+  
+  /* Day Mode (Light) */
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  /* Night Mode (Deep Dark OLED) */
+  html.dark body {
+    background-color: #070c18;
+    color: #f1f5f9;
+  }
+
+  /* Har div, card, container ko auto dark-theme dena */
+  html.dark .bg-white {
+    background-color: #0d1527 !important;
+    border-color: #1e293b !important;
+    color: #f8fafc !important;
+  }
+
+  html.dark .bg-slate-50,
+  html.dark .bg-gray-50 {
+    background-color: #111c33 !important;
+    border-color: #1e293b !important;
+    color: #e2e8f0 !important;
+  }
+
+  html.dark .text-slate-900,
+  html.dark .text-gray-900 {
+    color: #f8fafc !important;
+  }
+
+  html.dark .text-slate-700,
+  html.dark .text-gray-700,
+  html.dark .text-slate-600,
+  html.dark .text-gray-600 {
+    color: #94a3b8 !important;
+  }
+
+  html.dark .border-slate-200,
+  html.dark .border-gray-200,
+  html.dark .border-gray-100 {
+    border-color: #1e293b !important;
+  }
+}
