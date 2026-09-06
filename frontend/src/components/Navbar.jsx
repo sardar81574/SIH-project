@@ -545,9 +545,6 @@
 
 
 
-
-
-
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import {
@@ -558,6 +555,7 @@ import {
   Bot,
   User,
   LogIn,
+  LogOut,
   Pill,
   ShieldAlert,
   Sprout,
@@ -579,7 +577,14 @@ import {
   Languages
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { onAuthStateChanged } from "firebase/auth";
+import { 
+  onAuthStateChanged, 
+  signInWithPopup, 
+  GoogleAuthProvider, 
+  signOut,
+  setPersistence,
+  browserLocalPersistence 
+} from "firebase/auth";
 import { auth } from "../services/firebase";
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
@@ -596,6 +601,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
   const [user, setUser] = useState(null);
+  const [authLoading, setAuthLoading] = useState(false);
 
   // Day/Night & Multi-Language Global Context Hooks
   const { isDarkMode, toggleTheme } = useTheme();
@@ -623,6 +629,40 @@ export default function Navbar() {
         (adminEmail) => adminEmail.toLowerCase().trim() === user.email.toLowerCase().trim()
       )
   );
+
+  // Direct Reliable Google Login Handler
+  const handleDirectLogin = async () => {
+    try {
+      setAuthLoading(true);
+      const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: "select_account" });
+      await setPersistence(auth, browserLocalPersistence);
+      const res = await signInWithPopup(auth, provider);
+      setUser(res.user);
+      if (res.user?.displayName) {
+        localStorage.setItem("farmerName", res.user.displayName);
+      }
+    } catch (err) {
+      console.error("Login Error:", err);
+      // Fallback redirect if popup is blocked
+      navigate("/login");
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  // Direct Logout Handler
+  const handleDirectLogout = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem("farmerName");
+      sessionStorage.clear();
+      setUser(null);
+      navigate("/");
+    } catch (err) {
+      console.error("Logout Error:", err);
+    }
+  };
 
   /* -------------------------------------------------------------
       1. PRIMARY NAVBAR LINKS (Main Desktop Bar)
@@ -895,7 +935,7 @@ export default function Navbar() {
           </AnimatePresence>
         </nav>
 
-        {/* RIGHT: THEME, LANGUAGE, ALERTS, PROFILE */}
+        {/* RIGHT: THEME, LANGUAGE, ALERTS, PROFILE & DIRECT AUTH */}
         <div className="flex items-center gap-2">
           
           {/* Language Toggle */}
@@ -952,32 +992,42 @@ export default function Navbar() {
             <Bell className="w-4 h-4" />
           </Link>
 
-          {/* Profile & Auth */}
+          {/* Profile & One-Click Login / Logout */}
           {user ? (
-            <Link
-              to="/profile"
-              className="flex items-center gap-2 pl-1.5 pr-3 py-1.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-600 transition"
-            >
-              <div className="w-8 h-8 rounded-xl bg-emerald-800 dark:bg-emerald-600 text-white flex items-center justify-center font-black text-xs shadow-xs">
-                {user.displayName ? user.displayName.charAt(0).toUpperCase() : <User className="w-4 h-4" />}
-              </div>
-              <div className="hidden sm:block text-left">
-                <span className="block text-xs font-black text-slate-900 dark:text-white leading-tight max-w-[90px] truncate">
-                  {user.displayName || (lang === "hi" ? "किसान" : "Farmer")}
-                </span>
-                <span className="text-[9px] font-bold text-emerald-700 dark:text-emerald-400 block">
-                  {isAdmin ? "Admin" : (lang === "hi" ? "प्रोफ़ाइल" : "Profile")}
-                </span>
-              </div>
-            </Link>
+            <div className="flex items-center gap-1.5">
+              <Link
+                to="/profile"
+                className="flex items-center gap-2 pl-1.5 pr-2.5 py-1.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-600 transition"
+              >
+                <div className="w-8 h-8 rounded-xl bg-emerald-800 dark:bg-emerald-600 text-white flex items-center justify-center font-black text-xs shadow-xs">
+                  {user.displayName ? user.displayName.charAt(0).toUpperCase() : <User className="w-4 h-4" />}
+                </div>
+                <div className="hidden sm:block text-left">
+                  <span className="block text-xs font-black text-slate-900 dark:text-white leading-tight max-w-[85px] truncate">
+                    {user.displayName || (lang === "hi" ? "किसान" : "Farmer")}
+                  </span>
+                  <span className="text-[9px] font-bold text-emerald-700 dark:text-emerald-400 block">
+                    {isAdmin ? "Admin" : (lang === "hi" ? "प्रोफ़ाइल" : "Profile")}
+                  </span>
+                </div>
+              </Link>
+              <button
+                onClick={handleDirectLogout}
+                className="p-2 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-900/60 hover:bg-rose-100 transition"
+                title="लॉगआउट करें (Sign Out)"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+            </div>
           ) : (
-            <Link
-              to="/login"
-              className="flex items-center gap-1.5 bg-slate-900 dark:bg-emerald-600 hover:bg-emerald-800 dark:hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl text-xs font-black transition active:scale-95 shadow-xs"
+            <button
+              onClick={handleDirectLogin}
+              disabled={authLoading}
+              className="flex items-center gap-1.5 bg-slate-900 dark:bg-emerald-600 hover:bg-emerald-800 dark:hover:bg-emerald-700 disabled:opacity-50 text-white px-3.5 py-2 rounded-xl text-xs font-black transition active:scale-95 shadow-xs cursor-pointer"
             >
               <LogIn className="w-4 h-4" />
-              <span>{lang === "hi" ? "लॉगिन" : "Sign In"}</span>
-            </Link>
+              <span>{authLoading ? "..." : (lang === "hi" ? "लॉगिन" : "Sign In")}</span>
+            </button>
           )}
 
           {/* Mobile Hamburger Button */}
