@@ -548,7 +548,6 @@
 
 
 
-
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import {
@@ -585,7 +584,7 @@ import { auth } from "../services/firebase";
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
 
-// Authorized Super Admin Emails (Dono emails allowed)
+// Authorized Super Admin Emails
 const ADMIN_EMAILS = [
   "sardardhakad81@gmail.com",
   "katariyavishal74@gmail.com"
@@ -600,7 +599,7 @@ export default function Navbar() {
 
   // Day/Night & Multi-Language Global Context Hooks
   const { isDarkMode, toggleTheme } = useTheme();
-  const { lang, toggleLanguage, t } = useLanguage();
+  const { lang, toggleLanguage } = useLanguage();
 
   // Check if current route is Crop Doctor / AI Scan page
   const isScanRoute = location.pathname.startsWith("/crop-doctor");
@@ -617,8 +616,13 @@ export default function Navbar() {
     setMoreDropdownOpen(false);
   };
 
-  // Fixed: .includes() check for array comparison
-  const isAdmin = user && ADMIN_EMAILS.includes(user.email);
+  // Robust case-insensitive email check
+  const isAdmin = Boolean(
+    user?.email &&
+      ADMIN_EMAILS.some(
+        (adminEmail) => adminEmail.toLowerCase().trim() === user.email.toLowerCase().trim()
+      )
+  );
 
   /* -------------------------------------------------------------
       1. PRIMARY NAVBAR LINKS (Main Desktop Bar)
@@ -626,7 +630,7 @@ export default function Navbar() {
   const defaultNavLinks = [
     { name: lang === "hi" ? "डैशबोर्ड" : "Dashboard", path: "/", icon: Home },
     { name: lang === "hi" ? "AI स्कैन" : "AI Scan", path: "/crop-doctor", icon: ScanLine, highlight: true },
-    { name: lang === "hi" ? "फसल व दवाइयां" : " Medicine", path: "/marketplace", icon: ShoppingCart },
+    { name: lang === "hi" ? "दवाइयां" : "Medicine", path: "/marketplace", icon: ShoppingCart },
     { name: lang === "hi" ? "फसल बेचें" : "Sell Crop", path: "/sell-crop", icon: PlusCircle },
     { name: lang === "hi" ? "मौसम" : "Weather", path: "/weather", icon: CloudSun },
     { name: lang === "hi" ? "किसान चौपाल" : "Community", path: "/community", icon: Users },
@@ -687,9 +691,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full bg-white/95 dark:bg-[#070c18]/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xs transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
         
-        {/* =====================================================
-            LEFT: BRAND LOGO OR SCAN BACK BUTTON
-        ===================================================== */}
+        {/* LEFT: LOGO OR SCAN BACK BUTTON */}
         <div className="flex items-center gap-3">
           <AnimatePresence mode="wait">
             {isScanRoute ? (
@@ -752,9 +754,7 @@ export default function Navbar() {
           </AnimatePresence>
         </div>
 
-        {/* =====================================================
-            CENTER: DYNAMIC NAVIGATION LINKS
-        ===================================================== */}
+        {/* CENTER: DESKTOP NAVIGATION */}
         <nav className="hidden xl:flex items-center gap-1">
           <AnimatePresence mode="wait">
             {isScanRoute ? (
@@ -874,7 +874,7 @@ export default function Navbar() {
                   </AnimatePresence>
                 </div>
 
-                {/* Exclusive Admin Link */}
+                {/* Exclusive Admin Link on Desktop */}
                 {isAdmin && (
                   <NavLink
                     to="/admin"
@@ -895,12 +895,10 @@ export default function Navbar() {
           </AnimatePresence>
         </nav>
 
-        {/* =====================================================
-            RIGHT: DAY/NIGHT, LANGUAGE, ALERTS, PROFILE & HAMBURGER
-        ===================================================== */}
+        {/* RIGHT: THEME, LANGUAGE, ALERTS, PROFILE */}
         <div className="flex items-center gap-2">
           
-          {/* 🌟 1. Animated Language Switcher Button */}
+          {/* Language Toggle */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -912,13 +910,13 @@ export default function Navbar() {
             <span className="tracking-wide">{lang === "hi" ? "EN" : "हिं"}</span>
           </motion.button>
 
-          {/* 🌟 2. Animated Day / Night Mode Toggle */}
+          {/* Theme Toggle */}
           <motion.button
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.92 }}
             onClick={toggleTheme}
             className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 transition relative overflow-hidden shadow-2xs"
-            title={isDarkMode ? "Day Mode on karein" : "Night Mode on karein"}
+            title={isDarkMode ? "Day Mode" : "Night Mode"}
           >
             <AnimatePresence mode="wait" initial={false}>
               {isDarkMode ? (
@@ -945,7 +943,7 @@ export default function Navbar() {
             </AnimatePresence>
           </motion.button>
 
-          {/* Activity Alerts */}
+          {/* Alerts */}
           <Link
             to="/notifications"
             className="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
@@ -954,7 +952,7 @@ export default function Navbar() {
             <Bell className="w-4 h-4" />
           </Link>
 
-          {/* Profile & Auth Buttons */}
+          {/* Profile & Auth */}
           {user ? (
             <Link
               to="/profile"
@@ -994,9 +992,7 @@ export default function Navbar() {
 
       </div>
 
-      {/* =====================================================
-          MOBILE DRAWER MENU (With Dark Mode & Translation)
-      ===================================================== */}
+      {/* MOBILE DRAWER */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
