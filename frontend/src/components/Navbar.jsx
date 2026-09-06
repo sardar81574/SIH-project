@@ -626,7 +626,7 @@ export default function Navbar() {
   const defaultNavLinks = [
     { name: lang === "hi" ? "डैशबोर्ड" : "Dashboard", path: "/", icon: Home },
     { name: lang === "hi" ? "AI स्कैन" : "AI Scan", path: "/crop-doctor", icon: ScanLine, highlight: true },
-    { name: lang === "hi" ? "फसल व दवाइयां" : "Buy Crop & Medicine", path: "/marketplace", icon: ShoppingCart },
+    { name: lang === "hi" ? "फसल व दवाइयां" : " Medicine", path: "/marketplace", icon: ShoppingCart },
     { name: lang === "hi" ? "फसल बेचें" : "Sell Crop", path: "/sell-crop", icon: PlusCircle },
     { name: lang === "hi" ? "मौसम" : "Weather", path: "/weather", icon: CloudSun },
     { name: lang === "hi" ? "किसान चौपाल" : "Community", path: "/community", icon: Users },
