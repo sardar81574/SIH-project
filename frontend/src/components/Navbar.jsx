@@ -35,7 +35,7 @@ import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
 
 // Authorized Super Admin Email
-const ADMIN_EMAIL = "sardardhakad81@gmail.com";
+const ADMIN_EMAIL = ["sardardhakad81@gmail.com","katariyavishal74@gmail.com"];
 
 export default function Navbar() {
   const location = useLocation();
@@ -72,9 +72,9 @@ export default function Navbar() {
     { name: lang === "hi" ? "डैशबोर्ड" : "Dashboard", path: "/", icon: Home },
     { name: lang === "hi" ? "AI स्कैन" : "AI Scan", path: "/crop-doctor", icon: ScanLine, highlight: true },
     { name: lang === "hi" ? "फसल व दवाइयां" : "Buy Crop & Medicine", path: "/marketplace", icon: ShoppingCart },
-    { name: lang === "hi" ? "फसल बेचें" : "Sell Crop", path: "/sell-crop", icon: PlusCircle, badge: lang === "hi" ? "नया" : "NEW" },
+    { name: lang === "hi" ? "फसल बेचें" : "Sell Crop", path: "/sell-crop", icon: PlusCircle,  },
     { name: lang === "hi" ? "मौसम" : "Weather", path: "/weather", icon: CloudSun },
-    { name: lang === "hi" ? "किसान चौपाल" : "Community", path: "/community", icon: Users, badge: "LIVE" },
+    { name: lang === "hi" ? "किसान चौपाल" : "Community", path: "/community", icon: Users, },
     { name: lang === "hi" ? "AI सहायक" : "AI Assistant", path: "/ai-assistant", icon: Bot },
   ];
 
@@ -185,11 +185,10 @@ export default function Navbar() {
                   </motion.div>
                   <div>
                     <span className="text-lg font-black tracking-tight text-slate-900 dark:text-white">
-                      Agri<span className="text-emerald-700 dark:text-emerald-400">Scan</span>
+                      Smart<span className="text-emerald-700 dark:text-emerald-400">Farmer</span>
                     </span>
                     <span className="text-[9px] font-black tracking-widest text-emerald-700 dark:text-emerald-400 block uppercase -mt-0.5">
-                      Smart AI Farm
-                    </span>
+                      Ai-scan-app </span>
                   </div>
                 </Link>
               </motion.div>
