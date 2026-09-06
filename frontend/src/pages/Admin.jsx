@@ -35,7 +35,7 @@ import {
 import { auth, db } from "../services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
-const AUTHORIZED_ADMIN_EMAIL = "sardardhakad81@gmail.com";
+const AUTHORIZED_ADMIN_EMAIL = ["sardardhakad81@gmail.com","katariyavishal74@gmail.com"];
 
 export default function Admin() {
   const navigate = useNavigate();
