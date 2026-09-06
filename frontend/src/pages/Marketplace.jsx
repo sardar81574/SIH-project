@@ -384,14 +384,19 @@ export default function Marketplace() {
 
 
 
-
-
-      await triggerNotification(
-  "Agri Order Placed",
-  `Order total ₹${totalAmount.toLocaleString('en-IN')} confirmed.`,
-  "order",
-  "/marketplace"
-);
+// Local in-app notification direct Firestore me push karein
+try {
+  await addDoc(collection(db, "notifications"), {
+    title: "Agri Order Placed",
+    message: `Order total ₹${totalAmount.toLocaleString('en-IN')} confirmed.`,
+    type: "order",
+    actionUrl: "/marketplace",
+    isRead: false,
+    createdAt: serverTimestamp()
+  });
+} catch (notifErr) {
+  console.warn("Notification skipped:", notifErr);
+}
 
       const docRef = await addDoc(collection(db, 'orders'), payload);
       setPlacedOrderId(docRef.id);
