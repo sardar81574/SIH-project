@@ -1,0 +1,38 @@
+{
+  "cropId": "wheat_root_rot_01",
+  "cropNameHi": "गेहूं (Wheat)",
+  "cropNameEn": "Wheat",
+  "diseaseHi": "समय से पूर्व सूखना / तना व जड़ सड़न (Foot & Root Rot)",
+  "diseaseEn": "Foot Rot / Take-all Root Rot",
+  "infectedImage": "agri_database/reference_images/wheat bakar.jpg",
+  "symptoms": [
+    "निचले तने और पत्तियों का समय से पहले भूरा होकर सूखना",
+    "बालियों का हल्का व अपूर्ण दानेदार रह जाना",
+    "जड़ों के पास काले व भूरे धब्बे पड़ना"
+  ],
+  "medicines": [
+    {
+      "name": "कस्टोडिया (Azoxystrobin 11% + Tebuconazole 18.3% SC)",
+      "dosePer15LPump": "25-30 मिली प्रति 15L पंप",
+      "dosePerAcre": "250-300 मिली प्रति एकड़ (150L पानी में)",
+      "howToUse": "सुबह ओस सूखने के बाद तनों के निचले हिस्से तक अच्छी तरह स्प्रे करें।"
+    },
+    {
+      "name": "टिल्ट (Propiconazole 25% EC)",
+      "dosePer15LPump": "20 मिली प्रति 15L पंप",
+      "dosePerAcre": "200 मिली प्रति एकड़",
+      "howToUse": "फसल में रोग के शुरुआती फैलाव पर छिड़काव करें।"
+    }
+  ],
+  "organicSolutions": [
+    {
+      "name": "ट्राइकोडर्मा विरिडी 1% WP",
+      "dosePerAcre": "2 किग्रा प्रति एकड़",
+      "howToUse": "50 किग्रा सड़ी हुई गोबर की खाद में मिलाकर बुवाई पूर्व खेत में मिलाएं।"
+    }
+  ],
+  "preventive": [
+    "बुवाई से पहले बीज शोधन (Carbendazim 2g/kg) अनिवार्य रूप से करें।",
+    "फसल पकने पर विलंब न करें, समय पर कटाई सुनिश्चित करें।"
+  ]
+}
