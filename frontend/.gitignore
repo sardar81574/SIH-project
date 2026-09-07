@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+.env
+.env.*
+backend-ai/.env
+node_modules/
+dist/
