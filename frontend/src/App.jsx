@@ -120,8 +120,6 @@
 
 
 
-
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 
@@ -133,6 +131,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import LoadingScreen from './components/LoadingScreen';
+import CropRentMarketplace from "./components/CropRentMarketplace";
 
 // Pages
 import Dashboard from './pages/Dashboard';
@@ -148,15 +147,8 @@ import Orders from './pages/Orders';
 import Notifications from './pages/Notifications';
 import CommunityGroups from './pages/CommunityGroups';
 import Admin from './pages/Admin';
-
-const Crops = () => (
-  <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-    <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 transition-colors duration-300">
-      <h2 className="text-2xl font-black text-slate-900 dark:text-white">🌱 My Registered Crops</h2>
-      <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">खेत व बुवाई का पूरा विवरण।</p>
-    </div>
-  </div>
-);
+import IoTMokDashboard from "./pages/IoTMokDashboard";
+import CropOutbreakRadar from "./pages/CropOutbreakRadar";
 
 function AppLayout() {
   return (
@@ -204,13 +196,19 @@ export default function App() {
                 <Route path="/settings" element={<Settings />} />
 
                 <Route path="/marketplace" element={<Marketplace />} />
-                <Route path="/crops" element={<Crops />} />
+                {/* Fixed: /crops aur /rent-equipment dono par CropRentMarketplace set hai */}
+                <Route path="/crops" element={<CropRentMarketplace />} />
+                <Route path="/my-crop" element={<CropRentMarketplace />} />
+                <Route path="/rent-equipment" element={<CropRentMarketplace />} />
+                
                 <Route path="/ai-assistant" element={<AIAssistant />} />
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/notifications" element={<Notifications />} />
                 <Route path="/sell-crop" element={<SellCrop />} />
                 <Route path="/community" element={<CommunityGroups />} />
                 <Route path="/admin" element={<Admin />} />
+                <Route path="/iot-dashboard" element={<IoTMokDashboard />} />
+                <Route path="/outbreak-radar" element={<CropOutbreakRadar />} />
               </Route>
             </Route>
 

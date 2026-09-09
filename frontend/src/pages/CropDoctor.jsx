@@ -1,3 +1,8 @@
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../services/firebase";
+
+
+
 import React, { useState, useRef, useEffect } from 'react';
 import { 
   Camera, 
@@ -50,6 +55,102 @@ export default function CropDoctor() {
   const [facingMode, setFacingMode] = useState('environment');
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+
+
+
+
+
+
+
+
+
+const handleScan = async () => {
+  if (!imageFile) return;
+  setLoading(true);
+
+  // User ki current GPS location lein
+  navigator.geolocation.getCurrentPosition(
+    async (pos) => {
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
+
+      const formData = new FormData();
+      formData.append("file", imageFile);
+      formData.append("latitude", lat);
+      formData.append("longitude", lng);
+
+      try {
+        const API_URL = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+        const res = await axios.post(`${API_URL}/predict`, formData);
+        const data = res.data;
+        setResult(data);
+
+        // 🔥 AUTO BROADCAST TO 2 KM COMMUNITY IF DISEASE DETECTED
+        if (data.diseaseDetected) {
+          await addDoc(collection(db, "community_chats"), {
+            senderName: localStorage.getItem("farmerName") || "किसान साथी",
+            cropName: data.cropName || "फसल",
+            diseaseTag: data.diseaseName || "संक्रमण",
+            medicineTag: data.quickSummary?.sateekDawai || "दवा सलाह उपलब्ध",
+            infectionPercent: data.infectionPercent || "गंभीर",
+            image: data.heatmapImage || null,
+            location: { lat: lat, lng: lng },
+            isAutoScanAlert: true, // Mark this as automatic alert
+            createdAt: serverTimestamp(),
+          });
+        }
+
+
+
+
+
+// executeDiagnosis function ke andar res.data aane ke baad add karein:
+if (data.diseaseDetected && (data.severity === "High" || parseFloat(data.infectionPercent) > 30.0)) {
+  await addDoc(collection(db, "crop_hotspots"), {
+    farmerName: localStorage.getItem("farmerName") || "किसान साथी",
+    cropName: data.cropName || "फसल",
+    disease: data.diseaseName || "संक्रमण",
+    damagePercent: data.infectionPercent || "35%",
+    severity: "Critical",
+    status: "PENDING_INSPECTION",
+    location: { lat: lat, lng: lng }, // Exact GPS of field
+    recommendedChemical: data.quickSummary?.sateekDawai || "दवा परामर्श उपलब्ध",
+    reportedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+  });
+}
+
+
+
+
+
+
+
+
+
+      } catch (err) {
+        console.error("Scan error:", err);
+        alert("स्कैन करने में समस्या आई।");
+      } finally {
+        setLoading(false);
+      }
+    },
+    (gpsErr) => {
+      alert("कृपया GPS ऑन रखें ताकि 2 KM कम्युनिटी में अलर्ट भेजा जा सके।");
+      setLoading(false);
+    },
+    { enableHighAccuracy: true }
+  );
+};
+
+
+
+
+
+
+
+
+
+
 
   // Handle Gallery Upload
   const handleFileChange = (e) => {

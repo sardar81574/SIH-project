@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { db } from '../services/firebase';
+import { signOut } from 'firebase/auth';
+import { db, auth } from '../services/firebase';
 import { 
   User, 
   Camera, 
@@ -15,15 +17,18 @@ import {
   Sparkles, 
   Loader2,
   Calendar,
-  Layers
+  Layers,
+  LogOut
 } from 'lucide-react';
 
 export default function Profile() {
+  const navigate = useNavigate();
   const fileInputRef = useRef(null);
   
   const [isEditing, setIsEditing] = useState(false);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
 
   // Farmer Profile State
@@ -103,6 +108,26 @@ export default function Profile() {
     }
   };
 
+  // 4. Logout Functionality
+  const handleLogout = async () => {
+    const confirmLogout = window.confirm("क्या आप वाकई लॉगआउट करना चाहते हैं?");
+    if (!confirmLogout) return;
+
+    try {
+      setLoggingOut(true);
+      await signOut(auth);
+      localStorage.removeItem('userToken');
+      localStorage.removeItem('farmerName');
+      sessionStorage.clear();
+      navigate('/login', { replace: true });
+    } catch (err) {
+      console.error("Logout Error:", err);
+      alert("लॉगआउट करने में समस्या आई।");
+    } finally {
+      setLoggingOut(false);
+    }
+  };
+
   return (
     <div className="max-w-2xl mx-auto space-y-5 pb-28 md:pb-10 font-sans px-2 sm:px-4">
       
@@ -116,39 +141,58 @@ export default function Profile() {
           <h2 className="text-2xl font-black text-gray-900 mt-0.5 tracking-tight">किसान प्रोफाइल</h2>
         </div>
 
-        <button
-          type="button"
-          onClick={() => {
-            if (isEditing) {
-              document.getElementById('profile-form-submit')?.click();
-            } else {
-              setIsEditing(true);
-            }
-          }}
-          disabled={saving}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black transition flex items-center gap-1.5 shadow-sm active:scale-95 ${
-            isEditing 
-              ? 'bg-[#1b5e20] hover:bg-[#154a19] text-white' 
-              : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200'
-          }`}
-        >
-          {saving ? (
-            <>
+        <div className="flex items-center gap-2">
+          {/* Edit / Save Button */}
+          <button
+            type="button"
+            onClick={() => {
+              if (isEditing) {
+                document.getElementById('profile-form-submit')?.click();
+              } else {
+                setIsEditing(true);
+              }
+            }}
+            disabled={saving}
+            className={`px-4 py-2.5 rounded-2xl text-xs font-black transition flex items-center gap-1.5 shadow-sm active:scale-95 cursor-pointer ${
+              isEditing 
+                ? 'bg-[#1b5e20] hover:bg-[#154a19] text-white' 
+                : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200'
+            }`}
+          >
+            {saving ? (
+              <>
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                <span>Saving...</span>
+              </>
+            ) : isEditing ? (
+              <>
+                <Save className="w-3.5 h-3.5" />
+                <span>Save (सेव करें)</span>
+              </>
+            ) : (
+              <>
+                <Edit3 className="w-3.5 h-3.5" />
+                <span>Edit (बदलें)</span>
+              </>
+            )}
+          </button>
+
+          {/* Logout Button */}
+          <button
+            type="button"
+            onClick={handleLogout}
+            disabled={loggingOut}
+            className="px-3.5 py-2.5 rounded-2xl text-xs font-black bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 transition flex items-center gap-1.5 shadow-sm active:scale-95 disabled:opacity-50 cursor-pointer"
+            title="खाते से बाहर निकलें"
+          >
+            {loggingOut ? (
               <Loader2 className="w-3.5 h-3.5 animate-spin" />
-              <span>Saving...</span>
-            </>
-          ) : isEditing ? (
-            <>
-              <Save className="w-3.5 h-3.5" />
-              <span>Save Profile (सेव करें)</span>
-            </>
-          ) : (
-            <>
-              <Edit3 className="w-3.5 h-3.5" />
-              <span>Edit Profile (बदलें)</span>
-            </>
-          )}
-        </button>
+            ) : (
+              <LogOut className="w-3.5 h-3.5 text-rose-600" />
+            )}
+            <span>लॉगआउट</span>
+          </button>
+        </div>
       </div>
 
       {successMsg && (
@@ -173,7 +217,7 @@ export default function Profile() {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="absolute -bottom-2 -right-2 bg-[#1b5e20] hover:bg-[#154a19] text-white p-2.5 rounded-2xl shadow-lg transition active:scale-90"
+                className="absolute -bottom-2 -right-2 bg-[#1b5e20] hover:bg-[#154a19] text-white p-2.5 rounded-2xl shadow-lg transition active:scale-90 cursor-pointer"
                 title="Change Photo"
               >
                 <Camera className="w-4 h-4" />
@@ -192,7 +236,7 @@ export default function Profile() {
             <div className="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
               <h3 className="text-2xl font-black text-gray-900 tracking-tight">{profile.name}</h3>
               <span className="inline-flex items-center gap-1 bg-blue-50 text-blue-700 border border-blue-200 text-[10px] font-black px-2 py-0.5 rounded-md">
-                <ShieldCheck className="w-3 h-3" /> आधार व KCC सत्यापित
+                <ShieldCheck className="w-3.5 h-3.5" /> आधार व KCC सत्यापित
               </span>
             </div>
 

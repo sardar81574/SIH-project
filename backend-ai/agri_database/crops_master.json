@@ -1,38 +1,3262 @@
-{
-  "cropId": "wheat_root_rot_01",
-  "cropNameHi": "गेहूं (Wheat)",
-  "cropNameEn": "Wheat",
-  "diseaseHi": "समय से पूर्व सूखना / तना व जड़ सड़न (Foot & Root Rot)",
-  "diseaseEn": "Foot Rot / Take-all Root Rot",
-  "infectedImage": "agri_database/reference_images/wheat bakar.jpg",
-  "symptoms": [
-    "निचले तने और पत्तियों का समय से पहले भूरा होकर सूखना",
-    "बालियों का हल्का व अपूर्ण दानेदार रह जाना",
-    "जड़ों के पास काले व भूरे धब्बे पड़ना"
-  ],
-  "medicines": [
-    {
-      "name": "कस्टोडिया (Azoxystrobin 11% + Tebuconazole 18.3% SC)",
-      "dosePer15LPump": "25-30 मिली प्रति 15L पंप",
-      "dosePerAcre": "250-300 मिली प्रति एकड़ (150L पानी में)",
-      "howToUse": "सुबह ओस सूखने के बाद तनों के निचले हिस्से तक अच्छी तरह स्प्रे करें।"
+
+
+[
+  {
+    "cropId": "wheat_stripe_rust_01",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "पीला रतुआ / धारीदार रतुआ",
+    "diseaseEn": "Stripe Rust / Yellow Rust",
+    "infectedImage": "agri_database/reference_images/wheat bakar1.jpg",
+
+    "pathogen": {
+      "name": "Puccinia striiformis f. sp. tritici",
+      "type": "Fungus"
     },
-    {
-      "name": "टिल्ट (Propiconazole 25% EC)",
-      "dosePer15LPump": "20 मिली प्रति 15L पंप",
-      "dosePerAcre": "200 मिली प्रति एकड़",
-      "howToUse": "फसल में रोग के शुरुआती फैलाव पर छिड़काव करें।"
-    }
-  ],
-  "organicSolutions": [
-    {
-      "name": "ट्राइकोडर्मा विरिडी 1% WP",
-      "dosePerAcre": "2 किग्रा प्रति एकड़",
-      "howToUse": "50 किग्रा सड़ी हुई गोबर की खाद में मिलाकर बुवाई पूर्व खेत में मिलाएं।"
-    }
-  ],
-  "preventive": [
-    "बुवाई से पहले बीज शोधन (Carbendazim 2g/kg) अनिवार्य रूप से करें।",
-    "फसल पकने पर विलंब न करें, समय पर कटाई सुनिश्चित करें।"
-  ]
-}
+
+    "symptoms": [
+      "पत्तियों पर पीले से नारंगी रंग के छोटे-छोटे pustules दिखाई देते हैं।",
+      "Pustules सामान्यतः पत्ती की लंबाई के साथ धारियों में दिखाई देते हैं।",
+      "संक्रमण बढ़ने पर पत्तियां पीली पड़ सकती हैं।",
+      "गंभीर संक्रमण में पत्तियां समय से पहले सूख सकती हैं।",
+      "दाना भरने और उपज पर प्रतिकूल प्रभाव पड़ सकता है।"
+    ],
+
+    "favourableConditions": [
+      "ठंडा मौसम",
+      "अधिक humidity",
+      "ओस और पत्तियों पर लंबे समय तक नमी",
+      "बार-बार हल्की बारिश"
+    ],
+
+    "medicines": [
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "0.1%",
+        "dosePer15LPump": "15 ml प्रति 15 लीटर पानी",
+        "application": "Foliar spray",
+        "howToUse": "रोग की शुरुआती अवस्था में पत्तियों और crop canopy पर अच्छी तरह spray करें।"
+      },
+      {
+        "activeIngredient": "Tebuconazole + Trifloxystrobin",
+        "formulation": "50% + 25% WG",
+        "dose": "0.06%",
+        "application": "Foliar spray",
+        "howToUse": "उत्पाद के approved label और स्थानीय कृषि सलाह के अनुसार प्रयोग करें।"
+      }
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "रोग-प्रतिरोधी गेहूं की किस्म",
+        "howToUse": "अपने क्षेत्र के लिए recommended yellow-rust resistant variety का उपयोग करें।"
+      }
+    ],
+
+    "preventive": [
+      "फसल की नियमित निगरानी करें।",
+      "रोग के शुरुआती लक्षण दिखाई देते ही नियंत्रण करें।",
+      "अत्यधिक nitrogen fertilizer से बचें।",
+      "रोग-प्रतिरोधी variety का उपयोग करें।",
+      "Volunteer wheat plants को हटाएं।"
+    ]
+  },
+
+
+  {
+    "cropId": "wheat_loose_smut_01",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "कंडुआ / लूज स्मट",
+    "diseaseEn": "Loose Smut",
+    "infectedImage": "agri_database/reference_images/wheat bakar2.jpg",
+
+    "pathogen": {
+      "name": "Ustilago tritici",
+      "type": "Fungus"
+    },
+
+    "symptoms": [
+      "गेहूं की बालियों में सामान्य दानों की जगह काला powdery spore mass दिखाई देता है।",
+      "पूरी संक्रमित बाली काली spores से ढकी हुई दिखाई दे सकती है।",
+      "संक्रमित spikelets और grains नष्ट हो जाते हैं।",
+      "काली spores हवा द्वारा फैल सकती हैं।",
+      "संक्रमित बीज अगले crop में disease को carry कर सकता है।"
+    ],
+
+    "favourableConditions": [
+      "संक्रमित बीज का उपयोग",
+      "Untreated seed का उपयोग",
+      "संक्रमित seed material",
+      "फूल आने के समय अनुकूल संक्रमण परिस्थितियां"
+    ],
+
+    "medicines": [
+      {
+        "activeIngredient": "Carboxin",
+        "formulation": "75% WP",
+        "dose": "2.5 ग्राम प्रति kg बीज",
+        "application": "Seed treatment",
+        "howToUse": "बुवाई से पहले बीज का treatment करें।"
+      },
+      {
+        "activeIngredient": "Carbendazim",
+        "formulation": "50% WP",
+        "dose": "2.5 ग्राम प्रति kg बीज",
+        "application": "Seed treatment",
+        "howToUse": "बुवाई से पहले बीज का treatment करें।"
+      },
+      {
+        "activeIngredient": "Tebuconazole",
+        "formulation": "2 DS",
+        "dose": "1.25 ग्राम प्रति kg बीज",
+        "application": "Seed treatment",
+        "howToUse": "बुवाई से पहले seed treatment करें।"
+      }
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "Trichoderma viride",
+        "dose": "4 ग्राम प्रति kg बीज",
+        "howToUse": "Integrated seed treatment में recommended procedure के अनुसार प्रयोग करें।"
+      }
+    ],
+
+    "preventive": [
+      "Certified और disease-free seed का उपयोग करें।",
+      "बुवाई से पहले उचित seed treatment करें।",
+      "रोगग्रस्त फसल से अगले वर्ष के लिए बीज न रखें।",
+      "Recommended resistant varieties का उपयोग करें।"
+    ]
+  },
+
+
+  {
+    "cropId": "wheat_leaf_rust_01",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "भूरा रतुआ / पत्ती का रतुआ",
+    "diseaseEn": "Leaf Rust / Brown Rust",
+    "infectedImage": "agri_database/reference_images/wheat bakar3.jpg",
+
+    "pathogen": {
+      "name": "Puccinia triticina",
+      "type": "Fungus"
+    },
+
+    "symptoms": [
+      "पत्तियों पर छोटे गोल या अंडाकार नारंगी-भूरे pustules दिखाई देते हैं।",
+      "Pustules पत्ती पर बिखरे हुए दिखाई देते हैं।",
+      "समय के साथ rust pustules की संख्या बढ़ जाती है।",
+      "गंभीर संक्रमण में पत्तियां जल्दी सूख सकती हैं।",
+      "Photosynthesis और grain filling प्रभावित हो सकते हैं।"
+    ],
+
+    "favourableConditions": [
+      "मध्यम तापमान",
+      "उच्च relative humidity",
+      "पत्तियों पर moisture",
+      "ओस और बारिश"
+    ],
+
+    "medicines": [
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "0.1%",
+        "dosePer15LPump": "15 ml प्रति 15 लीटर पानी",
+        "application": "Foliar spray",
+        "howToUse": "रोग की शुरुआती अवस्था में crop canopy पर अच्छी तरह spray करें।"
+      },
+      {
+        "activeIngredient": "Mancozeb",
+        "formulation": "75% WP",
+        "dose": "1.5-2.0 kg formulation प्रति hectare",
+        "application": "Foliar spray",
+        "howToUse": "Approved crop-label recommendation के अनुसार प्रयोग करें।"
+      },
+      {
+        "activeIngredient": "Azoxystrobin + Cyproconazole",
+        "formulation": "18.2% + 7.3% SC",
+        "dose": "1.0 L formulation प्रति hectare",
+        "application": "Foliar spray",
+        "howToUse": "Approved label और स्थानीय कृषि सलाह के अनुसार प्रयोग करें।"
+      }
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "रोग-प्रतिरोधी गेहूं की किस्म",
+        "howToUse": "अपने क्षेत्र के लिए recommended resistant variety का उपयोग करें।"
+      }
+    ],
+
+    "preventive": [
+      "फसल की नियमित scouting करें।",
+      "रोग के शुरुआती लक्षण दिखाई देते ही नियंत्रण करें।",
+      "अत्यधिक nitrogen fertilizer से बचें।",
+      "Resistant variety का उपयोग करें।",
+      "Volunteer wheat plants को हटाएं।"
+    ]
+  },
+
+
+  {
+    "cropId": "wheat_stem_rust_01",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "काला रतुआ / तना रतुआ",
+    "diseaseEn": "Stem Rust / Black Rust",
+    "infectedImage": "agri_database/reference_images/wheat bakar4.jpg",
+
+    "pathogen": {
+      "name": "Puccinia graminis f. sp. tritici",
+      "type": "Fungus"
+    },
+
+    "symptoms": [
+      "तने पर लाल-भूरे से गहरे भूरे elongated pustules दिखाई देते हैं।",
+      "Leaf sheath पर भी pustules दिखाई दे सकते हैं।",
+      "Pustules लंबे और फटे हुए दिखाई दे सकते हैं।",
+      "गंभीर संक्रमण में पौधे कमजोर हो सकते हैं।",
+      "Lodging की समस्या हो सकती है।",
+      "गंभीर संक्रमण में grain filling और yield प्रभावित हो सकती है।"
+    ],
+
+    "favourableConditions": [
+      "गर्म और नम मौसम",
+      "उच्च humidity",
+      "पौधों की सतह पर moisture",
+      "संवेदनशील wheat variety"
+    ],
+
+    "medicines": [
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "0.1%",
+        "dosePer15LPump": "15 ml प्रति 15 लीटर पानी",
+        "application": "Foliar spray",
+        "howToUse": "रोग की शुरुआती अवस्था में recommended spray करें।"
+      },
+      {
+        "activeIngredient": "Mancozeb",
+        "formulation": "75% WP",
+        "dose": "1.5-2.0 kg formulation प्रति hectare",
+        "application": "Foliar spray",
+        "howToUse": "Approved crop-label recommendation के अनुसार प्रयोग करें।"
+      }
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "रोग-प्रतिरोधी गेहूं की किस्म",
+        "howToUse": "अपने क्षेत्र के लिए recommended stem-rust resistant variety का उपयोग करें।"
+      }
+    ],
+
+    "preventive": [
+      "Rust-resistant varieties का उपयोग करें।",
+      "खेत की नियमित निगरानी करें।",
+      "अत्यधिक nitrogen fertilizer से बचें।",
+      "बहुत dense sowing से बचें।",
+      "रोग के शुरुआती infection को नियंत्रित करें।"
+    ]
+  },
+
+
+  {
+    "cropId": "wheat_leaf_rust_02",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "भूरा रतुआ / पत्ती का रतुआ",
+    "diseaseEn": "Leaf Rust / Brown Rust",
+    "infectedImage": "agri_database/reference_images/wheat bakar5.jpg",
+
+    "pathogen": {
+      "name": "Puccinia triticina",
+      "type": "Fungus"
+    },
+
+    "symptoms": [
+      "पत्ती पर बड़ी संख्या में नारंगी-भूरे छोटे pustules दिखाई देते हैं।",
+      "Pustules पत्ती की सतह पर बिखरे हुए दिखाई देते हैं।",
+      "संक्रमण बढ़ने पर rust spots की संख्या बढ़ती है।",
+      "गंभीर संक्रमण में पत्तियां जल्दी सूख सकती हैं।",
+      "Photosynthesis और grain filling प्रभावित हो सकते हैं।"
+    ],
+
+    "favourableConditions": [
+      "मध्यम तापमान",
+      "उच्च relative humidity",
+      "पत्तियों पर moisture",
+      "ओस और बारिश"
+    ],
+
+    "medicines": [
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "0.1%",
+        "dosePer15LPump": "15 ml प्रति 15 लीटर पानी",
+        "application": "Foliar spray",
+        "howToUse": "रोग के शुरुआती लक्षणों पर crop canopy पर spray करें।"
+      },
+      {
+        "activeIngredient": "Mancozeb",
+        "formulation": "75% WP",
+        "dose": "1.5-2.0 kg formulation प्रति hectare",
+        "application": "Foliar spray",
+        "howToUse": "Approved crop-label recommendation के अनुसार प्रयोग करें।"
+      },
+      {
+        "activeIngredient": "Tebuconazole + Trifloxystrobin",
+        "formulation": "50% + 25% WG",
+        "dose": "0.06%",
+        "application": "Foliar spray",
+        "howToUse": "Approved label और स्थानीय कृषि सलाह के अनुसार प्रयोग करें।"
+      }
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "रोग-प्रतिरोधी wheat variety",
+        "howToUse": "अपने क्षेत्र के लिए recommended resistant variety का उपयोग करें।"
+      }
+    ],
+
+    "preventive": [
+      "फसल की नियमित scouting करें।",
+      "रोग के शुरुआती लक्षणों पर नियंत्रण करें।",
+      "अत्यधिक nitrogen fertilizer से बचें।",
+      "Recommended resistant variety का उपयोग करें।",
+      "Volunteer wheat plants को हटाएं।"
+    ]
+  },
+
+
+  {
+    "cropId": "wheat_leaf_rust_03",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "भूरा रतुआ / पत्ती का रतुआ",
+    "diseaseEn": "Leaf Rust / Brown Rust",
+    "infectedImage": "agri_database/reference_images/wheat bakar6.jpg",
+
+    "pathogen": {
+      "name": "Puccinia triticina",
+      "type": "Fungus"
+    },
+
+    "symptoms": [
+      "पत्तियों पर लाल-भूरे और नारंगी रंग के छोटे pustules दिखाई देते हैं।",
+      "Pustules मुख्य रूप से पत्ती की surface पर बिखरे हुए होते हैं।",
+      "कई pustules एक साथ दिखाई देने पर पत्ती पर rusted appearance बनता है।",
+      "गंभीर संक्रमण में पत्ती का हरा क्षेत्र कम हो सकता है।",
+      "गंभीर स्थिति में grain filling और yield कम हो सकती है।"
+    ],
+
+    "favourableConditions": [
+      "मध्यम तापमान",
+      "उच्च humidity",
+      "पत्तियों पर नमी",
+      "ओस और बारिश"
+    ],
+
+    "medicines": [
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "0.1%",
+        "dosePer15LPump": "15 ml प्रति 15 लीटर पानी",
+        "application": "Foliar spray",
+        "howToUse": "रोग के शुरुआती लक्षणों पर spray करें।"
+      },
+      {
+        "activeIngredient": "Mancozeb",
+        "formulation": "75% WP",
+        "dose": "1.5-2.0 kg formulation प्रति hectare",
+        "application": "Foliar spray",
+        "howToUse": "Approved crop-label recommendation के अनुसार प्रयोग करें।"
+      }
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "रोग-प्रतिरोधी wheat variety",
+        "howToUse": "स्थानीय क्षेत्र के लिए recommended resistant variety लगाएं।"
+      }
+    ],
+
+    "preventive": [
+      "फसल की नियमित monitoring करें।",
+      "Rust दिखाई देने पर early management करें।",
+      "अत्यधिक nitrogen से बचें।",
+      "Resistant varieties का उपयोग करें।"
+    ]
+  },
+
+
+  {
+    "cropId": "wheat_loose_smut_02",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "कंडुआ / लूज स्मट",
+    "diseaseEn": "Loose Smut",
+    "infectedImage": "agri_database/reference_images/wheat bakar7.jpg",
+
+    "pathogen": {
+      "name": "Ustilago tritici",
+      "type": "Fungus"
+    },
+
+    "symptoms": [
+      "पूरी गेहूं की बाली काले powdery spores में बदल सकती है।",
+      "संक्रमित बालियां सामान्य बालियों की तुलना में काली दिखाई देती हैं।",
+      "दाने बनने के बजाय black spore mass दिखाई देता है।",
+      "संक्रमित heads से spores हवा द्वारा फैल सकते हैं।",
+      "रोग seed-borne nature का है।"
+    ],
+
+    "favourableConditions": [
+      "संक्रमित seed",
+      "Untreated seed",
+      "संक्रमित crop से seed रखना"
+    ],
+
+    "medicines": [
+      {
+        "activeIngredient": "Carboxin",
+        "formulation": "75% WP",
+        "dose": "2.5 ग्राम प्रति kg बीज",
+        "application": "Seed treatment",
+        "howToUse": "बुवाई से पहले seed treatment करें।"
+      },
+      {
+        "activeIngredient": "Carbendazim",
+        "formulation": "50% WP",
+        "dose": "2.5 ग्राम प्रति kg बीज",
+        "application": "Seed treatment",
+        "howToUse": "बुवाई से पहले seed treatment करें।"
+      },
+      {
+        "activeIngredient": "Tebuconazole",
+        "formulation": "2 DS",
+        "dose": "1.25 ग्राम प्रति kg बीज",
+        "application": "Seed treatment",
+        "howToUse": "बुवाई से पहले seed treatment करें।"
+      }
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "Trichoderma viride",
+        "dose": "4 ग्राम प्रति kg बीज",
+        "howToUse": "Integrated seed treatment programme में recommended procedure के अनुसार प्रयोग करें।"
+      }
+    ],
+
+    "preventive": [
+      "Certified disease-free seed का उपयोग करें।",
+      "हर season से पहले seed treatment करें।",
+      "रोगग्रस्त crop को seed production के लिए उपयोग न करें।",
+      "Recommended varieties का उपयोग करें।"
+    ]
+  },
+
+
+  {
+    "cropId": "wheat_stripe_rust_02",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "पीला रतुआ / धारीदार रतुआ",
+    "diseaseEn": "Stripe Rust / Yellow Rust",
+    "infectedImage": "agri_database/reference_images/wheat bakar8.jpg",
+
+    "pathogen": {
+      "name": "Puccinia striiformis f. sp. tritici",
+      "type": "Fungus"
+    },
+
+    "symptoms": [
+      "पत्तियों पर पीले या नारंगी रंग की लंबी धारियां दिखाई देती हैं।",
+      "Pustules पत्ती की veins के साथ stripe pattern में व्यवस्थित होते हैं।",
+      "संक्रमण बढ़ने पर पत्तियां पीली और कमजोर हो सकती हैं।",
+      "गंभीर infection में leaf area कम हो जाता है।",
+      "दाना भरने और yield पर प्रभाव पड़ सकता है।"
+    ],
+
+    "favourableConditions": [
+      "ठंडा मौसम",
+      "उच्च humidity",
+      "ओस",
+      "बार-बार बारिश"
+    ],
+
+    "medicines": [
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "0.1%",
+        "dosePer15LPump": "15 ml प्रति 15 लीटर पानी",
+        "application": "Foliar spray",
+        "howToUse": "Stripe rust की शुरुआत में recommended spray करें।"
+      },
+      {
+        "activeIngredient": "Tebuconazole + Trifloxystrobin",
+        "formulation": "50% + 25% WG",
+        "dose": "0.06%",
+        "application": "Foliar spray",
+        "howToUse": "Approved product label के अनुसार प्रयोग करें।"
+      }
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "Rust-resistant wheat variety",
+        "howToUse": "स्थानीय recommendation के अनुसार resistant variety का उपयोग करें।"
+      }
+    ],
+
+    "preventive": [
+      "फसल की नियमित scouting करें।",
+      "Early symptoms पर management करें।",
+      "अत्यधिक nitrogen से बचें।",
+      "Resistant variety का उपयोग करें।",
+      "Volunteer wheat को हटाएं।"
+    ]
+  },
+
+
+  {
+    "cropId": "wheat_streak_mosaic_01",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "गेहूं स्ट्रीक मोजेक रोग",
+    "diseaseEn": "Wheat Streak Mosaic",
+    "infectedImage": "agri_database/reference_images/wheat bakar9.jpg",
+
+    "diagnosisStatus": "Provisional image-based identification",
+
+    "pathogen": {
+      "name": "Wheat Streak Mosaic Virus (WSMV) complex",
+      "type": "Virus"
+    },
+
+    "vector": {
+      "name": "Wheat Curl Mite",
+      "scientificName": "Aceria tosichella",
+      "type": "Mite"
+    },
+
+    "symptoms": [
+      "पत्तियों पर हल्के हरे, पीले और गहरे हरे रंग की mosaic pattern दिखाई देती है।",
+      "पत्तियों पर लंबी पीली या हल्की हरी streaks दिखाई दे सकती हैं।",
+      "पौधों की growth और tillering कम हो सकती है।",
+      "गंभीर संक्रमण में पौधे छोटे और कमजोर रह सकते हैं।",
+      "गंभीर स्थिति में पत्तियां necrotic होकर सूख सकती हैं।",
+      "कुछ परिस्थितियों में grain formation और yield बहुत कम हो सकती है।"
+    ],
+
+    "favourableConditions": [
+      "Volunteer wheat की मौजूदगी",
+      "Grassy weeds की मौजूदगी",
+      "Wheat curl mite का मौजूद होना",
+      "बहुत जल्दी wheat planting",
+      "गर्म मौसम में mite activity"
+    ],
+
+    "medicines": [],
+
+    "treatmentNote": "Virus-infected plant को cure करने के लिए कोई प्रभावी fungicide उपलब्ध नहीं है। Foliar fungicides viral infection को cure नहीं करते।",
+
+    "vectorManagement": [
+      "Volunteer wheat को नष्ट करें।",
+      "Grassy weeds को नियंत्रित करें।",
+      "नई wheat crop लगाने से पहले green bridge को समाप्त करें।",
+      "Planting से कम से कम 2 सप्ताह पहले volunteer hosts को पूरी तरह समाप्त करना उपयोगी management practice है।",
+      "बहुत जल्दी planting करने से बचें जहां WSMV risk अधिक हो।",
+      "स्थानीय रूप से adapted tolerant/resistant varieties का उपयोग करें।"
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "Green bridge management",
+        "howToUse": "Volunteer wheat और grass hosts को समय पर हटाएं।"
+      },
+      {
+        "name": "Crop rotation",
+        "howToUse": "जहां उपयुक्त हो wheat के बीच non-host broadleaf crop का rotation अपनाएं।"
+      }
+    ],
+
+    "preventive": [
+      "Volunteer wheat को crop cycle के बीच में न रहने दें।",
+      "Grassy weeds को नियंत्रित करें।",
+      "High-risk field में early planting से बचें।",
+      "Disease-tolerant/resistant variety का उपयोग करें।",
+      "संदिग्ध viral disease की laboratory diagnosis कराएं।"
+    ]
+  },
+
+
+  {
+    "cropId": "wheat_barley_yellow_dwarf_01",
+    "cropNameHi": "गेहूं",
+    "cropNameEn": "Wheat",
+    "diseaseHi": "पीला बौनापन रोग",
+    "diseaseEn": "Barley Yellow Dwarf / BYDV",
+    "infectedImage": "agri_database/reference_images/wheat bakar10.jpg",
+
+    "diagnosisStatus": "Provisional image-based identification",
+
+    "pathogen": {
+      "name": "Barley Yellow Dwarf Virus complex",
+      "type": "Virus"
+    },
+
+    "vector": {
+      "type": "Aphids",
+      "description": "BYDV aphid vectors द्वारा फैलता है।"
+    },
+
+    "symptoms": [
+      "पत्तियां पीली, लाल या बैंगनी रंग की हो सकती हैं।",
+      "Yellowing अक्सर पत्ती के tip और margins से शुरू हो सकती है।",
+      "पौधों की growth कम हो सकती है।",
+      "पौधे छोटे और कमजोर रह सकते हैं।",
+      "Tillering कम हो सकती है।",
+      "गंभीर संक्रमण में grain yield कम हो सकती है।",
+      "Field में symptoms अक्सर patches में दिखाई दे सकते हैं।"
+    ],
+
+    "favourableConditions": [
+      "Aphid population का बढ़ना",
+      "Volunteer cereals की मौजूदगी",
+      "Grass weeds की मौजूदगी",
+      "Early crop infection",
+      "अनुकूल aphid activity"
+    ],
+
+    "medicines": [],
+
+    "treatmentNote": "BYDV एक viral disease है। Virus को plant के अंदर cure करने के लिए fungicide प्रभावी नहीं है। Management मुख्यतः aphid vector और virus reservoirs को कम करने पर आधारित है।",
+
+    "vectorManagement": [
+      {
+        "activeIngredient": "Imidacloprid",
+        "formulation": "200 SL",
+        "iiwbrReferenceDose": "20 g active ingredient प्रति hectare",
+        "application": "Foliar spray against aphids",
+        "importantNote": "यह virus को cure नहीं करता; इसका उद्देश्य aphid vector management है। केवल current crop-label, local advisory और economic-threshold के अनुसार उपयोग करें।"
+      }
+    ],
+
+    "organicSolutions": [
+      {
+        "name": "Aphid natural enemies conservation",
+        "howToUse": "Ladybird beetles और अन्य beneficial insects को अनावश्यक broad-spectrum insecticide से बचाएं।"
+      }
+    ],
+
+    "preventive": [
+      "Volunteer cereals और grass weeds को नियंत्रित करें।",
+      "Aphid population की नियमित निगरानी करें।",
+      "Early infection risk को कम करने के लिए स्थानीय recommended sowing time का पालन करें।",
+      "Disease-tolerant varieties उपलब्ध होने पर उनका उपयोग करें।",
+      "Virus diagnosis के लिए आवश्यकता होने पर laboratory testing कराएं।"
+    ]
+  },
+
+
+
+
+
+
+
+
+[
+  {
+    "cropId": "paddy_stem_borer_hopper_01",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "तना छेदक / हॉपर बर्न (डेड हार्ट)",
+    "diseaseEn": "Stem Borer / Hopper Burn (Dead Heart)",
+    "infectedImage": "agri_database/reference_images/1000201376.jpg",
+    "pathogen": {
+      "name": "Scirpophaga incertulas / Nilaparvata lugens",
+      "type": "Insect Pest"
+    },
+    "symptoms": [
+      "कल्ले निकलने की अवस्था में पौधे का बीच का तना सूखकर डेड हार्ट (Dead Heart) बनना।",
+      "पौधों के आधार से पत्तियां सूखकर भूरी व पुआल जैसी पीली पड़ना।",
+      "जड़ों व तने के निचले हिस्से में कीड़े द्वारा रस चूसने से पौधे का सूखकर बैठना।"
+    ],
+    "favourableConditions": [
+      "खेत में लगातार खड़ा पानी रहना",
+      "उच्च आर्द्रता और अधिक तापमान",
+      "नाइट्रोजन (यूरिया) का असंतुलित और अत्यधिक प्रयोग"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Chlorantraniliprole",
+        "formulation": "18.5% SC",
+        "brandExample": "Coragen",
+        "dose": "0.4 ml प्रति लीटर",
+        "dosePer15LPump": "6-7 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray at stem base",
+        "howToUse": "स्प्रे नोजल को पौधों के तनों के निचले भाग की ओर रखकर छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Pymetrozine",
+        "formulation": "50% WG",
+        "brandExample": "Chess 50 WG",
+        "dose": "0.6 ग्राम प्रति लीटर",
+        "dosePer15LPump": "10-12 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "माहू नियंत्रण हेतु पानी की सतह और तनों के निचले हिस्से पर स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "नीम का तेल (Neem Oil 10,000 PPM)",
+        "dose": "3 मिली प्रति लीटर पानी",
+        "howToUse": "हल्के साबुन के घोल के साथ मिलाकर शाम के समय तनों पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "खेत में 2-3 दिन के लिए पानी निकालकर सुखाएं (Alternate Wetting and Drying)।",
+      "अत्यधिक यूरिया का प्रयोग रोकें और संतुलित NPK दें।"
+    ]
+  },
+  {
+    "cropId": "paddy_brown_spot_02",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "भूरा धब्बा रोग (ब्राउन स्पॉट)",
+    "diseaseEn": "Brown Spot",
+    "infectedImage": "agri_database/reference_images/1000201375.jpg",
+    "pathogen": {
+      "name": "Bipolaris oryzae",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पत्तियों पर गोल से अंडाकार गहरे कत्थई-भूरे रंग के तिल जैसे धब्बे दिखाई देना।",
+      "धब्बों के बीच का भाग हल्का धूसर और किनारों पर पीला घेरा (येलो हेलो) बनना।",
+      "संक्रमण बढ़ने पर पत्तियां पीली पड़कर सूखना और दानों पर काले-भूरे दाग पड़ना।"
+    ],
+    "favourableConditions": [
+      "हल्की या असंतुलित मिट्टी (पोटाश और जिंक की कमी)",
+      "25-30°C तापमान और 90% से अधिक आर्द्रता",
+      "पत्तियों पर लंबे समय तक ओस या नमी का ठहरना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Tebuconazole + Trifloxystrobin",
+        "formulation": "50% + 25% WG",
+        "brandExample": "Nativo",
+        "dose": "0.8-1.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "12-15 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "सुबह ओस सूखने के बाद पत्तियों के दोनों तरफ समान रूप से छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Carbendazim + Mancozeb",
+        "formulation": "12% + 63% WP",
+        "brandExample": "Saaf",
+        "dose": "2.0-2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30-35 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "लक्षण दिखते ही छिड़काव करें, आवश्यकता पड़ने पर 10-12 दिन बाद दोहराएं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Pseudomonas fluorescens 1% WP",
+        "dose": "5-7 ग्राम प्रति लीटर पानी",
+        "howToUse": "150 लीटर पानी में 1 किग्रा मिलाकर शाम के समय फसल पर छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "खेत में पोटाश (MOP) और जिंक सल्फेट की संतुलित मात्रा सुनिश्चित करें।",
+      "बुवाई से पहले कार्बेन्डाजिम (2 ग्राम प्रति किग्रा बीज) से बीजोपचार अवश्य करें।"
+    ]
+  },
+  {
+    "cropId": "paddy_false_smut_mature_03",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "झूठा कंडुआ / लेड़ा रोग (अंतिम अवस्था - काले बीजाणु)",
+    "diseaseEn": "False Smut (Late Stage - Dark Spores)",
+    "infectedImage": "agri_database/reference_images/1000201377.jpg",
+    "pathogen": {
+      "name": "Ustilaginoidea virens",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "बाली के दानों का फूलकर मखमली काली व गहरी हरी गांठों में बदल जाना।",
+      "गांठों के फटने पर काले चूर्ण जैसे फंगल बीजाणुओं का बाहर निकलना।",
+      "चावल के दाने विषैले, बदरंग और खाने के अयोग्य हो जाना।"
+    ],
+    "favourableConditions": [
+      "फूल आने और बाली निकलने के समय अधिक वर्षा",
+      "95% से अधिक सापेक्ष आर्द्रता",
+      "नाइट्रोजन का अधिक प्रयोग और घटाटोप बादल"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Picoxystrobin + Propiconazole",
+        "formulation": "7.05% + 11.71% SC",
+        "brandExample": "Galileo Way",
+        "dose": "1.5-2.0 मिली प्रति लीटर",
+        "dosePer15LPump": "25-30 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "गभोट अवस्था (Boots leaf stage) में बालियां निकलने से ठीक पहले छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Copper Oxychloride",
+        "formulation": "50% WP",
+        "brandExample": "Blitox 50 WP",
+        "dose": "2.5-3.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "बाली निकलने के शुरुआती 10% चरण पर पूरे पौधे पर तर-बतर छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma harzianum 1% WP",
+        "dose": "5-8 ग्राम प्रति लीटर पानी",
+        "howToUse": "150 लीटर पानी में मिलाकर बाली निकलने के समय शाम को छिड़कें।"
+      }
+    ],
+    "preventive": [
+      "काली गांठ वाली बालियों को पॉलीथीन से ढककर सावधानी से काटें और नष्ट करें।",
+      "फूल आते समय और बाली निकलते समय यूरिया का छिड़काव बिल्कुल न करें।"
+    ]
+  },
+  {
+    "cropId": "paddy_leaf_blast_04",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "पत्ती झुलसा / लीफ ब्लास्ट रोग",
+    "diseaseEn": "Rice Leaf Blast",
+    "infectedImage": "agri_database/reference_images/1000201378.jpg",
+    "pathogen": {
+      "name": "Magnaporthe oryzae (Pyricularia oryzae)",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पत्तियों पर नाव या आंख के आकार के धब्बे (दोनों सिरे नुकीले)।",
+      "धब्बों का बीच का भाग राख जैसा सफेद-धूसर और किनारा लाल-कत्थई होना।",
+      "पत्ती और तने के जोड़ (कॉलर) पर सड़न आना जिससे पत्ती सूखकर लटक जाती है।"
+    ],
+    "favourableConditions": [
+      "रात का तापमान 20-24°C और दिन का सामान्य तापमान",
+      "लंबे समय तक पत्तियों पर ओस का जमाव (10-14 घंटे)",
+      "अत्यधिक यूरिया और खेत में सूखा तनाव (Moisture stress)"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Tricyclazole",
+        "formulation": "75% WP",
+        "brandExample": "Beam 75 WP",
+        "dose": "1.0-1.2 ग्राम प्रति लीटर",
+        "dosePer15LPump": "15-18 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "नाव जैसे धब्बे दिखते ही पहला स्प्रे करें, 10-12 दिन बाद आवश्यकतानुसार दोहराएं।"
+      },
+      {
+        "activeIngredient": "Azoxystrobin + Difenoconazole",
+        "formulation": "18.2% + 11.4% SC",
+        "brandExample": "Amistar Top",
+        "dose": "1.0-1.2 मिली प्रति लीटर",
+        "dosePer15LPump": "18-20 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "सुबह ओस सूखने के बाद पत्तियों के दोनों सिरों पर अच्छी तरह छिड़कें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Pseudomonas fluorescens 1% WP",
+        "dose": "5-7 ग्राम प्रति लीटर पानी",
+        "howToUse": "150 लीटर पानी में घोल बनाकर पत्तियों पर तर-बतर छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "रोग दिखते ही यूरिया की अतिरिक्त टॉप-ड्रेसिंग तुरंत रोकें।",
+      "रोगरोधी किस्मों (जैसे पूसा बासमती 1637) की ही बुवाई करें।"
+    ]
+  },
+  {
+    "cropId": "paddy_sheath_rot_05",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "शीथ रॉट / झंडा पत्ती आवरण सड़न",
+    "diseaseEn": "Rice Sheath Rot",
+    "infectedImage": "agri_database/reference_images/1000201380.jpg",
+    "pathogen": {
+      "name": "Sarocladium oryzae",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "झंडा पत्ती (Flag Leaf) के आवरण पर लंबे, अनियमित भूरे-धूसर सड़न भरे धब्बे।",
+      "बाली आवरण के अंदर ही फंसी रह जाती है और पूरी बाहर नहीं निकल पाती।",
+      "बाहर निकली बालियों के दाने काले-भूरे, बदरंग और चपटे (बांझ) रह जाते हैं।"
+    ],
+    "favourableConditions": [
+      "गभोट अवस्था के दौरान 85-90% आर्द्रता",
+      "25-30°C तापमान और लगातार बादल छाए रहना",
+      "कीटों (जैसे माइट्स या तना छेदक) द्वारा बनाए गए घाव"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Azoxystrobin + Tebuconazole",
+        "formulation": "11% + 18.3% SC",
+        "brandExample": "Custodia",
+        "dose": "1.5-2.0 मिली प्रति लीटर",
+        "dosePer15LPump": "25-30 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "गभोट अवस्था में झंडा पत्ती और बालियों पर अच्छी तरह छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Carbendazim",
+        "formulation": "50% WP",
+        "brandExample": "Bavistin 50 WP",
+        "dose": "2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "आवरण पर भूरे दाग दिखते ही तनों के ऊपरी हिस्से पर स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "नीम का तेल (Neem Oil 10,000 PPM)",
+        "dose": "3-4 मिली प्रति लीटर पानी",
+        "howToUse": "हल्के साबुन के घोल के साथ मिलाकर शाम के समय छिड़कें।"
+      }
+    ],
+    "preventive": [
+      "पोटाश खाद (MOP) की संतुलित मात्रा खेत में अवश्य डालें।",
+      "संक्रमित फसल के अवशेषों को कटाई के बाद खेत से हटाकर नष्ट करें।"
+    ]
+  },
+  {
+    "cropId": "paddy_false_smut_early_06",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "झूठा कंडुआ / हल्दी गांठ (प्रारंभिक अवस्था)",
+    "diseaseEn": "False Smut (Early Stage - Yellow Balls)",
+    "infectedImage": "agri_database/reference_images/1000201379.jpg",
+    "pathogen": {
+      "name": "Ustilaginoidea virens",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "बाली के कुछ दानों का फूलकर हल्दी जैसे चमकीले पीले-नारंगी गोलों में बदलना।",
+      "दानों पर चिकनी, मखमली पीली गांठें दिखाई देना जो छूने पर रंग छोड़ती हैं।",
+      "समय के साथ यह गांठें पीली से नारंगी और फिर हरी-काली पड़ने लगती हैं।"
+    ],
+    "favourableConditions": [
+      "बाली निकलने के समय लगातार हल्की बारिश या बूंदाबांदी",
+      "90% से अधिक आर्द्रता और कम धूप",
+      "खेत में अत्यधिक नाइट्रोजन की उपलब्धता"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "1.0-1.2 मिली प्रति लीटर",
+        "dosePer15LPump": "20 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "हल्दी जैसी गांठें दिखते ही द्वितीयक फैलाव रोकने के लिए तुरंत स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Azoxystrobin + Tebuconazole",
+        "formulation": "11% + 18.3% SC",
+        "brandExample": "Custodia",
+        "dose": "1.5-2.0 मिली प्रति लीटर",
+        "dosePer15LPump": "25-30 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "बालियों के स्तर पर नोजल रखकर समान रूप से छिड़कें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "पंचगव्य + स्यूडोमोनास घोल",
+        "dose": "15-20 मिली प्रति लीटर पानी",
+        "howToUse": "150 लीटर पानी में मिलाकर सुबह ओस सूखने के बाद बालियों पर छिड़कें।"
+      }
+    ],
+    "preventive": [
+      "खेत में लगातार जलजमाव न रखें, समय-समय पर पानी निकालें।",
+      "इस खेत की फसल के दानों को अगले सीजन के लिए बीज के रूप में न रखें।"
+    ]
+  },
+  {
+    "cropId": "paddy_healthy_crop_field_07",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "स्वस्थ हरी फसल (रोगमुक्त वानस्पतिक अवस्था)",
+    "diseaseEn": "Healthy Crop Canopy - No Disease Detected",
+    "infectedImage": "agri_database/reference_images/1000201381.jpg",
+    "pathogen": {
+      "name": "None (Healthy)",
+      "type": "None"
+    },
+    "symptoms": [
+      "पत्तियां पूर्ण रूप से प्राकृतिक हरी, एकसमान और चमकदार हैं।",
+      "पौधों में कल्ले व बढ़वार सामान्य और स्वस्थ है।",
+      "खेत में किसी फंगल, बैक्टीरियल या कीट संक्रमण का कोई लक्षण नहीं है।"
+    ],
+    "favourableConditions": [
+      "इष्टतम धूप और संतुलित सिंचाई",
+      "उचित कतार दूरी और वायु संचार",
+      "संतुलित मृदा पोषण"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "NPK Foliar Fertilizer",
+        "formulation": "19:19:19",
+        "brandExample": "Water Soluble NPK",
+        "dose": "5.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "75 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar nutrition",
+        "howToUse": "फसल के बेहतर विकास व कल्ले बढ़ाने हेतु पर्णीय छिड़काव करें। किसी कीटनाशक की आवश्यकता नहीं है।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "सागरिका / सीवीड एक्सट्रैक्ट (Bio-stimulant)",
+        "dose": "1.5-2.0 मिली प्रति लीटर",
+        "howToUse": "पौधों की रोग प्रतिरोधक क्षमता और कल्लों की वृद्धि के लिए स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "खेत में 2-3 सेमी पानी बनाए रखें और अत्यधिक जलभराव से बचें।",
+      "नियमित रूप से खेत की निगरानी करते रहें।"
+    ]
+  },
+  {
+    "cropId": "paddy_sheath_blight_08",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "शीथ ब्लाइट / पर्णच्छद झुलसा रोग",
+    "diseaseEn": "Rice Sheath Blight",
+    "infectedImage": "agri_database/reference_images/1000201382.jpg",
+    "pathogen": {
+      "name": "Rhizoctonia solani",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पानी की सतह के पास तनों पर सांप की केंचुली जैसे चितकबरे धब्बे (Snake-skin pattern)।",
+      "धब्बों का बीच का हिस्सा धूसर-हरा और किनारे गहरे भूरे-काले होना।",
+      "संक्रमण ऊपर की पत्तियों तक फैलकर तने को गला देता है, जिससे पौधे गिर जाते हैं।"
+    ],
+    "favourableConditions": [
+      "28-32°C तापमान और 90% से अधिक उच्च आर्द्रता",
+      "घनी रोपाई और वायु संचार की कमी",
+      "अत्यधिक नाइट्रोजन खाद का प्रयोग"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Validamycin",
+        "formulation": "3% L",
+        "brandExample": "Sheathmar 3L",
+        "dose": "2.0-2.5 मिली प्रति लीटर",
+        "dosePer15LPump": "35-40 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray at stem base",
+        "howToUse": "स्प्रे नोजल को पौधों के तनों के निचले भाग व पानी की सतह की ओर रखकर छिड़कें।"
+      },
+      {
+        "activeIngredient": "Azoxystrobin + Difenoconazole",
+        "formulation": "18.2% + 11.4% SC",
+        "brandExample": "Amistar Top",
+        "dose": "1.0 मिली प्रति लीटर",
+        "dosePer15LPump": "20 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "गंभीर संक्रमण में तनों को तर-बतर करते हुए छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma viride 1% WP",
+        "dose": "10-15 ग्राम प्रति किग्रा गोबर खाद",
+        "howToUse": "50 किग्रा सड़ी गोबर खाद में मिलाकर खेत की मिट्टी में मिलाएं।"
+      }
+    ],
+    "preventive": [
+      "यूरिया (नाइट्रोजन) की अत्यधिक खुराक तुरंत रोकें।",
+      "पौधों के बीच पर्याप्त दूरी रखें ताकि धूप और हवा तनों तक पहुंच सके।"
+    ]
+  },
+  {
+    "cropId": "paddy_neck_blast_09",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "गर्दन तोड़ / नेक ब्लास्ट (बाली झुलसा)",
+    "diseaseEn": "Rice Neck Blast",
+    "infectedImage": "agri_database/reference_images/1000201384.jpg",
+    "pathogen": {
+      "name": "Magnaporthe oryzae",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "बाली के आधार (गर्दन/Neck) पर काले-कत्थई रंग का छल्ला बनना व सड़न आना।",
+      "बाली गर्दन के पास से टूटकर नीचे लटक जाना।",
+      "दानों में रस न पहुंचने से पूरी बाली सफेद, खोखली (फोक) व दाना-रहित रह जाना।"
+    ],
+    "favourableConditions": [
+      "बाली निकलने के समय 20-24°C का ठंडा तापमान और भारी ओस",
+      "आसमान में लगातार बादल छाए रहना",
+      "गभोट अवस्था के बाद यूरिया का असंतुलित उपयोग"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Tricyclazole",
+        "formulation": "75% WP",
+        "brandExample": "Beam 75 WP",
+        "dose": "1.0-1.2 ग्राम प्रति लीटर",
+        "dosePer15LPump": "18-20 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "बाली निकलने के शुरुआती चरण (5-10% Panicle emergence) पर तुरंत स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Kasugamycin",
+        "formulation": "3% SL",
+        "brandExample": "Kasu-B 3% SL",
+        "dose": "2.0 मिली प्रति लीटर",
+        "dosePer15LPump": "30 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "बालियों के स्तर पर फंगल फैलाव रोकने हेतु छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "पंचगव्य + स्यूडोमोनास घोल",
+        "dose": "15 मिली प्रति लीटर पानी",
+        "howToUse": "150 लीटर पानी में मिलाकर बाली निकलते समय शाम को स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "बाली निकलने के समय खेत में नमी की कमी (सूखा तनाव) बिल्कुल न होने दें।",
+      "गभोट अवस्था के बाद यूरिया का छिड़काव कभी न करें।"
+    ]
+  },
+  {
+    "cropId": "paddy_healthy_grain_filling_10",
+    "cropNameHi": "धान (Paddy / Rice)",
+    "cropNameEn": "Paddy / Rice",
+    "diseaseHi": "स्वस्थ दाना भराव अवस्था (रोगमुक्त बाली)",
+    "diseaseEn": "Healthy Grain Filling Stage - No Pathology",
+    "infectedImage": "agri_database/reference_images/1000201383.jpg",
+    "pathogen": {
+      "name": "None (Healthy)",
+      "type": "None"
+    },
+    "symptoms": [
+      "बालियों के दाने चमकदार, सुडौल और एकसमान रूप से भरे हुए हैं।",
+      "बाली की डंडी (गर्दन) पर किसी प्रकार का काला या भूरा दाग नहीं है।",
+      "फसल में दाना भराव (मिल्क/डो स्टेज) पूर्णतः स्वस्थ व रोगमुक्त है।"
+    ],
+    "favourableConditions": [
+      "खेत में उचित मृदा नमी (Field capacity)",
+      "पर्याप्त धूप और सूखा मौसम",
+      "रोगमुक्त फसल चक्र"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Potassium Sulphate (SOP)",
+        "formulation": "00:00:50",
+        "brandExample": "Water Soluble SOP",
+        "dose": "5.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "75-80 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "दानों का वजन, चमक और गुणवत्ता बढ़ाने हेतु स्प्रे करें। किसी फफूंदनाशक की आवश्यकता नहीं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "बोरॉन 20% (Disodium Octaborate Tetrahydrate)",
+        "dose": "1.0-1.2 ग्राम प्रति लीटर",
+        "howToUse": "दाना भराव व परागण सुधारने हेतु 150 लीटर पानी में मिलाकर छिड़कें।"
+      }
+    ],
+    "preventive": [
+      "दाना भराव के समय खेत में हल्की नमी लगातार बनाए रखें।",
+      "तेज हवा या बारिश के मौसम में खेत में अत्यधिक पानी न भरें।"
+    ]
+  }
+],
+
+
+
+[
+  {
+    "cropId": "sugarcane_grassy_shoot_01",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "घासीय प्ररोह रोग (Grassy Shoot Disease)",
+    "diseaseEn": "Grassy Shoot Disease (GSD)",
+    "infectedImage": "agri_database/reference_images/Sugarcan1.jpg",
+    "pathogen": {
+      "name": "Candidatus Phytoplasma sacchari",
+      "type": "Phytoplasma"
+    },
+    "symptoms": [
+      "पौधे के आधार से अनगिनत पतले, पीले व झाड़ीनुमा कल्ले निकलना।",
+      "कल्लों की पत्तियां संकरी, सफेद-पीली होकर घास के गुच्छे जैसी दिखाई देना।",
+      "गन्ने का तना नहीं बन पाना और पौधा पूरी तरह बौना रह जाना।"
+    ],
+    "favourableConditions": [
+      "संक्रमित बीज (सेट्स) का उपयोग",
+      "माहू (Aphids) और फड़का (Leafhoppers) कीटों का प्रकोप",
+      "पेड़ी (Ratoon) फसल की लगातार खेती"
+    ],
+    "medicines": [],
+    "treatmentNote": "फाइटोप्लाज्मा जनित रोग होने के कारण खड़ी फसल में कोई फफूंदनाशक काम नहीं करता। कीट प्रबंधन और बीज शोधन मुख्य उपाय हैं।",
+    "vectorManagement": [
+      {
+        "activeIngredient": "Dimethoate",
+        "formulation": "30% EC",
+        "brandExample": "Rogor",
+        "dose": "1.5-2.0 मिली प्रति लीटर",
+        "dosePer15LPump": "25-30 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "माहू और वाहक कीटों के नियंत्रण हेतु शुरुआती अवस्था में छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "गर्म जल उपचार (Moist Hot Air Treatment)",
+        "howToUse": "बुवाई पूर्व बीजों को 54°C तापमान वाले गर्म पानी में 2-2.5 घंटे उपचारित करें।"
+      }
+    ],
+    "preventive": [
+      "संक्रमित पौधों को जड़ सहित उखाड़कर तुरंत जला दें।",
+      "रोगग्रस्त खेत से पेड़ी फसल (Ratoon) कभी न लें।"
+    ]
+  },
+  {
+    "cropId": "sugarcane_rust_02",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "गन्ने का रतुआ रोग (रस्ट)",
+    "diseaseEn": "Sugarcane Rust",
+    "infectedImage": "agri_database/reference_images/Sugarcan2.jpg",
+    "pathogen": {
+      "name": "Puccinia kuehnii / Puccinia melanocephala",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पत्तियों की दोनों सतहों पर छोटे, लंबे नारंगी-भूरे से कत्थई रंग के फफोले (Pustules)।",
+      "फफोलों के फटने पर लाल-भूरे रंग का चूर्ण हाथ पर लगना।",
+      "गंभीर संक्रमण में पत्तियां समय से पहले झुलसकर सूख जाना।"
+    ],
+    "favourableConditions": [
+      "22-30°C तापमान और 80% से अधिक आर्द्रता",
+      "पत्तियों पर लंबे समय तक ओस या नमी",
+      "संवेदनशील किस्मों की घनी बुवाई"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Mancozeb",
+        "formulation": "75% WP",
+        "brandExample": "Dithane M-45",
+        "dose": "2.5-3.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "शुरुआती फफोले दिखते ही पत्तियों पर समान रूप से छिड़कें।"
+      },
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "1.0 मिली प्रति लीटर",
+        "dosePer15LPump": "15-20 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "गंभीर फैलाव होने पर 12-14 दिन के अंतराल पर दोहराएं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "नीम का तेल (Neem Oil 10,000 PPM)",
+        "dose": "3 मिली प्रति लीटर पानी",
+        "howToUse": "शाम के समय पत्तियों पर छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "रोगरोधी किस्मों का चयन करें।",
+      "खेत में अत्यधिक जलजमाव न होने दें।"
+    ]
+  },
+  {
+    "cropId": "sugarcane_smut_whip_03",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "गन्ने का कंडुआ रोग (चाबुक कंडुआ)",
+    "diseaseEn": "Sugarcane Smut (Whip Smut)",
+    "infectedImage": "agri_database/reference_images/Sugarcan3.jpg",
+    "pathogen": {
+      "name": "Sporisorium scitamineum",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पौधे के शीर्ष से लंबी, मुड़ी हुई काली चाबुक (Whip) जैसी संरचना निकलना।",
+      "शुरुआत में चाबुक पर पतली चांदी जैसी झिल्ली होना जो बाद में फटकर काले पाउडर में बदल जाती है।",
+      "संक्रमित पौधे पतले, लंबे और पोरियां छोटी रह जाना।"
+    ],
+    "favourableConditions": [
+      "गर्म और शुष्क मौसम (25-35°C)",
+      "हवा द्वारा काले बीजाणुओं का तेजी से फैलना",
+      "संक्रमित बीज गूलों का प्रयोग"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Carbendazim",
+        "formulation": "50% WP",
+        "brandExample": "Bavistin 50 WP",
+        "dose": "2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Sett treatment & Foliar spray",
+        "howToUse": "बुवाई से पहले बीज गूलों को 15 मिनट घोल में डुबोएं।"
+      },
+      {
+        "activeIngredient": "Triadimefon",
+        "formulation": "25% WP",
+        "brandExample": "Bayleton",
+        "dose": "1.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "15 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "खेत में अन्य पौधों पर संक्रमण फैलने से रोकने हेतु स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma viride 1% WP",
+        "dose": "2.5 किग्रा प्रति एकड़",
+        "howToUse": "गोबर खाद में मिलाकर बुवाई के समय कतारों में डालें।"
+      }
+    ],
+    "preventive": [
+      "काली चाबुक को निकलने से पहले कपड़े की थैली से ढककर सावधानी से काटें और जलाएं।",
+      "संक्रमित फसल से पेड़ी (Ratoon) बिल्कुल न रखें।"
+    ]
+  },
+  {
+    "cropId": "sugarcane_red_rot_internal_04",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "गन्ने का लाल सड़न रोग (रेड रॉट - आंतरिक लक्षण)",
+    "diseaseEn": "Sugarcane Red Rot (Internal Stalk Symptoms)",
+    "infectedImage": "agri_database/reference_images/Sugarcan4.jpg",
+    "pathogen": {
+      "name": "Colletotrichum falcatum",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "तने को चीरने पर अंदर का गूदा गहरा लाल दिखाई देना।",
+      "लाल भाग के बीच-बीच में विशिष्ट आड़े सफेद चकत्ते (White cross patches) होना।",
+      "तने से सिरके या शराब जैसी खट्टी गंध आना और अंदर से सूखकर खोखला होना।"
+    ],
+    "favourableConditions": [
+      "जलभराव और भारी दोमट मिट्टी",
+      "27-32°C तापमान और उच्च सापेक्ष आर्द्रता",
+      "कीटों या चूहे द्वारा तने में बने घाव"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Thiophanate Methyl",
+        "formulation": "70% WP",
+        "brandExample": "Roko 70 WP",
+        "dose": "2.0-2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30-35 ग्राम प्रति 15 लीटर पंप",
+        "application": "Sett treatment & soil drench",
+        "howToUse": "बुवाई पूर्व बीज गूलों को उपचारित करें और जड़ों के पास ड्रेन्चिंग करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma harzianum 1% WP",
+        "dose": "2 किग्रा प्रति एकड़",
+        "howToUse": "खेत की तैयारी के समय मिट्टी में मिलाएँ।"
+      }
+    ],
+    "preventive": [
+      "रेड रॉट प्रभावित गन्ने को तुरंत उखाड़कर नष्ट करें।",
+      "प्रभावित खेत में 2-3 साल तक गन्ने की फसल न लें (फसल चक्र अपनाएं)।"
+    ]
+  },
+  {
+    "cropId": "sugarcane_pokkah_boeng_05",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "पोक्का बोइंग रोग (शीर्ष सड़न / मुड़न)",
+    "diseaseEn": "Pokkah Boeng Disease",
+    "infectedImage": "agri_database/reference_images/Sugarcan5.jpg",
+    "pathogen": {
+      "name": "Fusarium moniliforme / Fusarium sacchari",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "शीर्ष की नई पत्तियों का मुड़ना, सिकुड़ना और आपस में उलझ जाना।",
+      "पत्तियों के आधार पर हल्के पीले व लाल-कत्थई सड़न के धब्बे बनना।",
+      "गंभीर स्थिति में शीर्ष कलिका (Top rot) सड़कर काली पड़ जाना।"
+    ],
+    "favourableConditions": [
+      "मानसून के शुरुआती समय में अधिक गर्मी और उच्च आर्द्रता",
+      "हवा और बारिश द्वारा फफूंद का प्रसार",
+      "संवेदनशील संकर किस्मों में तेजी से वृद्धि का समय"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Copper Oxychloride",
+        "formulation": "50% WP",
+        "brandExample": "Blitox 50 WP",
+        "dose": "2.5-3.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "रोग के शुरुआती मुड़ाव दिखते ही शीर्ष पत्तियों के ऊपर छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Carbendazim",
+        "formulation": "50% WP",
+        "brandExample": "Bavistin",
+        "dose": "1.5-2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "25-30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "10-12 दिन बाद दूसरा छिड़काव दोहराएं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "स्यूडोमोनास फ्लोरेसेन्स 1% WP",
+        "dose": "5 ग्राम प्रति लीटर पानी",
+        "howToUse": "शाम के समय पत्तियों के शीर्ष भाग पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "नाइट्रोजन का असंतुलित उपयोग न करें।",
+      "खेत में उचित जल निकासी की व्यवस्था रखें।"
+    ]
+  },
+  {
+    "cropId": "sugarcane_red_stripe_06",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "लाल धारी रोग (रेड स्ट्राइप)",
+    "diseaseEn": "Bacterial Red Stripe",
+    "infectedImage": "agri_database/reference_images/Sugarcan6.jpg",
+    "pathogen": {
+      "name": "Acidovorax avenae subsp. avenae",
+      "type": "Bacterium"
+    },
+    "symptoms": [
+      "पत्तियों की नसों के समानांतर संकरी, लंबी लाल-कत्थई धारियां बनना।",
+      "धारियां आपस में मिलकर पत्ती के किनारों को झुलसा देती हैं।",
+      "संक्रमण शीर्ष तक पहुंचने पर तने का ऊपरी हिस्सा सड़कर बदबूदार हो जाना।"
+    ],
+    "favourableConditions": [
+      "गर्म, नम और आंधी-तूफान वाला मौसम",
+      "पत्तियों के आपस में रगड़ने से बने घाव",
+      "अधिक नाइट्रोजन और जलभराव"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Streptocycline + Copper Oxychloride",
+        "formulation": "90:10 SP + 50% WP",
+        "brandExample": "Plantomycin + Blitox",
+        "dose": "1 ग्राम स्ट्रेप्टोसाइक्लिन + 2.5 ग्राम कॉपर प्रति लीटर",
+        "dosePer15LPump": "2-3 ग्राम स्ट्रेप्टोसाइक्लिन + 35 ग्राम कॉपर प्रति 15L पंप",
+        "application": "Foliar spray",
+        "howToUse": "जीवाणु नियंत्रण हेतु पत्तियों पर अच्छी तरह से छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "ताजा खट्टी छाछ का घोल",
+        "dose": "50 मिली प्रति लीटर पानी",
+        "howToUse": "150 लीटर पानी में 5-6 लीटर खट्टी छाछ मिलाकर छिड़कें।"
+      }
+    ],
+    "preventive": [
+      "प्रभावित पत्तियों को काटकर खेत से बाहर निकालें।",
+      "हवा के अवरोध को कम करने के लिए घनी रोपाई से बचें।"
+    ]
+  },
+  {
+    "cropId": "sugarcane_smut_field_07",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "चाबुक कंडुआ रोग (खेत में फैलाव)",
+    "diseaseEn": "Sugarcane Smut Field Infestation",
+    "infectedImage": "agri_database/reference_images/Sugarcan7.jpg",
+    "pathogen": {
+      "name": "Sporisorium scitamineum",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "खेत के बीच-बीच में पौधों के शीर्ष से लंबी घुमावदार काली चाबुक निकलना।",
+      "रोगग्रस्त थान (Clumps) छोटे, कमजोर और घास जैसे दिखाई देना।",
+      "हवा चलने पर पूरे खेत में काले पाउडर (Spore cloud) का उड़ना।"
+    ],
+    "favourableConditions": [
+      "तेज हवा और शुष्क गर्म मौसम",
+      "पेड़ी फसल में पुराने ठूंठों का संक्रमण",
+      "असंतुलित पोषण"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "1.0 मिली प्रति लीटर",
+        "dosePer15LPump": "15-20 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "बीजाणुओं के नए पौधों पर फैलाव को रोकने हेतु पूरे खेत में स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma viride 1% WP",
+        "dose": "2.5 किग्रा प्रति एकड़",
+        "howToUse": "सिंचाई के पानी के साथ या मिट्टी में खाद के साथ मिलाकर दें।"
+      }
+    ],
+    "preventive": [
+      "काली चाबुक वाले पौधों को सावधानीपूर्वक काटकर बोरियों में बंद करके जलाएं।",
+      "संक्रमित खेत के बीजों का प्रयोग कतई न करें।"
+    ]
+  },
+  {
+    "cropId": "sugarcane_sooty_mold_08",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "काली फफूंद / सूटी मोल्ड (पायरीला या मिलीबग के बाद)",
+    "diseaseEn": "Sooty Mold / Black Mold",
+    "infectedImage": "agri_database/reference_images/Sugarcan8.jpg",
+    "pathogen": {
+      "name": "Capnodium spp.",
+      "type": "Fungus (Saprophytic)"
+    },
+    "symptoms": [
+      "पत्तियों और तने की सतह पर काले कोयले जैसे पाउडर की मोटी परत जम जाना।",
+      "पत्तियों की प्रकाश संश्लेषण (Photosynthesis) क्रिया बाधित होकर पीली पड़ना।",
+      "रस चूसक कीटों (जैसे पायरीला, व्हाइटफ्लाई) द्वारा छोड़े गए चिपचिपे पदार्थ (Honeydew) पर फफूंद पनपना।"
+    ],
+    "favourableConditions": [
+      "पायरीला, मिलीबग या एफिड कीटों का भारी प्रकोप",
+      "छायादार, नम और हवा की कमी वाला वातावरण",
+      "घनी फसल जिसमें धूप नीचे तक नहीं पहुंचती"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Imidacloprid",
+        "formulation": "17.8% SL",
+        "brandExample": "Confidor",
+        "dose": "0.4-0.5 मिली प्रति लीटर",
+        "dosePer15LPump": "7-8 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "रस चूसक कीटों को समाप्त करने हेतु पत्तियों के निचले भाग पर स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Wettable Sulphur",
+        "formulation": "80% WP",
+        "brandExample": "Sulfex",
+        "dose": "2.0-2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30-35 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "काली फफूंद की परत साफ करने हेतु पानी में घोलकर छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "स्टार्च / मैदा का घोल (1%)",
+        "dose": "10 ग्राम मैदा प्रति लीटर पानी",
+        "howToUse": "उबालकर ठंडा किया हुआ मैदे का घोल छिड़कें; सूखने पर फफूंद पपड़ी बनकर छूट जाती है।"
+      }
+    ],
+    "preventive": [
+      "रस चूसक कीटों का प्रारंभिक स्तर पर ही नियंत्रण करें।",
+      "निचली सूखी पत्तियों की छिलाई (Detrashing) करके खेत में वायु संचार बढ़ाएं।"
+    ]
+  },
+  {
+    "cropId": "sugarcane_yellow_leaf_09",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "पीली पत्ती रोग (येलो लीफ डिजीज)",
+    "diseaseEn": "Yellow Leaf Disease (YLD)",
+    "infectedImage": "agri_database/reference_images/Sugarcan9.jpg",
+    "pathogen": {
+      "name": "Sugarcane yellow leaf virus (SCYLV)",
+      "type": "Virus"
+    },
+    "symptoms": [
+      "पत्ती की मुख्य मध्य शिरा (Midrib) का निचली तरफ से गहरा पीला पड़ना।",
+      "पीलापन धीरे-धीरे पत्ती के किनारों और ऊपरी हिस्से में फैलना।",
+      "गंभीर स्थिति में शीर्ष पत्तियां लाल-गुलाबी होकर सूखना और गन्ने की पोरियां छोटी होना।"
+    ],
+    "favourableConditions": [
+      "गन्ने के माहू (Sugarcane Aphid - Melanaphis sacchari) की सक्रियता",
+      "संक्रमित बीज गूलों का प्रयोग",
+      "फसल में जल तनाव (सूखा या अत्यधिक जलभराव)"
+    ],
+    "medicines": [],
+    "treatmentNote": "वायरल रोग होने के कारण इसका कोई रासायनिक क्योर नहीं है। वाहक एफिड कीटों का नियंत्रण और संतुलित पोषण ही उपाय है।",
+    "vectorManagement": [
+      {
+        "activeIngredient": "Acetamiprid",
+        "formulation": "20% SP",
+        "brandExample": "Pride / Manik",
+        "dose": "0.4 ग्राम प्रति लीटर",
+        "dosePer15LPump": "6-8 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "माहू कीटों के नियंत्रण हेतु पत्तियों के नीचे अच्छी तरह स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "नीम का तेल (Neem Oil 10,000 PPM)",
+        "dose": "3-4 मिली प्रति लीटर पानी",
+        "howToUse": "शाम के समय कीट नियंत्रण हेतु छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "प्रमाणित रोगमुक्त नर्सरी से ही बीज गूलों का चयन करें।",
+      "पोटाश और सूक्ष्म पोषक तत्वों का संतुलित प्रयोग करें।"
+    ]
+  },
+  {
+    "cropId": "sugarcane_wilt_drought_10",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "गन्ने का उकठा रोग व सूखा झुलसा (विल्ट)",
+    "diseaseEn": "Sugarcane Wilt / Canopy Desiccation",
+    "infectedImage": "agri_database/reference_images/Sugarcan10.jpg",
+    "pathogen": {
+      "name": "Fusarium sacchari / Cephalosporium sacchari",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पौधों की ऊपरी पत्तियां पीली पड़कर पुआल जैसी सूख जाना।",
+      "गन्ने का तना अंदर से सूखकर हल्का, खोखला और नाव के आकार का सिकुड़ जाना।",
+      "तने को फाड़ने पर अंदर का गूदा मटमैला लाल-भूरा दिखाई देना।"
+    ],
+    "favourableConditions": [
+      "लंबे समय तक सूखा पड़ने के बाद अचानक अत्यधिक जलभराव",
+      "दीमक या जड़ छेदक कीटों द्वारा जड़ों को काटा जाना",
+      "रेतीली व हल्की मिट्टी में पोषक तत्वों की कमी"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Carbendazim + Mancozeb",
+        "formulation": "12% + 63% WP",
+        "brandExample": "Saaf",
+        "dose": "2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Soil drenching",
+        "howToUse": "प्रभावित पौधों की जड़ों के पास मिट्टी में अच्छी तरह ड्रेन्चिंग करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma harzianum 1% WP",
+        "dose": "2.5 किग्रा प्रति एकड़",
+        "howToUse": "100 किग्रा गोबर खाद में मिलाकर बुवाई के समय या जड़ों के पास डालें।"
+      }
+    ],
+    "preventive": [
+      "खेत में लंबे समय तक सूखा तनाव (Moisture stress) न आने दें।",
+      "दीमक और जड़ छेदक कीटों का बुवाई के समय ही उपचार करें।"
+    ]
+  },
+
+  {
+    "cropId": "sugarcane_red_rot_nodal_11",
+    "cropNameHi": "गन्ना (Sugarcane)",
+    "cropNameEn": "Sugarcane",
+    "diseaseHi": "लाल सड़न रोग (नोडल संक्रमण व आंतरिक लाल रेशे)",
+    "diseaseEn": "Sugarcane Red Rot (Nodal Infection & Vascular Discoloration)",
+    "infectedImage": "agri_database/reference_images/Sugarcan11.jpg",
+    "pathogen": {
+      "name": "Colletotrichum falcatum",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "गन्ने के पोरियों (Nodes) से टूटने पर अंदर संवहनी रेशों (Vascular bundles) का गहरा लाल होना।",
+      "तने के अंदर लाल गूदे के बीच-बीच में विशिष्ट आड़े सफेद चकत्ते (White cross patches) दिखाई देना।",
+      "तने का अंदर से सड़ना, रस की मात्रा कम होना और सिरके जैसी तीखी खट्टी बदबू आना।"
+    ],
+    "favourableConditions": [
+      "खेत में लगातार जलभराव और भारी चिकनी मिट्टी",
+      "28-32°C तापमान और 85% से अधिक आर्द्रता",
+      "कीटों या कृषि उपकरणों द्वारा तने पर बने घाव"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Thiophanate Methyl",
+        "formulation": "70% WP",
+        "brandExample": "Roko 70 WP",
+        "dose": "2.0-2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30-35 ग्राम प्रति 15 लीटर पंप",
+        "application": "Sett treatment & Root drenching",
+        "howToUse": "बुवाई पूर्व बीज गूलों को 15 मिनट उपचारित करें तथा प्रभावित थानों की जड़ों में ड्रेन्चिंग करें।"
+      },
+      {
+        "activeIngredient": "Carbendazim",
+        "formulation": "50% WP",
+        "brandExample": "Bavistin 50 WP",
+        "dose": "2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Sett treatment",
+        "howToUse": "बुवाई के समय बीज गूलों को घोल में डुबोकर ही लगाएं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma harzianum 1% WP",
+        "dose": "2.5 किग्रा प्रति एकड़",
+        "howToUse": "100 किग्रा सड़ी गोबर खाद में मिलाकर खेत की तैयारी के समय या कतारों में डालें।"
+      }
+    ],
+    "preventive": [
+      "संक्रमित गन्नों को जड़ समेत उखाड़कर तुरंत जलाएं या खेत से दूर गहरा दबाएं।",
+      "रोगग्रस्त खेत से पेड़ी (Ratoon) न लें और 2-3 वर्ष का फसल चक्र (जैसे धान-गेहूं या हरी खाद) अपनाएं।",
+      "रेड रॉट प्रतिरोधी किस्मों (जैसे Co 0238 के स्थान पर Co 0118, Co 15023) का चयन करें।"
+    ]
+  }
+],
+
+
+
+
+[
+  {
+    "cropId": "tomato_early_blight_01",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "अगेती झुलसा रोग (अर्ली ब्लाइट)",
+    "diseaseEn": "Early Blight of Tomato",
+    "infectedImage": "agri_database/reference_images/tamato1.jpg",
+    "pathogen": {
+      "name": "Alternaria solani",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पत्तियों पर छोटे, गोल, भूरे-काले धब्बे बनना जो बाद में सांद्र छल्ले (Concentric rings) का रूप ले लेते हैं।",
+      "पुरानी पत्तियों से शुरू होकर संक्रमण ऊपर की नई पत्तियों और तनों तक फैलना।",
+      "फल के डंठल के पास काले, धंसे हुए धब्बे बनना जिससे फल समय से पहले झड़ जाते हैं।"
+    ],
+    "favourableConditions": [
+      "24-29°C तापमान और लगातार उच्च आर्द्रता (Humidity)",
+      "बार-बार बारिश होना और पत्तियों पर ओस का लंबे समय तक टिकना",
+      "पौधे में नाइट्रोजन और पोटैशियम पोषण की कमी"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Mancozeb",
+        "formulation": "75% WP",
+        "brandExample": "Dithane M-45",
+        "dose": "2.5-3.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "संक्रमण के शुरुआती लक्षण दिखते ही पत्तियों पर अच्छी तरह छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Azoxystrobin + Difenoconazole",
+        "formulation": "18.2% + 11.4% SC",
+        "brandExample": "Amistar Top",
+        "dose": "1.0 मिली प्रति लीटर",
+        "dosePer15LPump": "15-20 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "गंभीर अवस्था में 10-12 दिन के अंतराल पर दोहराएं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Pseudomonas fluorescens 1% WP",
+        "dose": "5-7 ग्राम प्रति लीटर पानी",
+        "howToUse": "शाम के समय घोल बनाकर पौधों पर छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "फसल अवशेषों को खेत से हटाकर नष्ट करें और फसल चक्र (Crop rotation) अपनाएं।",
+      "ड्रिप सिंचाई का प्रयोग करें ताकि पत्तियों पर पानी न ठहरे।"
+    ]
+  },
+  {
+    "cropId": "tomato_bacterial_canker_02",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "बैक्टीरियल कैंकर (जीवाणु विगलन)",
+    "diseaseEn": "Bacterial Canker",
+    "infectedImage": "agri_database/reference_images/tamato2.jpg",
+    "pathogen": {
+      "name": "Clavibacter michiganensis subsp. michiganensis",
+      "type": "Bacterium"
+    },
+    "symptoms": [
+      "पत्तियों के किनारे अंदर की तरफ मुड़ना, पीला पड़ना और झुलसकर सूख जाना।",
+      "तने और डंठल के अंदर भूरे रंग की धारियां बनना और तना फटने पर अंदर खोखला होना।",
+      "फलों पर पक्षी की आंख (Bird's-eye spot) जैसे छोटे, उभरे हुए सफेद घेरे वाले धब्बे बनना।"
+    ],
+    "favourableConditions": [
+      "25-28°C तापमान और लगातार बारिश या तूफानी हवाएं",
+      "संक्रमित बीजों और कटाई-छटाई के औजारों से बैक्टीरिया का फैलना",
+      "खेत में अत्यधिक जलभराव"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Copper Hydroxide",
+        "formulation": "77% WP",
+        "brandExample": "Kocide 3000",
+        "dose": "2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "लक्षण दिखते ही सुरक्षात्मक तौर पर तुरंत छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "ताजा छाछ और तांबे के बर्तन का संपर्क रहित घोल",
+        "dose": "50 मिली प्रति लीटर पानी",
+        "howToUse": "जीवाणु वृद्धि रोकने के लिए पत्तियों पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "बुवाई से पहले बीजों को गर्म पानी (50°C) से उपचारित करें।",
+      "रोगग्रस्त पौधों को तुरंत उखाड़कर खेत से बाहर जलाएं।"
+    ]
+  },
+  {
+    "cropId": "tomato_late_blight_fruit_03",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "पछेती झुलसा रोग (लेट ब्लाइट - फल व तना संक्रमण)",
+    "diseaseEn": "Late Blight of Tomato (Fruit & Stalk Phase)",
+    "infectedImage": "agri_database/reference_images/tamato3.jpg",
+    "pathogen": {
+      "name": "Phytophthora infestans",
+      "type": "Oomycete"
+    },
+    "symptoms": [
+      "हरे और कच्चे फलों पर गहरे भूरे, तैलीय और धंसे हुए बड़े धब्बे बनना।",
+      "तनों और शाखाओं पर काले-भूरे रंग के बड़े छाले पड़कर तने का सड़ना व टूटना।",
+      "नम मौसम में धब्बों की सतह पर सफेद फफूंद की परत दिखाई देना।"
+    ],
+    "favourableConditions": [
+      "ठंडा और नम मौसम (तापमान 15-20°C)",
+      "लगातार बारिश, घना कोहरा और उच्च आर्द्रता (90%以上)",
+      "हवा द्वारा फफूंद के बीजाणुओं का तेजी से फैलना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Cymoxanil + Mancozeb",
+        "formulation": "8% + 64% WP",
+        "brandExample": "Curzate M-8",
+        "dose": "2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "लेट ब्लाइट के लक्षण दिखते ही तुरंत निवारक स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Metalaxyl + Mancozeb",
+        "formulation": "8% + 64% WP",
+        "brandExample": "Ridomil Gold",
+        "dose": "2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "फसल बचाने के लिए तुरंत तर-बतर छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "कॉपर सल्फेट + चूने का घोल (Bordeaux Mixture 1%)",
+        "dose": "10 ग्राम प्रति लीटर पानी",
+        "howToUse": "निवारक रूप से पौधों पर छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "खेत में पानी बिल्कुल न ठहरने दें और उचित जल निकासी रखें।",
+      "संक्रमित फलों को तोड़कर जमीन में गहरा दबा दें।"
+    ]
+  },
+  {
+    "cropId": "tomato_healthy_harvest_04",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "स्वस्थ व परिपक्व लाल टमाटर (रोगमुक्त फसल)",
+    "diseaseEn": "Healthy Ripening Tomato Clusters - No Pathology",
+    "infectedImage": "agri_database/reference_images/tamato4.jpg",
+    "pathogen": {
+      "name": "None (Healthy)",
+      "type": "None"
+    },
+    "symptoms": [
+      "टमाटर के फल चमकदार, एकसमान लाल और पूरी तरह स्वस्थ हैं।",
+      "पौधे की शाखाएं और पत्तियां हरी तथा फफूंद/कीट संक्रमण से मुक्त हैं।",
+      "फलों का आकार और रंग प्राकृतिक रूप से विकसित हुआ है।"
+    ],
+    "favourableConditions": [
+      "संतुलित सिंचाई और पूर्ण सूर्य का प्रकाश",
+      "उचित मल्चिंग और पोषक तत्वों की सही मात्रा",
+      "कीट एवं रोग नियंत्रण का सही प्रबंधन"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Water Soluble NPK + Boron",
+        "formulation": "13:00:45 + Boron 20%",
+        "brandExample": "SOP + Boron",
+        "dose": "5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "75 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "फलों की चमक और वजन बढ़ाने हेतु स्प्रे करें। कीटनाशक की आवश्यकता नहीं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "सीवीड लिक्विड एक्सट्रैक्ट (Seaweed Extract)",
+        "dose": "2 मिली प्रति लीटर पानी",
+        "howToUse": "पौधों की सेहत और गुणवत्ता के लिए छिड़कें।"
+      }
+    ],
+    "preventive": [
+      "नियमित रूप से टपक सिंचाई (Drip irrigation) जारी रखें।",
+      "फलों को जमीन के संपर्क से बचाने के लिए स्टैकिंग (Bamboo support) मजबूत रखें।"
+    ]
+  },
+  {
+    "cropId": "tomato_septoria_leaf_spot_05",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "सेप्टोरिया पत्ती धब्बा रोग",
+    "diseaseEn": "Septoria Leaf Spot",
+    "infectedImage": "agri_database/reference_images/tamato5.jpg",
+    "pathogen": {
+      "name": "Septoria lycopersici",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पत्तियों पर छोटे, गोल धब्बे जिनके किनारे गहरे भूरे और केंद्र सफेद या धूसर रंग के होते हैं।",
+      "धब्बों के बीच में छोटे-छोटे काले बिंदु (Pycnidia) दिखाई देना।",
+      "पुरानी निचली पत्तियों से शुरू होकर संक्रमण ऊपर की ओर बढ़ता है जिससे पत्तियां पीली पड़कर गिर जाती हैं।"
+    ],
+    "favourableConditions": [
+      "20-25°C तापमान और लगातार बारिश या भारी ओस",
+      "खरपतवारों की अधिकता और हवा का कम संचार",
+      "संक्रमित फसल के अवशेषों का खेत में मौजूद रहना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Chlorothalonil",
+        "formulation": "75% WP",
+        "brandExample": "Kavach 75 WP",
+        "dose": "2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "रोग के शुरुआती लक्षण दिखते ही पत्तियों के दोनों तरफ स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma viride 1% WP",
+        "dose": "5 ग्राम प्रति लीटर पानी",
+        "howToUse": "नियमित अंतराल पर पर्णीय छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "खेत के आसपास के खरपतवारों को पूरी तरह नष्ट करें।",
+      "फसल कटाई के बाद खेत की गहरी जुताई करें।"
+    ]
+  },
+  {
+    "cropId": "tomato_yellow_leaf_curl_06",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "टमाटर पीला पत्ती मोड़क वायरस रोग (TYLCV)",
+    "diseaseEn": "Tomato Yellow Leaf Curl Virus (TYLCV)",
+    "infectedImage": "agri_database/reference_images/tamato6.jpg",
+    "pathogen": {
+      "name": "Tomato yellow leaf curl virus (Begomovirus)",
+      "type": "Virus"
+    },
+    "vector": {
+      "name": "सफेद मक्खी (Whitefly - Bemisia tabaci)",
+      "type": "Insect Vector"
+    },
+    "symptoms": [
+      "पत्तियां आकार में छोटी रह जाती हैं, ऊपर की तरफ मुड़ती हैं (Cupping) और किनारों से पीली पड़ जाती हैं।",
+      "पौधे का विकास रुक जाता है, पौधे बौने और झाड़ीनुमा (Stunted & Bushy) हो जाते हैं।",
+      "फूलों का झड़ना बढ़ जाता है और फल बहुत कम या बिल्कुल नहीं बनते।"
+    ],
+    "favourableConditions": [
+      "गर्म और शुष्क मौसम जो सफेद मक्खी के पनपने के लिए अनुकूल हो",
+      "खेत में खरपतवारों और वैकल्पिक पोषी पौधों की मौजूदगी",
+      "असुरक्षित नर्सरी पौध का उपयोग"
+    ],
+    "medicines": [],
+    "treatmentNote": "वायरल रोग होने के कारण पौधे के अंदर वायरस को मारने की कोई दवा नहीं है। रोकथाम के लिए इसके वाहक कीट (सफेद मक्खी) को नियंत्रित करना जरूरी है।",
+    "vectorManagement": [
+      {
+        "activeIngredient": "Thiamethoxam",
+        "formulation": "25% WG",
+        "brandExample": "Actara",
+        "dose": "0.3 ग्राम प्रति लीटर",
+        "dosePer15LPump": "4-5 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "सफेद मक्खी के नियंत्रण हेतु पौधों पर अच्छी तरह छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Spiromesifen",
+        "formulation": "240 SC",
+        "brandExample": "Oberon",
+        "dose": "1.0 मिली प्रति लीटर",
+        "dosePer15LPump": "15 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "सफेद मक्खी के अंडों और निकास को रोकने के लिए स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "नीम का तेल (Neem Oil 10,000 PPM) + पीले चिपचिपे ट्रैप",
+        "dose": "4 मिली प्रति लीटर पानी",
+        "howToUse": "सफेद मक्खी पकड़ने के लिए खेत में पीले ट्रैप लगाएं और नीम तेल का स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "नर्सरी की पौध को कीट-रोधी नायलॉन नेट (Insect net) के अंदर उगाएं।",
+      "संक्रमित पौधों को शुरू में ही उखाड़कर नष्ट कर दें।"
+    ]
+  },
+  {
+    "cropId": "tomato_timber_rot_sclerotinia_07",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "टिंबर रॉट / स्क्लेरोटिनिया तना सड़न",
+    "diseaseEn": "Timber Rot / Sclerotinia Stem Rot",
+    "infectedImage": "agri_database/reference_images/tamato7.jpg",
+    "pathogen": {
+      "name": "Sclerotinia sclerotiorum",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "तने पर पानी से भीगे हुए भूरे-सफेद धब्बे बनना जो बाद में सफेद रुई जैसी फफूंद से ढक जाते हैं।",
+      "तने का अंदर से सड़कर खोखला होना और उसमें काले रंग के चूहे की बीट जैसे कठोर sclerotia कण बनना।",
+      "तने की ताकत खत्म होने से पौधा अचानक मुरझाकर सूख जाता है।"
+    ],
+    "favourableConditions": [
+      "ठंडा और अत्यधिक नम मौसम (15-20°C)",
+      "घनी रोपाई और खेत में लगातार उच्च आर्द्रता",
+      "मिट्टी में फफूंद के sclerotia का लंबे समय तक जीवित रहना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Carbendazim",
+        "formulation": "50% WP",
+        "brandExample": "Bavistin",
+        "dose": "2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Soil drenching & Spray",
+        "howToUse": "संक्रमित तनों पर स्प्रे करें और जड़ों के पास मिट्टी में ड्रेन्चिंग करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma harzianum",
+        "dose": "2.5 किग्रा प्रति एकड़",
+        "howToUse": "गोबर खाद में मिलाकर मिट्टी में उपचारित करें।"
+      }
+    ],
+    "preventive": [
+      "गहरी जुताई करें ताकि फफूंद के कण गहराई में दब जाएं।",
+      "फसल अवशेषों को खेत से पूरी तरह साफ करें।"
+    ]
+  },
+  {
+    "cropId": "tomato_leaf_mold_08",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "पत्ती फफूंद रोग (लीफ मोल्ड)",
+    "diseaseEn": "Tomato Leaf Mold",
+    "infectedImage": "agri_database/reference_images/tamato8.jpg",
+    "pathogen": {
+      "name": "Passalora fulva (Cladosporium fulvum)",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पत्तियों की ऊपरी सतह पर हल्के पीले या हरे-पीले अनिश्चित आकार के धब्बे बनना।",
+      "पत्तियों की निचली सतह पर उन्हीं धब्बों के ठीक नीचे मखमली, जैतून जैसी भूरी या बैंगनी फफूंद की परत जम जाना।",
+      "संक्रमित पत्तियां सूखकर मुड़ जाती हैं और समय से पहले गिर जाती हैं।"
+    ],
+    "favourableConditions": [
+      "ग्रीनहाउस या पॉलीहाउस जैसी बंद जगहों में 85% से अधिक आर्द्रता",
+      "22-24°C तापमान और खराब वायु संचार (Poor ventilation)",
+      "पत्तियों पर नमी का लगातार बने रहना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Chlorothalonil",
+        "formulation": "75% WP",
+        "brandExample": "Kavach",
+        "dose": "2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "पत्तियों की निचली सतह को तर-बतर करते हुए छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "स्यूडोमोनास फ्लोरेसेन्स",
+        "dose": "5 ग्राम प्रति लीटर पानी",
+        "howToUse": "नियमित अंतराल पर पत्तियों पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "ग्रीनहाउस में पंखे चलाकर हवा का संचार (Ventilation) दुरुस्त रखें।",
+      "पौधों के बीच उचित दूरी रखें।"
+    ]
+  },
+  {
+    "cropId": "tomato_buckeye_rot_09",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "बकये रॉट (फल सड़न रोग)",
+    "diseaseEn": "Buckeye Rot of Tomato",
+    "infectedImage": "agri_database/reference_images/tamato9.jpg",
+    "pathogen": {
+      "name": "Phytophthora nicotianae var. parasitica",
+      "type": "Oomycete"
+    },
+    "symptoms": [
+      "फलों (विशेषकर जमीन के संपर्क वाले या हरी अवस्था के फलों) पर भूरे रंग के पानीदार गोल धब्बे बनना।",
+      "धब्बों पर पेड़ के तने या घोड़े की आंख जैसे गहरे व हल्के भूरे रंग के संकेंद्रित गोले (Concentric rings) दिखाई देना।",
+      "फलों का चमड़े जैसा कड़क रहना लेकिन अंदर से सड़कर बदबू देना।"
+    ],
+    "favourableConditions": [
+      "भारी बारिश और खेत में पानी का भरा रहना",
+      "25-30°C तापमान और मिट्टी के छींटे फलों पर पड़ना",
+      "खराब जल निकासी"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Metalaxyl + Mancozeb",
+        "formulation": "8% + 64% WP",
+        "brandExample": "Ridomil Gold",
+        "dose": "2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray & soil drench",
+        "howToUse": "फलों पर धब्बे दिखते ही पौधों और जमीन के पास छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "ट्राइकोडर्मा विरिडी",
+        "dose": "2 किग्रा प्रति एकड़",
+        "howToUse": "मिट्टी में मिलाकर फफूंद का नियंत्रण करें।"
+      }
+    ],
+    "preventive": [
+      "पौधों के नीचे मल्चिंग (Plastic mulch) का प्रयोग करें ताकि मिट्टी फलों को न छूए।",
+      "निचली पत्तियों की छिलाई करें।"
+    ]
+  },
+  {
+    "cropId": "tomato_fruit_cracking_10",
+    "cropNameHi": "टमाटर (Tomato)",
+    "cropNameEn": "Tomato",
+    "diseaseHi": "टमाटर का फटना (फ्रूट क्रैकिंग - दैहिक विकार)",
+    "diseaseEn": "Tomato Fruit Cracking (Physiological Disorder)",
+    "infectedImage": "agri_database/reference_images/tamato10.jpg",
+    "pathogen": {
+      "name": "None (Nutritional & Watering Fluctuation Disorder)",
+      "type": "Physiological"
+    },
+    "symptoms": [
+      "फलों के डंठल के पास से गोल घेरे में (Concentric cracking) या ऊपर से नीचे लंबी दरारें (Radial cracking) पड़ना।",
+      "फटी हुई जगहों पर बाद में फफूंद या बैक्टीरिया का संक्रमण होकर फल सड़ जाना।",
+      "अचानक तेज सिंचाई होने या लंबे सूखे के बाद भारी पानी मिलने से फल का छिलका फट जाना।"
+    ],
+    "favourableConditions": [
+      "सिंचाई में अनियमितता (लंबे समय तक सूखा रखने के बाद भारी सिंचाई)",
+      "मिट्टी में बोरॉन (Boron) और कैल्शियम की कमी",
+      "तापमान और आर्द्रता में अचानक भारी बदलाव"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Boron (Disodium Octaborate Tetrahydrate)",
+        "formulation": "20% Soluble Powder",
+        "brandExample": "Boro-Sol / Solubor",
+        "dose": "1.0-1.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "20 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "फल विकास की अवस्था में बोरॉन का पर्णीय छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Calcium Nitrate",
+        "formulation": "Water Soluble",
+        "brandExample": "Calcium Nitrate Spray",
+        "dose": "5.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "75 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "छिलके की मजबूती के लिए छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "तरल कैल्शियुक्त जैविक स्प्रे",
+        "dose": "2 मिली प्रति लीटर पानी",
+        "howToUse": "नियमित अंतराल पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "खेत में नमी की एकसमान मात्रा बनाए रखें, इसके लिए ड्रिप सिंचाई अपनाएं।",
+      "संतुलित खाद और सूक्ष्म पोषक तत्वों का प्रयोग करें।"
+    ]
+  }
+],
+
+
+
+
+
+
+[
+  {
+    "cropId": "maize_healthy_vegetative_01",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "स्वस्थ हरी फसल (वानस्पतिक व भुट्टा निर्माण अवस्था)",
+    "diseaseEn": "Healthy Maize Canopy & Early Silking Stage",
+    "infectedImage": "agri_database/reference_images/Maize-crop1.jpg",
+    "pathogen": {
+      "name": "None (Healthy)",
+      "type": "None"
+    },
+    "symptoms": [
+      "पौधे की पत्तियां प्राकृतिक रूप से गहरी हरी, चौड़ी और चमकदार हैं।",
+      "तने मजबूत हैं तथा भुट्टों पर स्वस्थ रेशम (Silk) और नर मंजर (Tassel) का सामान्य विकास हो रहा है।",
+      "फसल में किसी भी प्रकार के कीट या फफूंदजनित धब्बों का कोई लक्षण नहीं है।"
+    ],
+    "favourableConditions": [
+      "पर्याप्त धूप और संतुलित मृदा नमी",
+      "उचित कतार से कतार की दूरी (60 सेमी × 20 सेमी)",
+      "संतुलित नाइट्रोजन, फास्फोरस व पोटाश पोषण"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "NPK Foliar Fertilizer",
+        "formulation": "19:19:19",
+        "brandExample": "Water Soluble 19:19:19",
+        "dose": "5.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "75 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "पौधों के समुचित विकास और भुट्टे के अच्छे आकार हेतु पर्णीय छिड़काव करें। किसी कीटनाशक की आवश्यकता नहीं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "सीवीड एक्सट्रैक्ट (बायो-स्टिमुलेंट)",
+        "dose": "2 मिली प्रति लीटर पानी",
+        "howToUse": "फसल के बेहतर विकास के लिए 150 लीटर पानी में मिलाकर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "मंजर और रेशम निकलने के समय खेत में नमी की कमी न होने दें।",
+      "नियमित रूप से फाल आर्मीवर्म की निगरानी के लिए फेरोमोन ट्रैप लगाएं।"
+    ]
+  },
+  {
+    "cropId": "maize_healthy_maturity_02",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "परिपक्व व तैयार भुट्टे (कटाई अवस्था)",
+    "diseaseEn": "Healthy Crop Maturity & Harvest Stage",
+    "infectedImage": "agri_database/reference_images/Maize-crop2.jpg",
+    "pathogen": {
+      "name": "None (Healthy)",
+      "type": "None"
+    },
+    "symptoms": [
+      "भुट्टे के बाहरी छिलके सूखकर हल्के भूरे-सुनहरे हो चुके हैं।",
+      "दाने पूरी तरह ठोस, चमकदार और एकसमान पंक्ति में भरे हुए हैं।",
+      "दानों में कोई सड़न, फफूंद या कीट छिद्र नहीं है।"
+    ],
+    "favourableConditions": [
+      "पकने के समय शुष्क और धूप वाला मौसम",
+      "खेत में जल निकासी की सही व्यवस्था",
+      "रोगमुक्त दाना भराव काल"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "None (Maturity Phase)",
+        "formulation": "None",
+        "brandExample": "None",
+        "dose": "0",
+        "dosePer15LPump": "दवा की आवश्यकता नहीं है",
+        "application": "None",
+        "howToUse": "फसल कटाई के लिए तैयार है। किसी भी रासायनिक छिड़काव की आवश्यकता नहीं है।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "उचित धूप में सुखाना",
+        "howToUse": "कटाई के बाद भुट्टों को धूप में 12-14% नमी आने तक अच्छी तरह सुखाएं।"
+      }
+    ],
+    "preventive": [
+      "कटाई में अत्यधिक देरी न करें ताकि दीमक और पक्षियों से नुकसान न हो।",
+      "भंडारण से पहले दानों को साफ और सूखा रखें।"
+    ]
+  },
+  {
+    "cropId": "maize_earworm_faw_cob_03",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "भुट्टा छेदक / फाल आर्मीवर्म (भुट्टे पर इल्ली का हमला)",
+    "diseaseEn": "Corn Earworm / Fall Armyworm Cob Infestation",
+    "infectedImage": "agri_database/reference_images/Maize-crop3.jpg",
+    "pathogen": {
+      "name": "Helicoverpa zea / Spodoptera frugiperda",
+      "type": "Insect Pest"
+    },
+    "symptoms": [
+      "इल्ली द्वारा भुट्टे के रेशम (Silk) को काटकर शीर्ष से अंदर प्रवेश करना।",
+      "भुट्टे के ऊपरी नरम और दूधिया दानों को चबाकर नष्ट करना।",
+      "भुट्टे के शीर्ष पर इल्ली का भूरा मल (Frass) जमा होना जिससे बाद में द्वितीयक फफूंद सड़न लगना।"
+    ],
+    "favourableConditions": [
+      "भुट्टे में दाना भराव और दूधिया अवस्था का समय",
+      "गर्म और उमस भरा मौसम (26-34°C)",
+      "शुरुआती वानस्पतिक अवस्था में कीट नियंत्रण न होना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Emamectin Benzoate",
+        "formulation": "5% SG",
+        "brandExample": "Proclaim",
+        "dose": "0.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "8-10 ग्राम प्रति 15 लीटर पंप",
+        "application": "Directed foliar spray on cobs",
+        "howToUse": "स्प्रे नोजल को सीधे भुट्टे के शीर्ष व रेशम की ओर रखकर छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Chlorantraniliprole",
+        "formulation": "18.5% SC",
+        "brandExample": "Coragen",
+        "dose": "0.4 मिली प्रति लीटर",
+        "dosePer15LPump": "6-7 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "रेशम निकलते समय इल्ली के भुट्टे में घुसने से पहले छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "बवेरिया बेसियाना (Beauveria bassiana 1.15% WP)",
+        "dose": "5 ग्राम प्रति लीटर पानी",
+        "howToUse": "शाम के समय भुट्टों पर तर-बतर छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "खेत में प्रति एकड़ 5-6 फेरोमोन ट्रैप लगाएं।",
+      "ट्राइकोग्रामा परजीवी ततैया (Trichogramma pretiosum) के ट्राइकोकार्ड खेत में लगाएं।"
+    ]
+  },
+  {
+    "cropId": "maize_healthy_cob_development_04",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "स्वस्थ भुट्टा विकास अवस्था",
+    "diseaseEn": "Healthy Cob Development Stage",
+    "infectedImage": "agri_database/reference_images/Maize-crop4.jpg",
+    "pathogen": {
+      "name": "None (Healthy)",
+      "type": "None"
+    },
+    "symptoms": [
+      "हरे छिलकों (Husk) से पूरी तरह ढके हुए सुडौल और पुष्ट भुट्टे।",
+      "रेशम (Silk) का रंग प्राकृतिक रूप से हरा से भूरा होना, जो सफल परागण दर्शाता है।",
+      "पत्तियों और तनों पर किसी बीमारी या सड़न का कोई निशान नहीं।"
+    ],
+    "favourableConditions": [
+      "संतुलित मृदा नमी और उचित धूप",
+      "पर्याप्त परागण और अनुकूल तापमान (22-30°C)",
+      "संतुलित पोटाश और सूक्ष्म पोषक तत्वों की उपलब्धता"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Potassium Sulphate (SOP) + Boron",
+        "formulation": "00:00:50 + 20% Boron",
+        "brandExample": "Water Soluble SOP + Boron",
+        "dose": "5 ग्राम SOP + 1 ग्राम बोरॉन प्रति लीटर",
+        "dosePer15LPump": "75 ग्राम SOP + 15 ग्राम बोरॉन प्रति 15L पंप",
+        "application": "Foliar spray",
+        "howToUse": "दानों का वजन और भुट्टे के सिरे तक भराई सुधारने हेतु पर्णीय छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "पंचगव्य घोल (3%)",
+        "dose": "30 मिली प्रति लीटर पानी",
+        "howToUse": "पौधों पर स्प्रे करके दानों के विकास को बढ़ावा दें।"
+      }
+    ],
+    "preventive": [
+      "दूधिया अवस्था में खेत में सिंचाई की कमी न होने दें।",
+      "अनावश्यक रासायनिक कीटनाशकों का छिड़काव न करें ताकि मित्र कीट बचे रहें।"
+    ]
+  },
+  {
+    "cropId": "maize_bacterial_stalk_top_rot_05",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "जीवाणु तना सड़न / शीर्ष सड़न रोग (गोभ विगलन)",
+    "diseaseEn": "Bacterial Stalk Rot / Top Rot",
+    "infectedImage": "agri_database/reference_images/Maize-crop6.jpg",
+    "pathogen": {
+      "name": "Dickeya zeae (Erwinia chrysanthemi pv. zeae)",
+      "type": "Bacterium"
+    },
+    "symptoms": [
+      "पौधे की गोभ (Whorl) की ऊपरी पत्तियां खींचने पर आसानी से हाथ में निकल आना।",
+      "गोभ और तने के आधार का चिपचिपा, गीला और सड़ा हुआ होना।",
+      "संक्रमित भाग से अत्यंत तीव्र, बदबूदार और सड़े हुए मांस जैसी दुर्गंध आना।"
+    ],
+    "favourableConditions": [
+      "30-35°C का उच्च तापमान और 85% से अधिक आर्द्रता",
+      "खेत में लगातार जलभराव और भारी बारिश",
+      "ऊपर से गंदे या संक्रमित पानी से स्प्रिंकलर सिंचाई करना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Streptocycline + Copper Oxychloride",
+        "formulation": "90:10 SP + 50% WP",
+        "brandExample": "Plantomycin + Blitox",
+        "dose": "1 ग्राम स्ट्रेप्टोसाइक्लिन + 2.5 ग्राम कॉपर प्रति लीटर",
+        "dosePer15LPump": "2-3 ग्राम स्ट्रेप्टोसाइक्लिन + 35 ग्राम कॉपर प्रति 15L पंप",
+        "application": "Whorl application & Foliar spray",
+        "howToUse": "घोल को सीधे पौधों की गोभ (Whorl) के अंदर अच्छी तरह डालें।"
+      },
+      {
+        "activeIngredient": "Bleaching Powder (Stable Bleach)",
+        "formulation": "33% Chlorine",
+        "brandExample": "Bleaching Powder",
+        "dose": "10-12 किग्रा प्रति एकड़",
+        "dosePer15LPump": "सिंचाई के पानी के साथ प्रयोग",
+        "application": "Irrigation water treatment",
+        "howToUse": "जीवाणुओं के प्रसार को रोकने के लिए सिंचाई के पानी के साथ खेत में बहाएं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "स्यूडोमोनास फ्लोरेसेन्स 1% WP",
+        "dose": "5 ग्राम प्रति लीटर पानी",
+        "howToUse": "गोभ में प्रारंभिक अवस्था में छिड़कें।"
+      }
+    ],
+    "preventive": [
+      "खेत में जलभराव न होने दें; मेड़ों पर मक्का बोएं।",
+      "अत्यधिक नाइट्रोजन (यूरिया) देने से बचें और पोटाश की मात्रा बढ़ाएं।"
+    ]
+  },
+  {
+    "cropId": "maize_charcoal_rot_pfsr_06",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "पोस्ट-फ्लावरिंग तना सड़न / चारकोल रॉट",
+    "diseaseEn": "Post-Flowering Stalk Rot / Charcoal Rot",
+    "infectedImage": "agri_database/reference_images/Maize-crop7.jpg",
+    "pathogen": {
+      "name": "Macrophomina phaseolina / Fusarium verticillioides",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "फूल आने के बाद तने के निचले हिस्से का सूखकर धूसर-भूरा पड़ना।",
+      "तने का अंदर से खोखला हो जाना जिससे हवा चलने पर पौधे बीच से टूटकर गिर जाते हैं (Lodging)।",
+      "तने को फाड़ने पर अंदर के रेशों पर कोयले के चूरे जैसे असंख्य काले बिंदु (Sclerotia) दिखाई देना।"
+    ],
+    "favourableConditions": [
+      "फूल आने और दाना भरने के समय सूखा व 32-38°C का उच्च तापमान",
+      "हल्की रेतीली मिट्टी में नमी का अचानक कम होना",
+      "पौधों का अधिक घनत्व"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Carbendazim + Mancozeb",
+        "formulation": "12% + 63% WP",
+        "brandExample": "Saaf",
+        "dose": "2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Stem drenching",
+        "howToUse": "तनों के निचले भाग और जड़ों के पास मिट्टी में ड्रेन्चिंग करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma harzianum 1% WP",
+        "dose": "2.5 किग्रा प्रति एकड़",
+        "howToUse": "100 किग्रा गोबर खाद में मिलाकर बुवाई के समय मिट्टी में डालें।"
+      }
+    ],
+    "preventive": [
+      "फूल आने और दाना भरने की अवस्था में खेत में नमी का तनाव (सूखा) बिल्कुल न आने दें।",
+      "पोटाश (MOP 20 किग्रा/एकड़) का प्रयोग तने की मजबूती के लिए अवश्य करें।"
+    ]
+  },
+  {
+    "cropId": "maize_gibberella_fusarium_ear_rot_07",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "भुट्टा सड़न रोग (गिबरेला व फ्यूजेरियम इयर रॉट)",
+    "diseaseEn": "Gibberella / Fusarium Ear Rot",
+    "infectedImage": "agri_database/reference_images/Maize-crop8.jpg",
+    "pathogen": {
+      "name": "Fusarium verticillioides / Gibberella zeae",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "भुट्टे के दानों पर गुलाबी, सफेद या धूसर रंग की फफूंद की परत जमना।",
+      "दानों का सड़ा हुआ, खोखला, बदरंग और आसानी से पाउडर जैसा बिखरना।",
+      "संक्रमित दानों में विषैले तत्व (Mycotoxins / Fumonisin) बनना जो पशु व मानव स्वास्थ्य के लिए हानिकारक हैं।"
+    ],
+    "favourableConditions": [
+      "रेशम निकलते समय और दाना भराव के दौरान लगातार बारिश व ठंडक",
+      "कीटों (जैसे इयरवर्म) द्वारा दानों में घाव होना",
+      "भुट्टों का कटाई के बाद खेत में गीला पड़ा रहना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Azoxystrobin + Difenoconazole",
+        "formulation": "18.2% + 11.4% SC",
+        "brandExample": "Amistar Top",
+        "dose": "1.0-1.2 मिली प्रति लीटर",
+        "dosePer15LPump": "15-20 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray on cobs",
+        "howToUse": "रेशम निकलते समय भुट्टों के स्तर पर निवारक छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Propiconazole",
+        "formulation": "25% EC",
+        "brandExample": "Tilt 25 EC",
+        "dose": "1.0 मिली प्रति लीटर",
+        "dosePer15LPump": "15 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "शुरुआती फंगल संक्रमण रोकने हेतु छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "स्यूडोमोनास फ्लोरेसेन्स 1% WP",
+        "dose": "5 ग्राम प्रति लीटर पानी",
+        "howToUse": "शाम के समय भुट्टों पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "भुट्टा छेदक कीटों का समय पर नियंत्रण करें ताकि दानों में घाव न बनें।",
+      "परिपक्व होते ही भुट्टों की समय पर तुड़ाई करें और सुरक्षित सूखा रखें।"
+    ]
+  },
+  {
+    "cropId": "maize_turcicum_leaf_blight_08",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "टर्सिकम पत्ती झुलसा / मक्के का ब्लाइट",
+    "diseaseEn": "Turcicum Leaf Blight / Northern Corn Leaf Blight",
+    "infectedImage": "agri_database/reference_images/Maize-crop9.jpg",
+    "pathogen": {
+      "name": "Exserohilum turcicum (Helminthosporium turcicum)",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पत्तियों पर सिगार या नाव के आकार के लंबे (2.5 से 15 सेमी) धूसर-हरे से भूरे धब्बे।",
+      "धब्बों का आपस में मिलकर पूरी पत्ती को झुलसा देना जिससे पत्तियां जली हुई दिखाई देती हैं।",
+      "संक्रमण निचली पत्तियों से शुरू होकर ऊपर की पत्तियों तक तेजी से फैलना।"
+    ],
+    "favourableConditions": [
+      "18-27°C का मध्यम तापमान और 90% से अधिक आर्द्रता",
+      "पत्तियों पर लंबे समय तक ओस या बारिश का पानी टिकना",
+      "संवेदनशील संकर किस्मों की बुवाई"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Mancozeb",
+        "formulation": "75% WP",
+        "brandExample": "Dithane M-45",
+        "dose": "2.5-3.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "शुरुआती नाव जैसे धब्बे दिखते ही पत्तियों पर दोनों तरफ अच्छी तरह स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Azoxystrobin + Difenoconazole",
+        "formulation": "18.2% + 11.4% SC",
+        "brandExample": "Amistar Top",
+        "dose": "1.0 मिली प्रति लीटर",
+        "dosePer15LPump": "15-20 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "गंभीर फैलाव होने पर 10-12 दिन के अंतराल पर दोहराएं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "ट्राइकोडर्मा विरिडी 1% WP",
+        "dose": "5-7 ग्राम प्रति लीटर पानी",
+        "howToUse": "पत्तियों पर सुरक्षात्मक रूप से छिड़कें।"
+      }
+    ],
+    "preventive": [
+      "रोगरोधी किस्मों की बुवाई करें।",
+      "फसल अवशेषों को खेत में न छोड़ें; गहरी जुताई करके नष्ट करें।"
+    ]
+  },
+  {
+    "cropId": "maize_fall_armyworm_larva_09",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "फाल आर्मीवर्म कीट (इल्ली द्वारा गोभ भक्षण)",
+    "diseaseEn": "Fall Armyworm (FAW) Foliar & Whorl Damage",
+    "infectedImage": "agri_database/reference_images/Maize-crop10.jpg",
+    "pathogen": {
+      "name": "Spodoptera frugiperda",
+      "type": "Insect Pest"
+    },
+    "symptoms": [
+      "पौधे की गोभ (Whorl) और पत्तियों में बड़े-बड़े अनियमित छेद और पत्तियां छलनी होना।",
+      "गोभ के अंदर लकड़ी के बुरादे जैसा भारी मात्रा में इल्ली का मटमैला मल (Frass) जमा होना।",
+      "इल्ली के सिर पर उल्टा 'Y' का निशान और शरीर के पिछले हिस्से पर चार वर्गाकार काले बिंदु होना।"
+    ],
+    "favourableConditions": [
+      "गर्म और शुष्क से लेकर मध्यम नम मौसम",
+      "फसल की शुरुआती वानस्पतिक अवस्था (बुवाई के 15-40 दिन बाद)",
+      "आसपास मक्का, ज्वार या बाजरा की निरंतर खेती"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Spinetoram",
+        "formulation": "11.7% SC",
+        "brandExample": "Delegate",
+        "dose": "0.5 मिली प्रति लीटर",
+        "dosePer15LPump": "8-10 मिली प्रति 15 लीटर पंप",
+        "application": "Whorl application",
+        "howToUse": "स्प्रे नोजल को सीधे पौधे की गोभ के अंदर रखकर अच्छी तरह स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Emamectin Benzoate",
+        "formulation": "5% SG",
+        "brandExample": "Proclaim",
+        "dose": "0.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "8-10 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar & whorl spray",
+        "howToUse": "शाम के समय जब इल्लियां सक्रिय हों तब छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "नीम का तेल (Neem Oil 10,000 PPM) + सूखी रेत व राख",
+        "dose": "4 मिली नीम तेल प्रति लीटर पानी",
+        "howToUse": "गोभ के अंदर बारीक सूखी रेत या राख डालने से इल्ली का दम घुटकर मर जाती है।"
+      }
+    ],
+    "preventive": [
+      "बुवाई के 10-15 दिन बाद से ही खेत में 4-5 फेरोमोन ट्रैप प्रति एकड़ लगाएं।",
+      "एक साथ पूरे क्षेत्र में मक्के की बुवाई करें ताकि कीट का निरंतर चक्र न बने।"
+    ]
+  },
+  
+  {
+    "cropId": "maize_fall_armyworm_whorl_10",
+    "cropNameHi": "मक्का (Maize / Corn)",
+    "cropNameEn": "Maize / Corn",
+    "diseaseHi": "फाल आर्मीवर्म / तना छेदक (पत्ती व गोभ क्षति)",
+    "diseaseEn": "Fall Armyworm (FAW) Whorl & Foliar Feeding",
+    "infectedImage": "agri_database/reference_images/Maize-crop5.jpg",
+    "pathogen": {
+      "name": "Spodoptera frugiperda / Chilo partellus",
+      "type": "Insect Pest"
+    },
+    "symptoms": [
+      "पत्तियों के खुलने पर आर-पार दिखने वाले गोल छेद (Shot holes) और कटी-फटी छलनी जैसी पत्तियां।",
+      "इल्ली द्वारा पत्ती की हरी परत को खुरचकर खाना जिससे सफेद पारदर्शी खिड़कियां (Window paning) बन जाती हैं।",
+      "गोभ (Whorl) के अंदर इल्ली द्वारा पत्तियों को कतरना और बुरादे जैसा मल जमा होना।"
+    ],
+    "favourableConditions": [
+      "गर्म व शुष्क मौसम और 25-33°C का तापमान",
+      "बुवाई के 15 से 35 दिन बाद की कोमल वानस्पतिक अवस्था (V3-V6 stage)",
+      "आसपास ज्वार, बाजरा या बिना उपचारित मक्के की खेती"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Chlorantraniliprole",
+        "formulation": "18.5% SC",
+        "brandExample": "Coragen",
+        "dose": "0.4 मिली प्रति लीटर",
+        "dosePer15LPump": "6-7 मिली प्रति 15 लीटर पंप",
+        "application": "Whorl directed spray",
+        "howToUse": "स्प्रे नोजल को सीधे पौधे की गोभ (Whorl) में रखकर घोल अंदर तक पहुंचाएं।"
+      },
+      {
+        "activeIngredient": "Spinetoram",
+        "formulation": "11.7% SC",
+        "brandExample": "Delegate",
+        "dose": "0.5 मिली प्रति लीटर",
+        "dosePer15LPump": "8 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar & whorl application",
+        "howToUse": "शाम के समय जब कीट सक्रिय हों, तब पौधों की गोभ पर छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "बारीक सूखी रेत व राख (1:1) + नीम चूर्ण",
+        "howToUse": "एक चुटकी मिश्रण सीधे पौधे की गोभ (Whorl) में डालें, इससे इल्ली का दम घुट जाता है।"
+      },
+      {
+        "name": "नीम का तेल (Neem Oil 10,000 PPM)",
+        "dose": "3-4 मिली प्रति लीटर पानी",
+        "howToUse": "शुरुआती अंडों और छोटी इल्लियों की रोकथाम हेतु छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "बुवाई के तुरंत बाद प्रति एकड़ 5 फेरोमोन ट्रैप नर पतंगों की निगरानी हेतु लगाएं।",
+      "अंडे के समूहों (Hair-covered egg masses) को हाथ से मसलकर नष्ट करें।"
+    ]
+  }
+
+],
+
+
+
+
+
+
+
+
+[
+  {
+    "cropId": "soybean_septoria_brown_spot_01",
+    "cropNameHi": "सोयाबीन (Soybean)",
+    "cropNameEn": "Soybean",
+    "diseaseHi": "सेप्टोरिया भूरा पत्ती धब्बा रोग",
+    "diseaseEn": "Septoria Brown Spot",
+    "infectedImage": "agri_database/reference_images/soybean1.jpg",
+    "pathogen": {
+      "name": "Septoria glycines",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "निचली पुरानी पत्तियों पर छोटे, अनियमित गहरे भूरे से काले धब्बे बनना।",
+      "धब्बों के आसपास की पत्ती पीली पड़ना और समय से पहले सूखकर झड़ जाना।",
+      "लगातार बारिश में संक्रमण ऊपर की नई पत्तियों और फलियों तक तेजी से फैलना।"
+    ],
+    "favourableConditions": [
+      "25-28°C का मध्यम तापमान और लगातार नम मौसम",
+      "घनी बुवाई और खेत में हवा का कम संचार",
+      "बारिश के छींटों द्वारा मिट्टी से फफूंद के बीजाणुओं का निचली पत्तियों पर पहुंचना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Pyraclostrobin + Fluxapyroxad",
+        "formulation": "333 g/l FS / SC",
+        "brandExample": "Priaxor",
+        "dose": "0.6-0.8 मिली प्रति लीटर",
+        "dosePer15LPump": "12-15 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "शुरुआती लक्षण दिखने पर निचली पत्तियों को तर करते हुए स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Carbendazim + Mancozeb",
+        "formulation": "12% + 63% WP",
+        "brandExample": "Saaf",
+        "dose": "2.0-2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "रोग के फैलाव को रोकने के लिए 10-12 दिन के अंतराल पर दोहराएं।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma viride 1% WP",
+        "dose": "5 ग्राम प्रति लीटर पानी",
+        "howToUse": "पत्तियों पर शाम के समय तर-बतर छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "फसल चक्र अपनाएं और लगातार उसी खेत में सोयाबीन न बोएं।",
+      "बुवाई से पहले थायरम + कार्बेन्डाजिम (2:1) से 3 ग्राम/किग्रा बीज उपचार करें।"
+    ]
+  },
+  {
+    "cropId": "cucurbit_anthracnose_rot_02",
+    "cropNameHi": "खीरा / ककड़ी (Cucumber / Cucurbits)",
+    "cropNameEn": "Cucumber / Cucurbits",
+    "diseaseHi": "एन्थ्रेक्नोज / फल व पत्ती सड़न रोग",
+    "diseaseEn": "Cucurbit Anthracnose & Fruit Rot",
+    "infectedImage": "agri_database/reference_images/soybean2.jpg",
+    "pathogen": {
+      "name": "Colletotrichum orbiculare",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पत्तियों पर गोल से कोणीय पानीदार धब्बे जो बाद में सूखकर फट जाते हैं (Shot-hole effect)।",
+      "फलों पर धंसे हुए, गोल और गहरे काले-भूरे सड़न वाले घाव बनना।",
+      "फल का टेढ़ा-मेढ़ा होना और धब्बों के बीच में नम मौसम में गुलाबी बीजाणु दिखना।"
+    ],
+    "favourableConditions": [
+      "22-27°C तापमान और 85% से अधिक उच्च आर्द्रता",
+      "लगातार बारिश और पत्तियों पर 8-10 घंटे पानी टिकना",
+      "फलों का गीली मिट्टी के सीधे संपर्क में रहना"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Azoxystrobin + Difenoconazole",
+        "formulation": "18.2% + 11.4% SC",
+        "brandExample": "Amistar Top",
+        "dose": "1.0 मिली प्रति लीटर",
+        "dosePer15LPump": "15 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "पत्तियों और फलों के दोनों तरफ समान रूप से छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Copper Oxychloride",
+        "formulation": "50% WP",
+        "brandExample": "Blitox 50 WP",
+        "dose": "2.5-3.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "संक्रमण के शुरुआती चरण में सुरक्षात्मक स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "स्यूडोमोनास फ्लोरेसेन्स 1% WP",
+        "dose": "5-6 ग्राम प्रति लीटर पानी",
+        "howToUse": "शाम के समय बेलों पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "फलों को जमीन से ऊपर रखने के लिए मचान / ट्रेलिस (Trellis) पद्धति अपनाएं।",
+      "खेत में मल्चिंग का प्रयोग करें ताकि मिट्टी के छींटे फलों पर न पड़ें।"
+    ]
+  },
+  {
+    "cropId": "soybean_sds_field_patch_03",
+    "cropNameHi": "सोयाबीन (Soybean)",
+    "cropNameEn": "Soybean",
+    "diseaseHi": "सडन डेथ सिंड्रोम (खेत में आकस्मिक सूखा व पीलापन)",
+    "diseaseEn": "Sudden Death Syndrome (SDS) Field Infestation",
+    "infectedImage": "agri_database/reference_images/soybean3.jpg",
+    "pathogen": {
+      "name": "Fusarium virguliforme",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "खेत के बीच-बीच में गोल या अनियमित टुकड़ों में पौधों का अचानक पीला पड़कर सूखना।",
+      "दाना भराव (Pod filling stage) के समय पत्तियों का तेजी से झुलसना।",
+      "पौधे की पत्तियां सूखकर गिर जाती हैं लेकिन पत्तियों की डंडी (Petiole) तने से जुड़ी रह जाती है।"
+    ],
+    "favourableConditions": [
+      "शुरुआती बुवाई के समय ठंडी और अत्यधिक गीली मिट्टी",
+      "मिट्टी में सिस्ट नेमाटोड (Soybean Cyst Nematode) की मौजूदगी",
+      "खराब जल निकासी और मिट्टी का कड़ापन (Compacted soil)"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Thiophanate Methyl",
+        "formulation": "70% WP",
+        "brandExample": "Roko 70 WP",
+        "dose": "2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Root drenching & Spray",
+        "howToUse": "प्रभावित पैच के आसपास के स्वस्थ पौधों की जड़ों में ड्रेन्चिंग करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma harzianum 1% WP",
+        "dose": "2.5 किग्रा प्रति एकड़",
+        "howToUse": "100 किग्रा गोबर खाद में मिलाकर खेत की तैयारी के समय मिट्टी में डालें।"
+      }
+    ],
+    "preventive": [
+      "खेत में जलभराव रोकने के लिए सब-सॉइलिंग या गहरी जुताई करें।",
+      "एसडीएस प्रतिरोधी किस्मों का चयन करें और बहुत जल्दी बुवाई से बचें।"
+    ]
+  },
+  {
+    "cropId": "soybean_stem_canker_04",
+    "cropNameHi": "सोयाबीन (Soybean)",
+    "cropNameEn": "Soybean",
+    "diseaseHi": "सोयाबीन तना नासूर / स्टेम कैंकर",
+    "diseaseEn": "Soybean Stem Canker",
+    "infectedImage": "agri_database/reference_images/soybean4.jpg",
+    "pathogen": {
+      "name": "Diaporthe aspalathi / Diaporthe caulivora",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "तने की गांठों (Nodes) के पास लाल-भूरे से कत्थई रंग के धंसे हुए घाव (Cankers) बनना।",
+      "घाव तने के चारों ओर फैलकर छल्ला बना लेते हैं, जिससे ऊपर रस पहुंचना बंद हो जाता है।",
+      "घाव के ऊपर का पूरा पौधा सूख जाता है और तना छूने पर आसानी से टूट जाता है।"
+    ],
+    "favourableConditions": [
+      "22-30°C तापमान और लंबे समय तक पत्तियों/तनों का भीगा रहना",
+      "वानस्पतिक अवस्था में लगातार बारिश होना",
+      "संक्रमित बीज और पूर्ववर्ती फसल के अवशेष"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Tebuconazole",
+        "formulation": "25.9% EC",
+        "brandExample": "Folicur",
+        "dose": "1.0-1.2 मिली प्रति लीटर",
+        "dosePer15LPump": "15-18 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "तनों को अच्छी तरह भिगोते हुए शुरुआती अवस्था में स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Thiophanate Methyl",
+        "formulation": "70% WP",
+        "brandExample": "Roko",
+        "dose": "1.5-2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "25-30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "फूल आने से ठीक पहले सुरक्षात्मक छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "नीम का अर्क (5%) + ट्राइकोडर्मा घोल",
+        "dose": "50 मिली नीम अर्क प्रति लीटर",
+        "howToUse": "तनों के निचले हिस्से पर छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "रोगरोधी किस्मों की बुवाई करें।",
+      "फसल अवशेषों को खेत में सड़ने के लिए गहरी जुताई करें।"
+    ]
+  },
+  {
+    "cropId": "soybean_sds_foliar_leaf_05",
+    "cropNameHi": "सोयाबीन (Soybean)",
+    "cropNameEn": "Soybean",
+    "diseaseHi": "सडन डेथ सिंड्रोम (नसों के बीच पीलापन व झुलसा)",
+    "diseaseEn": "Sudden Death Syndrome (Interveinal Chlorosis & Necrosis)",
+    "infectedImage": "agri_database/reference_images/soybean5.jpg",
+    "pathogen": {
+      "name": "Fusarium virguliforme",
+      "type": "Fungus (Root-origin toxin)"
+    },
+    "symptoms": [
+      "पत्तियों की नसों के बीच का भाग पहले पीला और फिर कत्थई-भूरा होकर झुलसना।",
+      "पत्ती की मुख्य और सहायक नसें पूरी तरह हरी बनी रहती हैं (Interveinal pattern)।",
+      "गंभीर स्थिति में पत्ती के झुलसे हुए हिस्से झड़ जाते हैं और पत्ती में छेद बन जाते हैं।"
+    ],
+    "favourableConditions": [
+      "फूल आने और फली बनने के समय मिट्टी में अधिक नमी",
+      "जड़ों में फंगस द्वारा टॉक्सिन पैदा होकर पत्तियों तक पहुंचना",
+      "मिट्टी में कॉम्पैक्शन और खराब वातन"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Picoxystrobin + Tricyclazole",
+        "formulation": "20% + 45% WG",
+        "brandExample": "Foliar Shield",
+        "dose": "1.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "15 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "द्वितीयक पर्णीय संक्रमण और पत्ती गिरने को रोकने हेतु स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "स्यूडोमोनास फ्लोरेसेन्स + बैसिलस सबटिलिस",
+        "dose": "5 ग्राम प्रति लीटर पानी",
+        "howToUse": "पौधों की जड़ों और पत्तियों पर छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "सोयाबीन सिस्ट नेमाटोड का नियंत्रण करें जो फंगस को जड़ में प्रवेश कराता है।",
+      "पोटाश की पर्याप्त मात्रा देकर पौधों की प्रतिरोधक क्षमता बढ़ाएं।"
+    ]
+  },
+  {
+    "cropId": "soybean_frogeye_leaf_spot_06",
+    "cropNameHi": "सोयाबीन (Soybean)",
+    "cropNameEn": "Soybean",
+    "diseaseHi": "मेंढक आंख धब्बा रोग (फ्रॉग-आई लीफ स्पॉट)",
+    "diseaseEn": "Frogeye Leaf Spot",
+    "infectedImage": "agri_database/reference_images/soybean6.jpg",
+    "pathogen": {
+      "name": "Cercospora sojina",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "पत्तियों पर छोटे, गोल से कोणीय धब्बे जिनका केंद्र हल्का धूसर और किनारा लाल-भूरा होता है।",
+      "धब्बे मेंढक की आंख जैसे विशिष्ट घेरेदार दिखाई देते हैं।",
+      "कई धब्बे आपस में मिलकर पत्तियों को झुलसा देते हैं जिससे पत्तियां समय पूर्व गिर जाती हैं।"
+    ],
+    "favourableConditions": [
+      "25-30°C का गर्म तापमान और 90% से अधिक सापेक्ष आर्द्रता",
+      "हवा और बारिश के छींटों द्वारा बीजाणुओं का तेजी से फैलना",
+      "संवेदनशील किस्मों की खेती"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Azoxystrobin + Tebuconazole",
+        "formulation": "11% + 18.3% SC",
+        "brandExample": "Custodia",
+        "dose": "1.5-2.0 मिली प्रति लीटर",
+        "dosePer15LPump": "25-30 मिली प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "फूल आने के समय या लक्षण दिखते ही पत्तियों पर समान रूप से स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Pyraclostrobin",
+        "formulation": "20% WG",
+        "brandExample": "Headline",
+        "dose": "1.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "15-18 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "रोग की शुरुआती अवस्था में पर्णीय छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "तांबे के बर्तन में रखी खट्टी छाछ का घोल",
+        "dose": "40-50 मिली प्रति लीटर पानी",
+        "howToUse": "फंगल धब्बों की रोकथाम के लिए पत्तियों पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "प्रमाणित फफूंदमुक्त बीजों का ही उपयोग करें।",
+      "सोयाबीन के बाद मक्का या ज्वार की फसल लेकर फसल चक्र अपनाएं।"
+    ]
+  },
+  {
+    "cropId": "soybean_mosaic_virus_07",
+    "cropNameHi": "सोयाबीन (Soybean)",
+    "cropNameEn": "Soybean",
+    "diseaseHi": "सोयाबीन मोजेक वायरस (पत्ती सिकुड़न व ऐंठन)",
+    "diseaseEn": "Soybean Mosaic Virus (SMV)",
+    "infectedImage": "agri_database/reference_images/soybean7.jpg",
+    "pathogen": {
+      "name": "Soybean mosaic virus (Potyvirus)",
+      "type": "Virus"
+    },
+    "vector": {
+      "name": "माहू / एफिड (Aphids - Aphis glycines)",
+      "type": "Insect Vector"
+    },
+    "symptoms": [
+      "नई पत्तियों का गहरे हरे रंग का होना, किनारों से नीचे की ओर मुड़ना और फफोलेनुमा (Rugose/Puckering) उभरना।",
+      "पौधे का विकास रुक जाना, पौधे बौने और झाड़ीदार हो जाना।",
+      "फलियों का आकार छोटा, मुड़ा हुआ और दानों पर भूरे-काले छिलके के दाग बनना।"
+    ],
+    "favourableConditions": [
+      "माहू कीटों की अधिक सक्रियता और शुष्क मौसम",
+      "संक्रमित बीजों की बुवाई",
+      "खेत के आसपास खरपतवारों की मौजूदगी"
+    ],
+    "medicines": [],
+    "treatmentNote": "वायरल रोग का कोई रासायनिक उपचार नहीं है। वाहक माहू कीटों का नियंत्रण और रोगग्रस्त पौधों को हटाना ही एकमात्र उपाय है।",
+    "vectorManagement": [
+      {
+        "activeIngredient": "Thiamethoxam",
+        "formulation": "25% WG",
+        "brandExample": "Actara",
+        "dose": "0.3-0.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "5-7 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "माहू कीटों के नियंत्रण हेतु पत्तियों के निचले भाग पर स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Acetamiprid",
+        "formulation": "20% SP",
+        "brandExample": "Pride",
+        "dose": "0.4 ग्राम प्रति लीटर",
+        "dosePer15LPump": "6-8 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "कीट प्रकोप दिखते ही तुरंत छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "नीम का तेल (Neem Oil 10,000 PPM)",
+        "dose": "3-4 मिली प्रति लीटर पानी",
+        "howToUse": "एफिड नियंत्रण हेतु 10-12 दिन के अंतराल पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "संक्रमित पौधों को खेत से उखाड़कर तुरंत नष्ट करें (Rouging)।",
+      "प्रतिरोधी किस्मों (जैसे JS 95-60, JS 20-34) का चयन करें।"
+    ]
+  },
+  {
+    "cropId": "soybean_pod_stem_blight_08",
+    "cropNameHi": "सोयाबीन (Soybean)",
+    "cropNameEn": "Soybean",
+    "diseaseHi": "फली व तना झुलसा रोग (पोमोप्सिस ब्लाइट)",
+    "diseaseEn": "Pod and Stem Blight / Phomopsis",
+    "infectedImage": "agri_database/reference_images/soybean8.jpg",
+    "pathogen": {
+      "name": "Diaporthe phaseolorum var. sojae / Phomopsis longicolla",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "परिपक्व तनों और फलियों पर कतारों में व्यवस्थित छोटे-छोटे काले बिंदु (Pycnidia) दिखाई देना।",
+      "फलियों का समय से पहले पककर सूख जाना और अंदर के दानों का सिकुड़ा व फफूंदयुक्त होना।",
+      "तनों का कमजोर होकर आसानी से फटना और उपज व बीज अंकुरण क्षमता का भारी नुकसान।"
+    ],
+    "favourableConditions": [
+      "फसल पकने के समय अधिक बारिश और गर्म-नम मौसम",
+      "कटाई में देरी होना और फसल का खेत में भीगना",
+      "रोगग्रस्त बीजों का उपयोग"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Tebuconazole + Trifloxystrobin",
+        "formulation": "50% + 25% WG",
+        "brandExample": "Nativo",
+        "dose": "0.8-1.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "12-15 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "फली निर्माण (R3-R5 stage) के समय सुरक्षात्मक स्प्रे करें।"
+      },
+      {
+        "activeIngredient": "Carbendazim",
+        "formulation": "50% WP",
+        "brandExample": "Bavistin",
+        "dose": "1.5-2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "25-30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "फलियों पर फफूंद का फैलाव रोकने हेतु छिड़काव करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma viride 1% WP",
+        "dose": "5 ग्राम प्रति लीटर पानी",
+        "howToUse": "शाम के समय फलियों और तनों पर स्प्रे करें।"
+      }
+    ],
+    "preventive": [
+      "फसल पकते ही समय पर कटाई करें, खेत में ज्यादा दिन न छोड़ें।",
+      "कटाई के तुरंत बाद दानों को 10-12% नमी पर सुखाकर भंडारित करें।"
+    ]
+  },
+  {
+    "cropId": "soybean_cercospora_leaf_blight_09",
+    "cropNameHi": "सोयाबीन (Soybean)",
+    "cropNameEn": "Soybean",
+    "diseaseHi": "सर्कोस्पोरा पत्ती झुलसा व बैंगनी पत्ती रोग",
+    "diseaseEn": "Cercospora Leaf Blight & Purple Seed Stain",
+    "infectedImage": "agri_database/reference_images/soybean9.jpg",
+    "pathogen": {
+      "name": "Cercospora kikuchii",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "शीर्ष पत्तियों की ऊपरी सतह पर कांस्य (Bronze) या लाल-बैंगनी रंग की परत चढ़ना।",
+      "पत्तियों का चमड़े जैसा कड़क, खुरदुरा होना और समय से पहले झुलसकर गिरना।",
+      "फलियों के अंदर के दानों पर विशिष्ट गुलाबी-बैंगनी रंग के धब्बे (Purple seed stain) पड़ना।"
+    ],
+    "favourableConditions": [
+      "26-32°C तापमान और लंबे समय तक उच्च आर्द्रता",
+      "फली भराव के समय तेज धूप और नमी का संयोजन",
+      "संक्रमित बीजों की बुवाई"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Pyraclostrobin",
+        "formulation": "20% WG",
+        "brandExample": "Headline",
+        "dose": "1.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "15 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "पत्तियों पर कांस्य रंग दिखते ही तुरंत छिड़काव करें।"
+      },
+      {
+        "activeIngredient": "Thiophanate Methyl",
+        "formulation": "70% WP",
+        "brandExample": "Roko 70 WP",
+        "dose": "1.5-2.0 ग्राम प्रति लीटर",
+        "dosePer15LPump": "25-30 ग्राम प्रति 15 लीटर पंप",
+        "application": "Foliar spray",
+        "howToUse": "फली विकास अवस्था में 10-12 दिन के अंतराल पर स्प्रे करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "स्यूडोमोनास फ्लोरेसेन्स 1% WP",
+        "dose": "5-6 ग्राम प्रति लीटर पानी",
+        "howToUse": "फसल पर पर्णीय छिड़काव करें।"
+      }
+    ],
+    "preventive": [
+      "बैंगनी दाग वाले संक्रमित दानों को बुवाई के लिए उपयोग न करें।",
+      "थायरम + कार्बेन्डाजिम से बीज शोधन अनिवार्य रूप से करें।"
+    ]
+  },
+  {
+    "cropId": "soybean_red_crown_rot_10",
+    "cropNameHi": "सोयाबीन (Soybean)",
+    "cropNameEn": "Soybean",
+    "diseaseHi": "लाल क्राउन सड़न / तना आधार विगलन (रेड क्राउन रॉट)",
+    "diseaseEn": "Red Crown Rot",
+    "infectedImage": "agri_database/reference_images/soybean10.jpg",
+    "pathogen": {
+      "name": "Calonectria ilicicola (Cylindrocladium parasiticum)",
+      "type": "Fungus"
+    },
+    "symptoms": [
+      "जमीन की सतह के ठीक पास तने के आधार (Crown) पर ईंट जैसे लाल-नारंगी रंग के बीजाणु समूह (Perithecia) बनना।",
+      "पौधे की मुख्य जड़ और तने का निचला भाग सड़कर काला-कत्थई हो जाना।",
+      "पत्तियों में इंटरवीनल क्लोरोसिस होना और पूरा पौधा अचानक सूखकर खड़ा रह जाना।"
+    ],
+    "favourableConditions": [
+      "भारी, जलभराव वाली मिट्टी और बुवाई के समय अधिक वर्षा",
+      "25-30°C तापमान और मिट्टी में फंगस का लंबे समय तक बने रहना",
+      "खराब जल निकासी और मिट्टी में नेमाटोड का प्रकोप"
+    ],
+    "medicines": [
+      {
+        "activeIngredient": "Fluopyram",
+        "formulation": "500 SC",
+        "brandExample": "ILeVO (Seed Treatment)",
+        "dose": "1.0-1.5 मिली प्रति किग्रा बीज",
+        "dosePer15LPump": "बीज उपचार हेतु प्रयुक्त",
+        "application": "Seed treatment",
+        "howToUse": "बुवाई पूर्व बीजों को समान रूप से उपचारित करें।"
+      },
+      {
+        "activeIngredient": "Carbendazim + Mancozeb",
+        "formulation": "12% + 63% WP",
+        "brandExample": "Saaf",
+        "dose": "2.5 ग्राम प्रति लीटर",
+        "dosePer15LPump": "35-40 ग्राम प्रति 15 लीटर पंप",
+        "application": "Soil drenching",
+        "howToUse": "तने के आधार और जड़ क्षेत्र में मिट्टी को तर करते हुए ड्रेन्चिंग करें।"
+      }
+    ],
+    "organicSolutions": [
+      {
+        "name": "Trichoderma harzianum 1% WP",
+        "dose": "2.5-3.0 किग्रा प्रति एकड़",
+        "howToUse": "100 किग्रा सड़ी गोबर खाद में मिलाकर बुवाई के समय कतारों में डालें।"
+      }
+    ],
+    "preventive": [
+      "खेत में जलभराव रोकने के लिए मेड़ बनाकर (Ridge and furrow) बुवाई करें।",
+      "संक्रमित खेत में कम से कम 2 वर्ष तक मक्का, ज्वार या गेहूं का फसल चक्र अपनाएं।"
+    ]
+  }
+]
+]
