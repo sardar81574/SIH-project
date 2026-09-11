@@ -1,5 +1,3 @@
-
-
 [
   {
     "cropId": "wheat_stripe_rust_01",
@@ -8,12 +6,10 @@
     "diseaseHi": "पीला रतुआ / धारीदार रतुआ",
     "diseaseEn": "Stripe Rust / Yellow Rust",
     "infectedImage": "agri_database/reference_images/wheat bakar1.jpg",
-
     "pathogen": {
       "name": "Puccinia striiformis f. sp. tritici",
       "type": "Fungus"
     },
-
     "symptoms": [
       "पत्तियों पर पीले से नारंगी रंग के छोटे-छोटे pustules दिखाई देते हैं।",
       "Pustules सामान्यतः पत्ती की लंबाई के साथ धारियों में दिखाई देते हैं।",
@@ -21,14 +17,12 @@
       "गंभीर संक्रमण में पत्तियां समय से पहले सूख सकती हैं।",
       "दाना भरने और उपज पर प्रतिकूल प्रभाव पड़ सकता है।"
     ],
-
     "favourableConditions": [
       "ठंडा मौसम",
       "अधिक humidity",
       "ओस और पत्तियों पर लंबे समय तक नमी",
       "बार-बार हल्की बारिश"
     ],
-
     "medicines": [
       {
         "activeIngredient": "Propiconazole",
@@ -47,14 +41,12 @@
         "howToUse": "उत्पाद के approved label और स्थानीय कृषि सलाह के अनुसार प्रयोग करें।"
       }
     ],
-
     "organicSolutions": [
       {
         "name": "रोग-प्रतिरोधी गेहूं की किस्म",
         "howToUse": "अपने क्षेत्र के लिए recommended yellow-rust resistant variety का उपयोग करें।"
       }
     ],
-
     "preventive": [
       "फसल की नियमित निगरानी करें।",
       "रोग के शुरुआती लक्षण दिखाई देते ही नियंत्रण करें।",
@@ -63,8 +55,6 @@
       "Volunteer wheat plants को हटाएं।"
     ]
   },
-
-
   {
     "cropId": "wheat_loose_smut_01",
     "cropNameHi": "गेहूं",
@@ -72,12 +62,10 @@
     "diseaseHi": "कंडुआ / लूज स्मट",
     "diseaseEn": "Loose Smut",
     "infectedImage": "agri_database/reference_images/wheat bakar2.jpg",
-
     "pathogen": {
       "name": "Ustilago tritici",
       "type": "Fungus"
     },
-
     "symptoms": [
       "गेहूं की बालियों में सामान्य दानों की जगह काला powdery spore mass दिखाई देता है।",
       "पूरी संक्रमित बाली काली spores से ढकी हुई दिखाई दे सकती है।",
@@ -85,14 +73,12 @@
       "काली spores हवा द्वारा फैल सकती हैं।",
       "संक्रमित बीज अगले crop में disease को carry कर सकता है।"
     ],
-
     "favourableConditions": [
       "संक्रमित बीज का उपयोग",
       "Untreated seed का उपयोग",
       "संक्रमित seed material",
       "फूल आने के समय अनुकूल संक्रमण परिस्थितियां"
     ],
-
     "medicines": [
       {
         "activeIngredient": "Carboxin",
@@ -116,7 +102,6 @@
         "howToUse": "बुवाई से पहले seed treatment करें।"
       }
     ],
-
     "organicSolutions": [
       {
         "name": "Trichoderma viride",
@@ -124,7 +109,6 @@
         "howToUse": "Integrated seed treatment में recommended procedure के अनुसार प्रयोग करें।"
       }
     ],
-
     "preventive": [
       "Certified और disease-free seed का उपयोग करें।",
       "बुवाई से पहले उचित seed treatment करें।",
@@ -132,8 +116,6 @@
       "Recommended resistant varieties का उपयोग करें।"
     ]
   },
-
-
   {
     "cropId": "wheat_leaf_rust_01",
     "cropNameHi": "गेहूं",
@@ -141,12 +123,10 @@
     "diseaseHi": "भूरा रतुआ / पत्ती का रतुआ",
     "diseaseEn": "Leaf Rust / Brown Rust",
     "infectedImage": "agri_database/reference_images/wheat bakar3.jpg",
-
     "pathogen": {
       "name": "Puccinia triticina",
       "type": "Fungus"
     },
-
     "symptoms": [
       "पत्तियों पर छोटे गोल या अंडाकार नारंगी-भूरे pustules दिखाई देते हैं।",
       "Pustules पत्ती पर बिखरे हुए दिखाई देते हैं।",
@@ -154,14 +134,12 @@
       "गंभीर संक्रमण में पत्तियां जल्दी सूख सकती हैं।",
       "Photosynthesis और grain filling प्रभावित हो सकते हैं।"
     ],
-
     "favourableConditions": [
       "मध्यम तापमान",
       "उच्च relative humidity",
       "पत्तियों पर moisture",
       "ओस और बारिश"
     ],
-
     "medicines": [
       {
         "activeIngredient": "Propiconazole",
@@ -187,14 +165,12 @@
         "howToUse": "Approved label और स्थानीय कृषि सलाह के अनुसार प्रयोग करें।"
       }
     ],
-
     "organicSolutions": [
       {
         "name": "रोग-प्रतिरोधी गेहूं की किस्म",
         "howToUse": "अपने क्षेत्र के लिए recommended resistant variety का उपयोग करें।"
       }
     ],
-
     "preventive": [
       "फसल की नियमित scouting करें।",
       "रोग के शुरुआती लक्षण दिखाई देते ही नियंत्रण करें।",
@@ -203,8 +179,6 @@
       "Volunteer wheat plants को हटाएं।"
     ]
   },
-
-
   {
     "cropId": "wheat_stem_rust_01",
     "cropNameHi": "गेहूं",
@@ -212,12 +186,10 @@
     "diseaseHi": "काला रतुआ / तना रतुआ",
     "diseaseEn": "Stem Rust / Black Rust",
     "infectedImage": "agri_database/reference_images/wheat bakar4.jpg",
-
     "pathogen": {
       "name": "Puccinia graminis f. sp. tritici",
       "type": "Fungus"
     },
-
     "symptoms": [
       "तने पर लाल-भूरे से गहरे भूरे elongated pustules दिखाई देते हैं।",
       "Leaf sheath पर भी pustules दिखाई दे सकते हैं।",
@@ -226,14 +198,12 @@
       "Lodging की समस्या हो सकती है।",
       "गंभीर संक्रमण में grain filling और yield प्रभावित हो सकती है।"
     ],
-
     "favourableConditions": [
       "गर्म और नम मौसम",
       "उच्च humidity",
       "पौधों की सतह पर moisture",
       "संवेदनशील wheat variety"
     ],
-
     "medicines": [
       {
         "activeIngredient": "Propiconazole",
@@ -252,14 +222,12 @@
         "howToUse": "Approved crop-label recommendation के अनुसार प्रयोग करें।"
       }
     ],
-
     "organicSolutions": [
       {
         "name": "रोग-प्रतिरोधी गेहूं की किस्म",
         "howToUse": "अपने क्षेत्र के लिए recommended stem-rust resistant variety का उपयोग करें।"
       }
     ],
-
     "preventive": [
       "Rust-resistant varieties का उपयोग करें।",
       "खेत की नियमित निगरानी करें।",
@@ -268,8 +236,6 @@
       "रोग के शुरुआती infection को नियंत्रित करें।"
     ]
   },
-
-
   {
     "cropId": "wheat_leaf_rust_02",
     "cropNameHi": "गेहूं",
@@ -277,12 +243,10 @@
     "diseaseHi": "भूरा रतुआ / पत्ती का रतुआ",
     "diseaseEn": "Leaf Rust / Brown Rust",
     "infectedImage": "agri_database/reference_images/wheat bakar5.jpg",
-
     "pathogen": {
       "name": "Puccinia triticina",
       "type": "Fungus"
     },
-
     "symptoms": [
       "पत्ती पर बड़ी संख्या में नारंगी-भूरे छोटे pustules दिखाई देते हैं।",
       "Pustules पत्ती की सतह पर बिखरे हुए दिखाई देते हैं।",
@@ -290,14 +254,12 @@
       "गंभीर संक्रमण में पत्तियां जल्दी सूख सकती हैं।",
       "Photosynthesis और grain filling प्रभावित हो सकते हैं।"
     ],
-
     "favourableConditions": [
       "मध्यम तापमान",
       "उच्च relative humidity",
       "पत्तियों पर moisture",
       "ओस और बारिश"
     ],
-
     "medicines": [
       {
         "activeIngredient": "Propiconazole",
@@ -323,14 +285,12 @@
         "howToUse": "Approved label और स्थानीय कृषि सलाह के अनुसार प्रयोग करें।"
       }
     ],
-
     "organicSolutions": [
       {
         "name": "रोग-प्रतिरोधी wheat variety",
         "howToUse": "अपने क्षेत्र के लिए recommended resistant variety का उपयोग करें।"
       }
     ],
-
     "preventive": [
       "फसल की नियमित scouting करें।",
       "रोग के शुरुआती लक्षणों पर नियंत्रण करें।",
@@ -339,8 +299,6 @@
       "Volunteer wheat plants को हटाएं।"
     ]
   },
-
-
   {
     "cropId": "wheat_leaf_rust_03",
     "cropNameHi": "गेहूं",
@@ -348,12 +306,10 @@
     "diseaseHi": "भूरा रतुआ / पत्ती का रतुआ",
     "diseaseEn": "Leaf Rust / Brown Rust",
     "infectedImage": "agri_database/reference_images/wheat bakar6.jpg",
-
     "pathogen": {
       "name": "Puccinia triticina",
       "type": "Fungus"
     },
-
     "symptoms": [
       "पत्तियों पर लाल-भूरे और नारंगी रंग के छोटे pustules दिखाई देते हैं।",
       "Pustules मुख्य रूप से पत्ती की surface पर बिखरे हुए होते हैं।",
@@ -361,14 +317,12 @@
       "गंभीर संक्रमण में पत्ती का हरा क्षेत्र कम हो सकता है।",
       "गंभीर स्थिति में grain filling और yield कम हो सकती है।"
     ],
-
     "favourableConditions": [
       "मध्यम तापमान",
       "उच्च humidity",
       "पत्तियों पर नमी",
       "ओस और बारिश"
     ],
-
     "medicines": [
       {
         "activeIngredient": "Propiconazole",
@@ -387,14 +341,12 @@
         "howToUse": "Approved crop-label recommendation के अनुसार प्रयोग करें।"
       }
     ],
-
     "organicSolutions": [
       {
         "name": "रोग-प्रतिरोधी wheat variety",
         "howToUse": "स्थानीय क्षेत्र के लिए recommended resistant variety लगाएं।"
       }
     ],
-
     "preventive": [
       "फसल की नियमित monitoring करें।",
       "Rust दिखाई देने पर early management करें।",
@@ -402,8 +354,6 @@
       "Resistant varieties का उपयोग करें।"
     ]
   },
-
-
   {
     "cropId": "wheat_loose_smut_02",
     "cropNameHi": "गेहूं",
@@ -411,12 +361,10 @@
     "diseaseHi": "कंडुआ / लूज स्मट",
     "diseaseEn": "Loose Smut",
     "infectedImage": "agri_database/reference_images/wheat bakar7.jpg",
-
     "pathogen": {
       "name": "Ustilago tritici",
       "type": "Fungus"
     },
-
     "symptoms": [
       "पूरी गेहूं की बाली काले powdery spores में बदल सकती है।",
       "संक्रमित बालियां सामान्य बालियों की तुलना में काली दिखाई देती हैं।",
@@ -424,13 +372,11 @@
       "संक्रमित heads से spores हवा द्वारा फैल सकते हैं।",
       "रोग seed-borne nature का है।"
     ],
-
     "favourableConditions": [
       "संक्रमित seed",
       "Untreated seed",
       "संक्रमित crop से seed रखना"
     ],
-
     "medicines": [
       {
         "activeIngredient": "Carboxin",
@@ -454,7 +400,6 @@
         "howToUse": "बुवाई से पहले seed treatment करें।"
       }
     ],
-
     "organicSolutions": [
       {
         "name": "Trichoderma viride",
@@ -462,7 +407,6 @@
         "howToUse": "Integrated seed treatment programme में recommended procedure के अनुसार प्रयोग करें।"
       }
     ],
-
     "preventive": [
       "Certified disease-free seed का उपयोग करें।",
       "हर season से पहले seed treatment करें।",
@@ -470,8 +414,6 @@
       "Recommended varieties का उपयोग करें।"
     ]
   },
-
-
   {
     "cropId": "wheat_stripe_rust_02",
     "cropNameHi": "गेहूं",
@@ -479,12 +421,10 @@
     "diseaseHi": "पीला रतुआ / धारीदार रतुआ",
     "diseaseEn": "Stripe Rust / Yellow Rust",
     "infectedImage": "agri_database/reference_images/wheat bakar8.jpg",
-
     "pathogen": {
       "name": "Puccinia striiformis f. sp. tritici",
       "type": "Fungus"
     },
-
     "symptoms": [
       "पत्तियों पर पीले या नारंगी रंग की लंबी धारियां दिखाई देती हैं।",
       "Pustules पत्ती की veins के साथ stripe pattern में व्यवस्थित होते हैं।",
@@ -492,14 +432,12 @@
       "गंभीर infection में leaf area कम हो जाता है।",
       "दाना भरने और yield पर प्रभाव पड़ सकता है।"
     ],
-
     "favourableConditions": [
       "ठंडा मौसम",
       "उच्च humidity",
       "ओस",
       "बार-बार बारिश"
     ],
-
     "medicines": [
       {
         "activeIngredient": "Propiconazole",
@@ -518,14 +456,12 @@
         "howToUse": "Approved product label के अनुसार प्रयोग करें।"
       }
     ],
-
     "organicSolutions": [
       {
         "name": "Rust-resistant wheat variety",
         "howToUse": "स्थानीय recommendation के अनुसार resistant variety का उपयोग करें।"
       }
     ],
-
     "preventive": [
       "फसल की नियमित scouting करें।",
       "Early symptoms पर management करें।",
@@ -534,8 +470,6 @@
       "Volunteer wheat को हटाएं।"
     ]
   },
-
-
   {
     "cropId": "wheat_streak_mosaic_01",
     "cropNameHi": "गेहूं",
@@ -543,20 +477,16 @@
     "diseaseHi": "गेहूं स्ट्रीक मोजेक रोग",
     "diseaseEn": "Wheat Streak Mosaic",
     "infectedImage": "agri_database/reference_images/wheat bakar9.jpg",
-
     "diagnosisStatus": "Provisional image-based identification",
-
     "pathogen": {
       "name": "Wheat Streak Mosaic Virus (WSMV) complex",
       "type": "Virus"
     },
-
     "vector": {
       "name": "Wheat Curl Mite",
       "scientificName": "Aceria tosichella",
       "type": "Mite"
     },
-
     "symptoms": [
       "पत्तियों पर हल्के हरे, पीले और गहरे हरे रंग की mosaic pattern दिखाई देती है।",
       "पत्तियों पर लंबी पीली या हल्की हरी streaks दिखाई दे सकती हैं।",
@@ -565,7 +495,6 @@
       "गंभीर स्थिति में पत्तियां necrotic होकर सूख सकती हैं।",
       "कुछ परिस्थितियों में grain formation और yield बहुत कम हो सकती है।"
     ],
-
     "favourableConditions": [
       "Volunteer wheat की मौजूदगी",
       "Grassy weeds की मौजूदगी",
@@ -573,11 +502,8 @@
       "बहुत जल्दी wheat planting",
       "गर्म मौसम में mite activity"
     ],
-
     "medicines": [],
-
     "treatmentNote": "Virus-infected plant को cure करने के लिए कोई प्रभावी fungicide उपलब्ध नहीं है। Foliar fungicides viral infection को cure नहीं करते।",
-
     "vectorManagement": [
       "Volunteer wheat को नष्ट करें।",
       "Grassy weeds को नियंत्रित करें।",
@@ -586,7 +512,6 @@
       "बहुत जल्दी planting करने से बचें जहां WSMV risk अधिक हो।",
       "स्थानीय रूप से adapted tolerant/resistant varieties का उपयोग करें।"
     ],
-
     "organicSolutions": [
       {
         "name": "Green bridge management",
@@ -597,7 +522,6 @@
         "howToUse": "जहां उपयुक्त हो wheat के बीच non-host broadleaf crop का rotation अपनाएं।"
       }
     ],
-
     "preventive": [
       "Volunteer wheat को crop cycle के बीच में न रहने दें।",
       "Grassy weeds को नियंत्रित करें।",
@@ -606,8 +530,6 @@
       "संदिग्ध viral disease की laboratory diagnosis कराएं।"
     ]
   },
-
-
   {
     "cropId": "wheat_barley_yellow_dwarf_01",
     "cropNameHi": "गेहूं",
@@ -615,19 +537,15 @@
     "diseaseHi": "पीला बौनापन रोग",
     "diseaseEn": "Barley Yellow Dwarf / BYDV",
     "infectedImage": "agri_database/reference_images/wheat bakar10.jpg",
-
     "diagnosisStatus": "Provisional image-based identification",
-
     "pathogen": {
       "name": "Barley Yellow Dwarf Virus complex",
       "type": "Virus"
     },
-
     "vector": {
       "type": "Aphids",
       "description": "BYDV aphid vectors द्वारा फैलता है।"
     },
-
     "symptoms": [
       "पत्तियां पीली, लाल या बैंगनी रंग की हो सकती हैं।",
       "Yellowing अक्सर पत्ती के tip और margins से शुरू हो सकती है।",
@@ -637,7 +555,6 @@
       "गंभीर संक्रमण में grain yield कम हो सकती है।",
       "Field में symptoms अक्सर patches में दिखाई दे सकते हैं।"
     ],
-
     "favourableConditions": [
       "Aphid population का बढ़ना",
       "Volunteer cereals की मौजूदगी",
@@ -645,11 +562,8 @@
       "Early crop infection",
       "अनुकूल aphid activity"
     ],
-
     "medicines": [],
-
     "treatmentNote": "BYDV एक viral disease है। Virus को plant के अंदर cure करने के लिए fungicide प्रभावी नहीं है। Management मुख्यतः aphid vector और virus reservoirs को कम करने पर आधारित है।",
-
     "vectorManagement": [
       {
         "activeIngredient": "Imidacloprid",
@@ -659,14 +573,12 @@
         "importantNote": "यह virus को cure नहीं करता; इसका उद्देश्य aphid vector management है। केवल current crop-label, local advisory और economic-threshold के अनुसार उपयोग करें।"
       }
     ],
-
     "organicSolutions": [
       {
         "name": "Aphid natural enemies conservation",
         "howToUse": "Ladybird beetles और अन्य beneficial insects को अनावश्यक broad-spectrum insecticide से बचाएं।"
       }
     ],
-
     "preventive": [
       "Volunteer cereals और grass weeds को नियंत्रित करें।",
       "Aphid population की नियमित निगरानी करें।",
@@ -675,22 +587,13 @@
       "Virus diagnosis के लिए आवश्यकता होने पर laboratory testing कराएं।"
     ]
   },
-
-
-
-
-
-
-
-
-[
   {
     "cropId": "paddy_stem_borer_hopper_01",
     "cropNameHi": "धान (Paddy / Rice)",
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "तना छेदक / हॉपर बर्न (डेड हार्ट)",
     "diseaseEn": "Stem Borer / Hopper Burn (Dead Heart)",
-    "infectedImage": "agri_database/reference_images/1000201376.jpg",
+    "infectedImage": "agri_database/reference_images/paddy1.jpg",
     "pathogen": {
       "name": "Scirpophaga incertulas / Nilaparvata lugens",
       "type": "Insect Pest"
@@ -743,7 +646,7 @@
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "भूरा धब्बा रोग (ब्राउन स्पॉट)",
     "diseaseEn": "Brown Spot",
-    "infectedImage": "agri_database/reference_images/1000201375.jpg",
+    "infectedImage": "agri_database/reference_images/paddy2.jpg",
     "pathogen": {
       "name": "Bipolaris oryzae",
       "type": "Fungus"
@@ -796,7 +699,7 @@
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "झूठा कंडुआ / लेड़ा रोग (अंतिम अवस्था - काले बीजाणु)",
     "diseaseEn": "False Smut (Late Stage - Dark Spores)",
-    "infectedImage": "agri_database/reference_images/1000201377.jpg",
+    "infectedImage": "agri_database/reference_images/paddy3.jpg",
     "pathogen": {
       "name": "Ustilaginoidea virens",
       "type": "Fungus"
@@ -849,7 +752,7 @@
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "पत्ती झुलसा / लीफ ब्लास्ट रोग",
     "diseaseEn": "Rice Leaf Blast",
-    "infectedImage": "agri_database/reference_images/1000201378.jpg",
+    "infectedImage": "agri_database/reference_images/paddy4.jpg",
     "pathogen": {
       "name": "Magnaporthe oryzae (Pyricularia oryzae)",
       "type": "Fungus"
@@ -902,7 +805,7 @@
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "शीथ रॉट / झंडा पत्ती आवरण सड़न",
     "diseaseEn": "Rice Sheath Rot",
-    "infectedImage": "agri_database/reference_images/1000201380.jpg",
+    "infectedImage": "agri_database/reference_images/paddy5.jpg",
     "pathogen": {
       "name": "Sarocladium oryzae",
       "type": "Fungus"
@@ -955,7 +858,7 @@
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "झूठा कंडुआ / हल्दी गांठ (प्रारंभिक अवस्था)",
     "diseaseEn": "False Smut (Early Stage - Yellow Balls)",
-    "infectedImage": "agri_database/reference_images/1000201379.jpg",
+    "infectedImage": "agri_database/reference_images/paddy6.jpg",
     "pathogen": {
       "name": "Ustilaginoidea virens",
       "type": "Fungus"
@@ -1008,7 +911,7 @@
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "स्वस्थ हरी फसल (रोगमुक्त वानस्पतिक अवस्था)",
     "diseaseEn": "Healthy Crop Canopy - No Disease Detected",
-    "infectedImage": "agri_database/reference_images/1000201381.jpg",
+    "infectedImage": "agri_database/reference_images/paddy7.jpg",
     "pathogen": {
       "name": "None (Healthy)",
       "type": "None"
@@ -1052,7 +955,7 @@
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "शीथ ब्लाइट / पर्णच्छद झुलसा रोग",
     "diseaseEn": "Rice Sheath Blight",
-    "infectedImage": "agri_database/reference_images/1000201382.jpg",
+    "infectedImage": "agri_database/reference_images/paddy8.jpg",
     "pathogen": {
       "name": "Rhizoctonia solani",
       "type": "Fungus"
@@ -1105,7 +1008,7 @@
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "गर्दन तोड़ / नेक ब्लास्ट (बाली झुलसा)",
     "diseaseEn": "Rice Neck Blast",
-    "infectedImage": "agri_database/reference_images/1000201384.jpg",
+    "infectedImage": "agri_database/reference_images/paddy9.jpg",
     "pathogen": {
       "name": "Magnaporthe oryzae",
       "type": "Fungus"
@@ -1158,7 +1061,7 @@
     "cropNameEn": "Paddy / Rice",
     "diseaseHi": "स्वस्थ दाना भराव अवस्था (रोगमुक्त बाली)",
     "diseaseEn": "Healthy Grain Filling Stage - No Pathology",
-    "infectedImage": "agri_database/reference_images/1000201383.jpg",
+    "infectedImage": "agri_database/reference_images/paddy10.jpg",
     "pathogen": {
       "name": "None (Healthy)",
       "type": "None"
@@ -1195,19 +1098,14 @@
       "दाना भराव के समय खेत में हल्की नमी लगातार बनाए रखें।",
       "तेज हवा या बारिश के मौसम में खेत में अत्यधिक पानी न भरें।"
     ]
-  }
-],
-
-
-
-[
+  },
   {
     "cropId": "sugarcane_grassy_shoot_01",
     "cropNameHi": "गन्ना (Sugarcane)",
     "cropNameEn": "Sugarcane",
     "diseaseHi": "घासीय प्ररोह रोग (Grassy Shoot Disease)",
     "diseaseEn": "Grassy Shoot Disease (GSD)",
-    "infectedImage": "agri_database/reference_images/Sugarcan1.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane1.jpg",
     "pathogen": {
       "name": "Candidatus Phytoplasma sacchari",
       "type": "Phytoplasma"
@@ -1252,7 +1150,7 @@
     "cropNameEn": "Sugarcane",
     "diseaseHi": "गन्ने का रतुआ रोग (रस्ट)",
     "diseaseEn": "Sugarcane Rust",
-    "infectedImage": "agri_database/reference_images/Sugarcan2.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane2.jpg",
     "pathogen": {
       "name": "Puccinia kuehnii / Puccinia melanocephala",
       "type": "Fungus"
@@ -1305,7 +1203,7 @@
     "cropNameEn": "Sugarcane",
     "diseaseHi": "गन्ने का कंडुआ रोग (चाबुक कंडुआ)",
     "diseaseEn": "Sugarcane Smut (Whip Smut)",
-    "infectedImage": "agri_database/reference_images/Sugarcan3.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane3.jpg",
     "pathogen": {
       "name": "Sporisorium scitamineum",
       "type": "Fungus"
@@ -1358,7 +1256,7 @@
     "cropNameEn": "Sugarcane",
     "diseaseHi": "गन्ने का लाल सड़न रोग (रेड रॉट - आंतरिक लक्षण)",
     "diseaseEn": "Sugarcane Red Rot (Internal Stalk Symptoms)",
-    "infectedImage": "agri_database/reference_images/Sugarcan4.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane4.jpg",
     "pathogen": {
       "name": "Colletotrichum falcatum",
       "type": "Fungus"
@@ -1402,7 +1300,7 @@
     "cropNameEn": "Sugarcane",
     "diseaseHi": "पोक्का बोइंग रोग (शीर्ष सड़न / मुड़न)",
     "diseaseEn": "Pokkah Boeng Disease",
-    "infectedImage": "agri_database/reference_images/Sugarcan5.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane5.jpg",
     "pathogen": {
       "name": "Fusarium moniliforme / Fusarium sacchari",
       "type": "Fungus"
@@ -1455,7 +1353,7 @@
     "cropNameEn": "Sugarcane",
     "diseaseHi": "लाल धारी रोग (रेड स्ट्राइप)",
     "diseaseEn": "Bacterial Red Stripe",
-    "infectedImage": "agri_database/reference_images/Sugarcan6.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane6.jpg",
     "pathogen": {
       "name": "Acidovorax avenae subsp. avenae",
       "type": "Bacterium"
@@ -1499,7 +1397,7 @@
     "cropNameEn": "Sugarcane",
     "diseaseHi": "चाबुक कंडुआ रोग (खेत में फैलाव)",
     "diseaseEn": "Sugarcane Smut Field Infestation",
-    "infectedImage": "agri_database/reference_images/Sugarcan7.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane7.jpg",
     "pathogen": {
       "name": "Sporisorium scitamineum",
       "type": "Fungus"
@@ -1543,7 +1441,7 @@
     "cropNameEn": "Sugarcane",
     "diseaseHi": "काली फफूंद / सूटी मोल्ड (पायरीला या मिलीबग के बाद)",
     "diseaseEn": "Sooty Mold / Black Mold",
-    "infectedImage": "agri_database/reference_images/Sugarcan8.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane8.jpg",
     "pathogen": {
       "name": "Capnodium spp.",
       "type": "Fungus (Saprophytic)"
@@ -1596,7 +1494,7 @@
     "cropNameEn": "Sugarcane",
     "diseaseHi": "पीली पत्ती रोग (येलो लीफ डिजीज)",
     "diseaseEn": "Yellow Leaf Disease (YLD)",
-    "infectedImage": "agri_database/reference_images/Sugarcan9.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane9.jpg",
     "pathogen": {
       "name": "Sugarcane yellow leaf virus (SCYLV)",
       "type": "Virus"
@@ -1642,7 +1540,7 @@
     "cropNameEn": "Sugarcane",
     "diseaseHi": "गन्ने का उकठा रोग व सूखा झुलसा (विल्ट)",
     "diseaseEn": "Sugarcane Wilt / Canopy Desiccation",
-    "infectedImage": "agri_database/reference_images/Sugarcan10.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane10.jpg",
     "pathogen": {
       "name": "Fusarium sacchari / Cephalosporium sacchari",
       "type": "Fungus"
@@ -1680,14 +1578,13 @@
       "दीमक और जड़ छेदक कीटों का बुवाई के समय ही उपचार करें।"
     ]
   },
-
   {
     "cropId": "sugarcane_red_rot_nodal_11",
     "cropNameHi": "गन्ना (Sugarcane)",
     "cropNameEn": "Sugarcane",
     "diseaseHi": "लाल सड़न रोग (नोडल संक्रमण व आंतरिक लाल रेशे)",
     "diseaseEn": "Sugarcane Red Rot (Nodal Infection & Vascular Discoloration)",
-    "infectedImage": "agri_database/reference_images/Sugarcan11.jpg",
+    "infectedImage": "agri_database/reference_images/Sugarcane11.jpg",
     "pathogen": {
       "name": "Colletotrichum falcatum",
       "type": "Fungus"
@@ -1734,13 +1631,7 @@
       "रोगग्रस्त खेत से पेड़ी (Ratoon) न लें और 2-3 वर्ष का फसल चक्र (जैसे धान-गेहूं या हरी खाद) अपनाएं।",
       "रेड रॉट प्रतिरोधी किस्मों (जैसे Co 0238 के स्थान पर Co 0118, Co 15023) का चयन करें।"
     ]
-  }
-],
-
-
-
-
-[
+  },
   {
     "cropId": "tomato_early_blight_01",
     "cropNameHi": "टमाटर (Tomato)",
@@ -1856,7 +1747,7 @@
     ],
     "favourableConditions": [
       "ठंडा और नम मौसम (तापमान 15-20°C)",
-      "लगातार बारिश, घना कोहरा और उच्च आर्द्रता (90%以上)",
+      "लगातार बारिश, घना कोहरा और उच्च आर्द्रता (90% से अधिक)",
       "हवा द्वारा फफूंद के बीजाणुओं का तेजी से फैलना"
     ],
     "medicines": [
@@ -2222,15 +2113,7 @@
       "खेत में नमी की एकसमान मात्रा बनाए रखें, इसके लिए ड्रिप सिंचाई अपनाएं।",
       "संतुलित खाद और सूक्ष्म पोषक तत्वों का प्रयोग करें।"
     ]
-  }
-],
-
-
-
-
-
-
-[
+  },
   {
     "cropId": "maize_healthy_vegetative_01",
     "cropNameHi": "मक्का (Maize / Corn)",
@@ -2671,7 +2554,6 @@
       "एक साथ पूरे क्षेत्र में मक्के की बुवाई करें ताकि कीट का निरंतर चक्र न बने।"
     ]
   },
-  
   {
     "cropId": "maize_fall_armyworm_whorl_10",
     "cropNameHi": "मक्का (Maize / Corn)",
@@ -2728,18 +2610,7 @@
       "बुवाई के तुरंत बाद प्रति एकड़ 5 फेरोमोन ट्रैप नर पतंगों की निगरानी हेतु लगाएं।",
       "अंडे के समूहों (Hair-covered egg masses) को हाथ से मसलकर नष्ट करें।"
     ]
-  }
-
-],
-
-
-
-
-
-
-
-
-[
+  },
   {
     "cropId": "soybean_septoria_brown_spot_01",
     "cropNameHi": "सोयाबीन (Soybean)",
@@ -3258,5 +3129,4 @@
       "संक्रमित खेत में कम से कम 2 वर्ष तक मक्का, ज्वार या गेहूं का फसल चक्र अपनाएं।"
     ]
   }
-]
 ]
