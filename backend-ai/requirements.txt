@@ -5,4 +5,5 @@ pillow
 numpy
 google-genai
 python-multipart
-pip freeze > requirements.txt
+opencv-python-headless
+pydantic
